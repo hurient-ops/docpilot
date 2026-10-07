@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-error": "var(--color-on-error)", "secondary-fixed-dim": "var(--color-secondary-fixed-dim)", "status-danger-text": "var(--color-status-danger-text)", "status-cloud-text": "var(--color-status-cloud-text)", "format-hwp-text": "var(--color-format-hwp-text)", "primary": "var(--color-primary)", "error": "var(--color-error)", "secondary-container": "var(--color-secondary-container)", "surface-container-lowest": "var(--color-surface-container-lowest)", "format-docx-text": "var(--color-format-docx-text)", "outline-variant": "var(--color-outline-variant)", "diff-modified-bg": "var(--color-diff-modified-bg)", "background": "var(--color-background)", "status-local-text": "var(--color-status-local-text)", "outline": "var(--color-outline)", "text-primary": "var(--color-text-primary)", "format-xlsx-bg": "var(--color-format-xlsx-bg)", "primary-fixed": "var(--color-primary-fixed)", "format-hwp-border": "var(--color-format-hwp-border)", "surface-container-low": "var(--color-surface-container-low)", "security-dlp-breach": "var(--color-security-dlp-breach)", "surface-container-highest": "var(--color-surface-container-highest)", "format-pdf-border": "var(--color-format-pdf-border)", "on-primary": "var(--color-on-primary)", "surface": "var(--color-surface)", "format-pptx-bg": "var(--color-format-pptx-bg)", "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)", "on-primary-fixed": "var(--color-on-primary-fixed)", "surface-container": "var(--color-surface-container)", "format-pdf-bg": "var(--color-format-pdf-bg)", "text-secondary": "var(--color-text-secondary)", "on-tertiary-fixed": "var(--color-on-tertiary-fixed)", "format-docx-bg": "var(--color-format-docx-bg)", "on-error-container": "var(--color-on-error-container)", "surface-tint": "var(--color-surface-tint)", "format-xlsx-text": "var(--color-format-xlsx-text)", "error-container": "var(--color-error-container)", "surface-dim": "var(--color-surface-dim)", "tertiary-container": "var(--color-tertiary-container)", "on-secondary-fixed": "var(--color-on-secondary-fixed)", "tertiary-fixed": "var(--color-tertiary-fixed)", "status-danger-bg": "var(--color-status-danger-bg)", "on-tertiary": "var(--color-on-tertiary)", "secondary": "var(--color-secondary)", "primary-container": "var(--color-primary-container)", "inverse-on-surface": "var(--color-inverse-on-surface)", "diff-removed-text": "var(--color-diff-removed-text)", "on-tertiary-container": "var(--color-on-tertiary-container)", "on-background": "var(--color-on-background)", "border-subtle": "var(--color-border-subtle)", "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)", "border-strong": "var(--color-border-strong)", "surface-variant": "var(--color-surface-variant)", "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)", "format-hwp-bg": "var(--color-format-hwp-bg)", "format-docx-border": "var(--color-format-docx-border)", "format-pdf-text": "var(--color-format-pdf-text)", "format-xlsx-border": "var(--color-format-xlsx-border)", "surface-canvas": "var(--color-surface-canvas)", "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)", "on-secondary": "var(--color-on-secondary)", "format-pptx-border": "var(--color-format-pptx-border)", "text-muted": "var(--color-text-muted)", "status-local-bg": "var(--color-status-local-bg)", "on-surface": "var(--color-on-surface)", "diff-removed-bg": "var(--color-diff-removed-bg)", "surface-bright": "var(--color-surface-bright)", "surface-container-high": "var(--color-surface-container-high)", "surface-card": "var(--color-surface-card)", "security-dlp-pass": "var(--color-security-dlp-pass)", "secondary-fixed": "var(--color-secondary-fixed)", "status-cloud-bg": "var(--color-status-cloud-bg)", "on-surface-variant": "var(--color-on-surface-variant)", "diff-added-bg": "var(--color-diff-added-bg)", "primary-fixed-dim": "var(--color-primary-fixed-dim)", "on-primary-container": "var(--color-on-primary-container)", "inverse-primary": "var(--color-inverse-primary)", "on-secondary-container": "var(--color-on-secondary-container)", "tertiary": "var(--color-tertiary)", "diff-added-text": "var(--color-diff-added-text)", "format-pptx-text": "var(--color-format-pptx-text)", "diff-modified-text": "var(--color-diff-modified-text)", "inverse-surface": "var(--color-inverse-surface)"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-sm":"0.375rem","space-xs":"0.25rem","space-md":"0.75rem","space-lg":"1rem","space-xl":"1.5rem","margin":"1rem","gutter":"1rem"},"fontFamily":{"code-mono":["JetBrains Mono"],"body-dense":["Inter"],"body-default":["Inter"],"display-lg":["Inter"],"caption":["Inter"],"title-sm":["Inter"],"body-semibold":["Inter"],"headline-md":["Inter"],"badge-label":["Inter"]},"fontSize":{"code-mono":["11px",{"lineHeight":"15px","letterSpacing":"0em","fontWeight":"400"}],"body-dense":["12px",{"lineHeight":"16px","letterSpacing":"0em","fontWeight":"400"}],"body-default":["13px",{"lineHeight":"18px","letterSpacing":"-0.005em","fontWeight":"400"}],"display-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"caption":["11px",{"lineHeight":"14px","letterSpacing":"0.01em","fontWeight":"500"}],"title-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-semibold":["13px",{"lineHeight":"18px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.015em","fontWeight":"600"}],"badge-label":["10px",{"lineHeight":"12px","letterSpacing":"0.04em","fontWeight":"700"}]}}}};</script><style>
+:root {
+  --color-on-error: #ffffff;
+  --color-secondary-fixed-dim: #b4c5ff;
+  --color-status-danger-text: #DC2626;
+  --color-status-cloud-text: #D97706;
+  --color-format-hwp-text: #0284C7;
+  --color-primary: #00152f;
+  --color-error: #ba1a1a;
+  --color-secondary-container: #316bf3;
+  --color-surface-container-lowest: #ffffff;
+  --color-format-docx-text: #2563EB;
+  --color-outline-variant: #c4c6cf;
+  --color-diff-modified-bg: #FEF9C3;
+  --color-background: #f8f9ff;
+  --color-status-local-text: #0D9488;
+  --color-outline: #74777f;
+  --color-text-primary: #1E293B;
+  --color-format-xlsx-bg: #DCFCE7;
+  --color-primary-fixed: #d4e3ff;
+  --color-format-hwp-border: #BAE6FD;
+  --color-surface-container-low: #eff4ff;
+  --color-security-dlp-breach: #E11D48;
+  --color-surface-container-highest: #d3e4fe;
+  --color-format-pdf-border: #FECACA;
+  --color-on-primary: #ffffff;
+  --color-surface: #f8f9ff;
+  --color-format-pptx-bg: #FFEDD5;
+  --color-on-tertiary-fixed-variant: #005049;
+  --color-on-primary-fixed: #001c3a;
+  --color-surface-container: #F1F5F9;
+  --color-format-pdf-bg: #FEE2E2;
+  --color-text-secondary: #64748B;
+  --color-on-tertiary-fixed: #00201d;
+  --color-format-docx-bg: #DBEAFE;
+  --color-on-error-container: #93000a;
+  --color-surface-tint: #485f82;
+  --color-format-xlsx-text: #16A34A;
+  --color-error-container: #ffdad6;
+  --color-surface-dim: #cbdbf5;
+  --color-tertiary-container: #00302b;
+  --color-on-secondary-fixed: #00174b;
+  --color-tertiary-fixed: #89f5e7;
+  --color-status-danger-bg: #FEE2E2;
+  --color-on-tertiary: #ffffff;
+  --color-secondary: #0051d5;
+  --color-primary-container: #0f2a4a;
+  --color-inverse-on-surface: #eaf1ff;
+  --color-diff-removed-text: #991B1B;
+  --color-on-tertiary-container: #29a195;
+  --color-on-background: #0b1c30;
+  --color-border-subtle: #E2E8F0;
+  --color-on-primary-fixed-variant: #304869;
+  --color-border-strong: #CBD5E1;
+  --color-surface-variant: #d3e4fe;
+  --color-tertiary-fixed-dim: #6bd8cb;
+  --color-format-hwp-bg: #E0F2FE;
+  --color-format-docx-border: #BFDBFE;
+  --color-format-pdf-text: #DC2626;
+  --color-format-xlsx-border: #BBF7D0;
+  --color-surface-canvas: #F8FAFC;
+  --color-on-secondary-fixed-variant: #003ea8;
+  --color-on-secondary: #ffffff;
+  --color-format-pptx-border: #FED7AA;
+  --color-text-muted: #94A3B8;
+  --color-status-local-bg: #CCFBF1;
+  --color-on-surface: #0b1c30;
+  --color-diff-removed-bg: #FEE2E2;
+  --color-surface-bright: #f8f9ff;
+  --color-surface-container-high: #dce9ff;
+  --color-surface-card: #FFFFFF;
+  --color-security-dlp-pass: #059669;
+  --color-secondary-fixed: #dbe1ff;
+  --color-status-cloud-bg: #FEF3C7;
+  --color-on-surface-variant: #43474e;
+  --color-diff-added-bg: #DCFCE7;
+  --color-primary-fixed-dim: #b0c8f0;
+  --color-on-primary-container: #7a92b7;
+  --color-inverse-primary: #b0c8f0;
+  --color-on-secondary-container: #fefcff;
+  --color-tertiary: #001916;
+  --color-diff-added-text: #166534;
+  --color-format-pptx-text: #EA580C;
+  --color-diff-modified-text: #854D0E;
+  --color-inverse-surface: #213145;
+}
+html.dark {
+  --color-on-error: #690005;
+  --color-secondary-fixed-dim: #6bd8cb;
+  --color-status-danger-text: #EF4444;
+  --color-status-cloud-text: #D97706;
+  --color-format-hwp-text: #06B6D4;
+  --color-primary: #b4c5ff;
+  --color-error: #ffb4ab;
+  --color-secondary-container: #005049;
+  --color-surface-container-lowest: #060e20;
+  --color-format-docx-text: #3B82F6;
+  --color-outline-variant: #434655;
+  --color-diff-modified-bg: #451A03;
+  --color-background: #0b1326;
+  --color-status-local-text: #10B981;
+  --color-outline: #8d90a0;
+  --color-text-primary: #F8FAFC;
+  --color-format-xlsx-bg: #064E3B;
+  --color-primary-fixed: #dbe1ff;
+  --color-format-hwp-border: #164E63;
+  --color-surface-container-low: #131b2e;
+  --color-security-dlp-breach: #E11D48;
+  --color-surface-container-highest: #2d3449;
+  --color-format-pdf-border: #450A0A;
+  --color-on-primary: #002a78;
+  --color-surface: #0b1326;
+  --color-format-pptx-bg: #431407;
+  --color-on-tertiary-fixed-variant: #653e00;
+  --color-on-primary-fixed: #00174b;
+  --color-surface-container: #171f33;
+  --color-format-pdf-bg: #450A0A;
+  --color-text-secondary: #94A3B8;
+  --color-on-tertiary-fixed: #2a1700;
+  --color-format-docx-bg: #1E3A8A;
+  --color-on-error-container: #ffdad6;
+  --color-surface-tint: #b4c5ff;
+  --color-format-xlsx-text: #10B981;
+  --color-error-container: #93000a;
+  --color-surface-dim: #0b1326;
+  --color-tertiary-container: #996100;
+  --color-on-secondary-fixed: #00201d;
+  --color-tertiary-fixed: #ffddb8;
+  --color-status-danger-bg: #450A0A;
+  --color-on-tertiary: #472a00;
+  --color-secondary: #6bd8cb;
+  --color-primary-container: #2563eb;
+  --color-inverse-on-surface: #283044;
+  --color-diff-removed-text: #EF4444;
+  --color-on-tertiary-container: #ffeedd;
+  --color-on-background: #dae2fd;
+  --color-border-subtle: #1E293B;
+  --color-on-primary-fixed-variant: #003ea8;
+  --color-border-strong: #334155;
+  --color-surface-variant: #2d3449;
+  --color-tertiary-fixed-dim: #ffb95f;
+  --color-format-hwp-bg: #164E63;
+  --color-format-docx-border: #1E3A8A;
+  --color-format-pdf-text: #EF4444;
+  --color-format-xlsx-border: #064E3B;
+  --color-surface-canvas: #0A0F1D;
+  --color-on-secondary-fixed-variant: #005049;
+  --color-on-secondary: #003732;
+  --color-format-pptx-border: #431407;
+  --color-text-muted: #64748B;
+  --color-status-local-bg: #064E3B;
+  --color-on-surface: #dae2fd;
+  --color-diff-removed-bg: #450A0A;
+  --color-surface-bright: #31394d;
+  --color-surface-container-high: #222a3d;
+  --color-surface-card: #0F172A;
+  --color-security-dlp-pass: #059669;
+  --color-secondary-fixed: #89f5e7;
+  --color-status-cloud-bg: #78350F;
+  --color-on-surface-variant: #c3c6d7;
+  --color-diff-added-bg: #064E3B;
+  --color-primary-fixed-dim: #b4c5ff;
+  --color-on-primary-container: #eeefff;
+  --color-inverse-primary: #0053db;
+  --color-on-secondary-container: #00302b;
+  --color-tertiary: #ffb95f;
+  --color-diff-added-text: #10B981;
+  --color-format-pptx-text: #EA580C;
+  --color-diff-modified-text: #F59E0B;
+  --color-inverse-surface: #dae2fd;
+}
+</style>
+</head><body class="bg-surface-canvas font-body-default text-body-default text-text-primary antialiased selection:bg-secondary selection:text-on-secondary"><header class="fixed top-0 left-0 right-0 z-50 h-12 bg-surface-card border-b border-border-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-12 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-xs"><img alt="DocPilot Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X4l-ue-zS7f63_a0Fbxlvu-6nC8TgBn_qzPL4qSNgJ9-1nmSW2pxHtqXbuNWmdt-hWcZlf7jBMF3o98D-JCWzTlJ_hxu6lRRJK8tkpav51hxNWGcqAEVOqEod-ICWQxDmpL79qWhTxUse_HxbQcU8WrRhkpiHps7SfSpgq7G7YxB037Hc7t6BD4hAdpLdWvSUj0_qNPASSaUDIh_6MarkLBuJXK2IVbWXmA9CxH0iaPC_jSLR0AYMnjyG-"/><span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">DocPilot</span></div><span class="px-space-xs py-0.5 rounded bg-surface-container text-text-secondary font-badge-label text-badge-label uppercase">v3.2 Enterprise</span></div><nav class="flex items-center gap-space-xs overflow-x-auto" data-active-classes="bg-surface-container text-primary font-body-semibold rounded"><a class="px-space-md py-1.5 rounded-lg font-body-default text-body-default text-text-secondary hover:text-on-surface hover:bg-surface-container transition-colors whitespace-nowrap" data-path="directory" href="#">디렉토리</a><a class="px-space-md py-1.5 rounded-lg font-body-default text-body-default text-text-secondary hover:text-on-surface hover:bg-surface-container transition-colors whitespace-nowrap" data-path="search" href="#">하이브리드 검색</a><a class="px-space-md py-1.5 rounded-lg font-body-default text-body-default text-text-secondary hover:text-on-surface hover:bg-surface-container transition-colors whitespace-nowrap" data-path="merger" href="#">문서 병합 &amp; 변환</a><a aria-current="page" class="px-space-md py-1.5 rounded-lg transition-colors whitespace-nowrap bg-primary text-on-primary font-body-semibold shadow-sm" data-path="compare" href="#">다중 비교</a><a class="px-space-md py-1.5 rounded-lg font-body-default text-body-default text-text-secondary hover:text-on-surface hover:bg-surface-container transition-colors whitespace-nowrap" data-path="media" href="#">미디어 검색</a><a class="px-space-md py-1.5 rounded-lg font-body-default text-body-default text-text-secondary hover:text-on-surface hover:bg-surface-container transition-colors whitespace-nowrap" data-path="security" href="#">AI DLP / 보안</a><a class="px-space-md py-1.5 rounded-lg font-body-default text-body-default text-text-secondary hover:text-on-surface hover:bg-surface-container transition-colors whitespace-nowrap" data-path="history" href="#">작업 내역</a><div class="flex items-center gap-1.5 px-space-sm py-1.5 ml-space-sm rounded-lg bg-status-local-bg border border-status-local-text/30 cursor-pointer hover:bg-surface-container transition-colors shrink-0">
+<span class="w-2 h-2 rounded-full bg-status-local-text animate-pulse"></span>
+<span class="font-caption text-caption font-semibold text-status-local-text">로컬 AI [NPU 가속 Standard]</span>
+<span class="material-symbols-outlined text-[14px] text-status-local-text">arrow_drop_down</span>
+</div></nav><div class="flex items-center gap-space-sm shrink-0"><button class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container border border-border-subtle text-text-secondary hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-code-mono text-code-mono text-text-muted">Ctrl+K</span></button><button class="w-7 h-7 rounded flex items-center justify-center text-text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span></button><button class="w-7 h-7 rounded flex items-center justify-center text-text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+<script>
+function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+}
+</script>
+<button onclick="toggleDarkMode()" class="p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors ml-2" title="Toggle Dark Mode">
+    <span class="material-symbols-outlined text-[18px]">dark_mode</span>
+</button>
+<div class="h-4 w-px bg-border-subtle mx-space-xs"></div><div class="flex items-center gap-space-xs pl-space-xs cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="font-body-dense text-body-dense font-medium text-text-primary hidden xl:inline">워크스페이스</span><span class="material-symbols-outlined text-[14px] text-text-secondary">unfold_more</span></div></div></div></header>
+
+<div class="w-full flex"><aside class="fixed left-0 top-12 bottom-7 w-64 bg-surface-card border-r border-border-subtle z-30 flex flex-col justify-between p-space-md"><div class="flex flex-col gap-space-md"><div class="flex items-center justify-between px-space-xs"><span class="font-caption text-caption uppercase font-semibold text-text-secondary">내 로컬 라이브러리</span><button class="w-6 h-6 rounded flex items-center justify-center text-text-secondary hover:bg-surface-container" type="button"><span class="material-symbols-outlined text-[16px]">create_new_folder</span></button></div><div class="space-y-space-xs font-body-dense text-body-dense"><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded bg-surface-container text-primary font-body-semibold cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">folder_open</span><span class="truncate">C:\DocArchive\2025</span></div><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[16px]">folder</span><span class="truncate">C:\HQ_Legal\HWP_Vault</span></div><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[16px]">folder</span><span class="truncate">D:\Presentations\Q1</span></div><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[16px]">folder_shared</span><span class="truncate">네트워크 공유 드라이브 (Z:)</span></div></div><div class="h-px bg-border-subtle my-space-xs"></div><div class="flex items-center justify-between px-space-xs"><span class="font-caption text-caption uppercase font-semibold text-text-secondary">포맷 필터</span><span class="font-code-mono text-code-mono text-text-muted">5개 유형</span></div><div class="flex flex-wrap gap-space-xs"><span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-hwp-bg text-format-hwp-text border border-format-hwp-border">HWP/HWPX</span><span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-docx-bg text-format-docx-text border border-format-docx-border">DOCX</span><span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-xlsx-bg text-format-xlsx-text border border-format-xlsx-border">XLSX</span><span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-pptx-bg text-format-pptx-text border border-format-pptx-border">PPTX</span><span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-pdf-bg text-format-pdf-text border border-format-pdf-border">PDF</span></div></div><div class="p-space-sm bg-surface-container rounded border border-border-subtle"><div class="flex items-center justify-between text-caption font-caption mb-1"><span class="text-text-secondary">보안 격리 상태</span><span class="text-security-dlp-pass font-semibold flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]">verified_user</span>Safe</span></div><p class="font-caption text-caption text-text-muted leading-tight">외부 클라우드 전송이 완전히 차단된 온디바이스 샌드박스입니다.</p></div></aside><div class="w-full pl-64 pb-7"><main class="w-full pt-12 min-h-screen bg-surface-canvas"><div class="flex flex-col w-full">
+<div class="p-space-lg flex flex-col gap-space-lg w-full">
+<!-- Section 1: Target Document Selection Bar -->
+<section class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<!-- Baseline & Target Selectors -->
+<div class="flex flex-wrap items-center gap-space-sm min-w-0">
+<!-- Baseline Document Pill -->
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-1.5 rounded-lg shadow-sm">
+<span class="font-caption text-caption text-text-secondary font-semibold">기준(A)</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-docx-bg text-format-docx-text">DOCX</span>
+<span class="font-body-semibold text-body-semibold text-text-primary truncate max-w-[200px]" title="2025_사업계획서_최종본_v1.2.docx">2025_사업계획서_최종본_v1.2.docx</span>
+<span class="material-symbols-outlined text-[16px] text-text-secondary cursor-pointer">arrow_drop_down</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-text-muted">compare_arrows</span>
+<!-- Target Tags -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1.5 rounded-lg">
+<span class="font-caption text-caption text-text-secondary font-semibold">비교 1</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-docx-bg text-format-docx-text">DOCX</span>
+<span class="font-body-dense text-body-dense text-text-primary truncate max-w-[190px]">2026_신규_사업계획서_수정안_v2.0.docx</span>
+<button aria-label="문서 제거" class="w-4 h-4 rounded flex items-center justify-center text-text-secondary hover:text-error" type="button">
+<span class="material-symbols-outlined text-[13px]">close</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1.5 rounded-lg">
+<span class="font-caption text-caption text-text-secondary font-semibold">비교 2</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-pptx-bg text-format-pptx-text">PPTX</span>
+<span class="font-body-dense text-body-dense text-text-primary truncate max-w-[170px]">2026_이사회_제출용_요약본.pptx</span>
+<button aria-label="문서 제거" class="w-4 h-4 rounded flex items-center justify-center text-text-secondary hover:text-error" type="button">
+<span class="material-symbols-outlined text-[13px]">close</span>
+</button>
+</div>
+<button class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container text-text-secondary hover:bg-surface-container-high hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span class="font-caption text-caption font-semibold">비교 대상 추가</span>
+</button>
+</div>
+</div>
+<!-- Action Right -->
+<div class="flex items-center gap-space-xs shrink-0">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-text-primary font-body-semibold text-body-semibold shadow-sm transition-all active:scale-95" id="btn-recompare" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">refresh</span>
+<span>비교 분석 다시 실행</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-body-semibold text-body-semibold shadow-sm transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>비교 리포트 다운로드</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-card/20 text-on-primary font-badge-label text-badge-label">DOCX/PDF</span>
+</button>
+</div>
+</div>
+<!-- Granularity Toggle Bar -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-caption text-caption text-text-secondary font-semibold">비교 정밀도</span>
+<div class="inline-flex p-0.5 bg-surface-container rounded-lg" id="granularity-toggles">
+<button class="granularity-btn px-space-md py-1 rounded font-caption text-caption font-semibold bg-surface-card text-primary shadow-sm" data-mode="sentence" type="button">
+              단락 / 문장 단위
+            </button>
+<button class="granularity-btn px-space-md py-1 rounded font-caption text-caption text-text-secondary hover:text-text-primary" data-mode="line" type="button">
+              원자적 라인 (Line Diff)
+            </button>
+<button class="granularity-btn px-space-md py-1 rounded font-caption text-caption text-text-secondary hover:text-text-primary" data-mode="numerical" type="button">
+              수치 / 표 (Numerical)
+            </button>
+</div>
+</div>
+<div class="flex items-center gap-space-md font-caption text-caption text-text-secondary">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-security-dlp-pass"></span>
+            로컬 NPU 하이브리드 토크나이저 연동 완료
+          </span>
+<span class="text-text-muted">|</span>
+<span class="font-code-mono text-code-mono">Similarity Index: 88.4%</span>
+</div>
+</div>
+</section>
+<!-- Section 2: 3-Tab Segment Navigation -->
+<nav aria-label="비교 분석 뷰" class="bg-surface-card rounded-xl p-1 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs" id="diff-tabs">
+<!-- Tab 1: AI Summary -->
+<button class="tab-btn active-tab flex items-center gap-space-xs px-space-lg py-2 rounded-lg bg-surface-container font-body-semibold text-body-semibold text-primary shadow-sm transition-colors" data-target="tab-summary" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">auto_awesome</span>
+<span>AI 문맥 요약 (LLM Report)</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-secondary-fixed text-primary font-bold">PRO</span>
+</button>
+<!-- Tab 2: Visual Side-by-Side -->
+<button class="tab-btn flex items-center gap-space-xs px-space-lg py-2 rounded-lg hover:bg-surface-container-low font-body-default text-body-default text-text-secondary hover:text-text-primary transition-colors" data-target="tab-diff" type="button">
+<span class="material-symbols-outlined text-[18px]">difference</span>
+<span>좌우 상세 Line Diff (Visual Side-by-Side)</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-diff-modified-bg text-diff-modified-text font-bold">24곳 변경</span>
+</button>
+<!-- Tab 3: Numerical Changes -->
+<button class="tab-btn flex items-center gap-space-xs px-space-lg py-2 rounded-lg hover:bg-surface-container-low font-body-default text-body-default text-text-secondary hover:text-text-primary transition-colors" data-target="tab-numerical" type="button">
+<span class="material-symbols-outlined text-[18px]">query_stats</span>
+<span>표·수치 변동 전용 탭 (Numerical Changes)</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-diff-added-bg text-diff-added-text font-bold">8건 주요 수치 변동</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm pr-space-md">
+<span class="font-code-mono text-code-mono text-text-muted">Diff Engine: DocPilot v3.2-Unified</span>
+<button class="w-7 h-7 rounded flex items-center justify-center text-text-secondary hover:bg-surface-container" title="보기 설정" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 px-space-sm py-1.5 ml-space-sm rounded-lg bg-status-local-bg border border-status-local-text/30 cursor-pointer hover:bg-surface-container transition-colors shrink-0">
+<span class="w-2 h-2 rounded-full bg-status-local-text animate-pulse"></span>
+<span class="font-caption text-caption font-semibold text-status-local-text">로컬 AI [NPU 가속 Standard]</span>
+<span class="material-symbols-outlined text-[14px] text-status-local-text">arrow_drop_down</span>
+</div></nav>
+<!-- Top Summary Banner -->
+<div class="bg-gradient-to-r from-surface-container via-surface-card to-surface-container-low p-space-md rounded-xl shadow-sm flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center text-on-secondary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-body-semibold text-body-semibold text-text-primary">총 24개 단락 변동 감지됨</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-diff-added-bg text-diff-added-text">추가 8건</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-diff-removed-bg text-diff-removed-text">삭제 4건</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-diff-modified-bg text-diff-modified-text">수정 12건</span>
+</div>
+<span class="font-caption text-caption text-text-secondary truncate mt-0.5">
+            수치 변동률: <strong class="text-status-danger-text font-semibold">CAPEX +28.5% 상향</strong>, <strong class="text-security-dlp-pass font-semibold">납기일정 2개월 단축</strong>, 연간 전력비용 38.7% 절감 모델 반영
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<div class="flex items-center gap-space-xs font-caption text-caption bg-surface-card px-space-md py-1 rounded-lg shadow-sm">
+<span class="text-text-secondary">엔진 신뢰도</span>
+<span class="font-code-mono text-code-mono font-bold text-status-local-text">99.2% (Deterministic)</span>
+</div>
+<div class="flex items-center gap-space-xs font-caption text-caption bg-surface-card px-space-md py-1 rounded-lg shadow-sm">
+<span class="text-text-secondary">소요 시간</span>
+<span class="font-code-mono text-code-mono text-text-primary">482ms</span>
+</div>
+</div>
+</div>
+<!-- Section 3: Main Split Content Display Area -->
+<div class="grid grid-cols-12 gap-space-lg w-full items-start">
+<!-- Left Side (45% -> 5.5 cols out of 12 approx 5 cols + 7 cols) -->
+<section class="col-span-12 xl:col-span-5 flex flex-col gap-space-md">
+<!-- Panel Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary">psychology</span>
+<h2 class="font-headline-md text-headline-md text-text-primary">AI 문맥 종합 요약 리포트</h2>
+</div>
+<span class="px-space-sm py-0.5 rounded bg-status-local-bg text-status-local-text font-caption text-caption font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">memory</span>
+            온디바이스 LLM 추출
+          </span>
+</div>
+<!-- Executive Summary Card -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-secondary/5 pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-text-secondary font-bold tracking-wider">Executive Summary</span>
+<span class="font-code-mono text-code-mono text-text-muted">Model: Llama-3-Korean-8B-Q4</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<p class="font-body-default text-body-default text-text-primary leading-relaxed font-medium">
+              1. 데이터센터 신규 냉각 방식이 기존 수랭식에서 <span class="bg-diff-modified-bg px-1 font-semibold text-diff-modified-text rounded">액침냉각(Immersion)</span>으로 전격 변경되어 초기 투자비 <strong class="text-primary underline decoration-secondary">71.4억원 절감</strong> 계획이 새롭게 반영되었습니다.
+            </p>
+<p class="font-body-dense text-body-dense text-text-secondary leading-normal">
+              - 2026 수정안에서는 연간 PUE 지표를 1.45에서 글로벌 탑티어 수준인 1.15로 대폭 강화하였으며, 이로 인해 연간 운영비용(OPEX) 추정치가 184.2억원에서 112.8억원으로 38.8% 감축 편성되었습니다.
+            </p>
+</div>
+<!-- Impact Assessment -->
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-caption text-caption text-text-secondary font-semibold">의사결정 영향도 평가</span>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-lg font-caption text-caption font-semibold bg-surface-container text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-security-dlp-pass">verified</span>
+                법무 리스크 낮음
+              </span>
+<span class="px-space-sm py-0.5 rounded-lg font-caption text-caption font-semibold bg-status-danger-bg text-status-danger-text flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">trending_up</span>
+                재무 영향도 높음
+              </span>
+</div>
+</div>
+</div>
+<!-- Clause Analysis List -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">gavel</span>
+<h3 class="font-title-sm text-title-sm text-text-primary">주요 조항 및 계약 조건 변동 분석</h3>
+</div>
+<span class="font-caption text-caption text-text-muted">4건 주요 변동</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Clause Item 1 -->
+<div class="p-space-sm bg-surface-container rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-body-semibold text-body-semibold text-text-primary">제4조 계약이행보증금 상향</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-diff-modified-bg text-diff-modified-text font-bold">10% → 20%</span>
+</div>
+<p class="font-body-dense text-body-dense text-text-secondary">
+                시공사 부도 및 납기 지연 방지를 위해 이행보증 요율이 상향 조정되었습니다. 자금 조달 계획 재검토가 필요합니다.
+              </p>
+</div>
+<!-- Clause Item 2 -->
+<div class="p-space-sm bg-surface-container rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-body-semibold text-body-semibold text-text-primary">제12조 전력단가 연동제 도입 합의</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-diff-added-bg text-diff-added-text font-bold">신규 조항 추가</span>
+</div>
+<p class="font-body-dense text-body-dense text-text-secondary">
+                한전 전기요금 인상 시 분기별 데이터센터 입주고객 분담금에 직접 연동하는 에스컬레이션 조항이 명문화되었습니다.
+              </p>
+</div>
+<!-- Clause Item 3 -->
+<div class="p-space-sm bg-surface-container rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-body-semibold text-body-semibold text-text-primary">제18조 SLA(서비스 가용율) 보장 기준 강화</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-diff-modified-bg text-diff-modified-text font-bold">99.98% → 99.995%</span>
+</div>
+<p class="font-body-dense text-body-dense text-text-secondary">
+                글로벌 CSP 요구사항 반영에 따른 무중단 운영 요건 상향으로 예비 UPS 배터리 셀 2조 추가 증설안이 채택되었습니다.
+              </p>
+</div>
+</div>
+</div>
+<!-- Semantic Vector Delta Radar mini chart -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-text-primary">의미론적 변경 강도 (Vector Drift)</span>
+<span class="font-code-mono text-code-mono text-secondary font-bold">Δ = 0.418</span>
+</div>
+<div class="flex items-center gap-space-md pt-space-xs">
+<!-- Inline SVG Metric Visual -->
+<svg aria-label="벡터 드리프트 레이더 다이어그램" class="w-24 h-24 shrink-0" viewbox="0 0 100 100">
+<polygon fill="none" points="50,10 90,50 50,90 10,50" stroke="#E2E8F0" stroke-width="2"></polygon>
+<polygon fill="none" points="50,25 75,50 50,75 25,50" stroke="#CBD5E1" stroke-width="1.5"></polygon>
+<polygon fill="#0051d5" fill-opacity="0.2" points="50,18 84,48 50,68 32,50" stroke="#0051d5" stroke-width="2"></polygon>
+<circle cx="50" cy="18" fill="#0051d5" r="3"></circle>
+<circle cx="84" cy="48" fill="#0051d5" r="3"></circle>
+<circle cx="50" cy="68" fill="#0051d5" r="3"></circle>
+<circle cx="32" cy="50" fill="#0051d5" r="3"></circle>
+</svg>
+<div class="flex flex-col gap-1 w-full font-caption text-caption text-text-secondary">
+<div class="flex justify-between items-center">
+<span>기술 규격 변경:</span>
+<span class="font-code-mono text-code-mono font-semibold text-text-primary">82% 변동</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full w-[82%]"></div>
+</div>
+<div class="flex justify-between items-center mt-1">
+<span>재무 예산 변경:</span>
+<span class="font-code-mono text-code-mono font-semibold text-text-primary">64% 변동</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-format-docx-text h-full rounded-full w-[64%]"></div>
+</div>
+<div class="flex justify-between items-center mt-1">
+<span>법률 및 분쟁 책임:</span>
+<span class="font-code-mono text-code-mono font-semibold text-text-primary">28% 변동</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-security-dlp-pass h-full rounded-full w-[28%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Side (55% -> 7 cols out of 12) -->
+<section class="col-span-12 xl:col-span-7 flex flex-col gap-space-md">
+<!-- Panel Header & Diff Controls -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary">compare</span>
+<h2 class="font-headline-md text-headline-md text-text-primary">좌우 대조 Line Diff 및 수치 변동</h2>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="w-7 h-7 rounded flex items-center justify-center bg-surface-card hover:bg-surface-container text-text-secondary shadow-sm" title="이전 변경점" type="button">
+<span class="material-symbols-outlined text-[16px]">expand_less</span>
+</button>
+<span class="font-code-mono text-code-mono text-text-secondary px-1">Diff 3 / 24</span>
+<button class="w-7 h-7 rounded flex items-center justify-center bg-surface-card hover:bg-surface-container text-text-secondary shadow-sm" title="다음 변경점" type="button">
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<button class="px-space-sm py-1 rounded bg-surface-card hover:bg-surface-container text-text-secondary font-caption text-caption shadow-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">wrap_text</span>
+              줄바꿈
+            </button>
+</div>
+</div>
+<!-- Diff Header (Side by Side title headers) -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface-card rounded-t-xl p-space-sm shadow-sm">
+<div class="flex items-center justify-between px-space-sm py-1 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="w-2.5 h-2.5 rounded-full bg-status-danger-text"></span>
+<span class="font-body-semibold text-body-semibold text-text-primary truncate">2025 기준본 (v1.2)</span>
+</div>
+<span class="px-space-xs py-0.5 rounded font-code-mono text-code-mono text-text-muted">Section 3.2</span>
+</div>
+<div class="flex items-center justify-between px-space-sm py-1 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="w-2.5 h-2.5 rounded-full bg-security-dlp-pass"></span>
+<span class="font-body-semibold text-body-semibold text-text-primary truncate">2026 수정안 (v2.0)</span>
+</div>
+<span class="px-space-xs py-0.5 rounded font-code-mono text-code-mono text-text-muted">Section 3.2</span>
+</div>
+</div>
+<!-- Line Diff Code / Text Block (Side-by-side / Unified representation) -->
+<div class="bg-surface-card rounded-b-xl shadow-sm overflow-hidden flex flex-col font-code-mono text-code-mono">
+<!-- Diff Row 1: Unchanged Context -->
+<div class="flex items-stretch hover:bg-surface-container-low transition-colors">
+<div class="w-12 py-1 px-space-xs text-right text-text-muted select-none bg-surface-container/50">142</div>
+<div class="w-12 py-1 px-space-xs text-right text-text-muted select-none bg-surface-container/30">142</div>
+<div class="w-6 py-1 text-center text-text-muted select-none"> </div>
+<div class="flex-1 py-1 px-space-sm text-text-secondary overflow-x-auto whitespace-pre">### 3.2 센터 냉각 인프라 설계 사양 및 에너지 효율 목표</div>
+</div>
+<!-- Diff Row 2: Unchanged Context -->
+<div class="flex items-stretch hover:bg-surface-container-low transition-colors">
+<div class="w-12 py-1 px-space-xs text-right text-text-muted select-none bg-surface-container/50">143</div>
+<div class="w-12 py-1 px-space-xs text-right text-text-muted select-none bg-surface-container/30">143</div>
+<div class="w-6 py-1 text-center text-text-muted select-none"> </div>
+<div class="flex-1 py-1 px-space-sm text-text-primary overflow-x-auto whitespace-pre">본 센터는 고밀도 AI 랙 클러스터(최대 40kW/랙) 운영을 지원하기 위하여</div>
+</div>
+<!-- Diff Row 3: DELETED LINE (Red) -->
+<div class="flex items-stretch bg-diff-removed-bg text-diff-removed-text transition-colors">
+<div class="w-12 py-1 px-space-xs text-right font-bold select-none bg-status-danger-bg">144</div>
+<div class="w-12 py-1 px-space-xs text-right text-text-muted select-none opacity-20"> </div>
+<div class="w-6 py-1 text-center font-bold select-none">-</div>
+<div class="flex-1 py-1 px-space-sm overflow-x-auto whitespace-pre font-medium"><del class="no-underline">기존 공랭식 및 수랭식 복합 칠러를 통해 연간 PUE 1.45 목표 달성</del></div>
+</div>
+<!-- Diff Row 4: ADDED LINE (Green) -->
+<div class="flex items-stretch bg-diff-added-bg text-diff-added-text transition-colors">
+<div class="w-12 py-1 px-space-xs text-right text-text-muted select-none opacity-20"> </div>
+<div class="w-12 py-1 px-space-xs text-right font-bold select-none bg-format-xlsx-bg">144</div>
+<div class="w-6 py-1 text-center font-bold select-none">+</div>
+<div class="flex-1 py-1 px-space-sm overflow-x-auto whitespace-pre font-medium"><ins class="no-underline">단상 액침냉각(Immersion Cooling) 시스템을 도입하여 연간 목표 PUE 1.15 달성</ins></div>
+</div>
+<!-- Diff Row 5: Unchanged Context -->
+<div class="flex items-stretch hover:bg-surface-container-low transition-colors">
+<div class="w-12 py-1 px-space-xs text-right text-text-muted select-none bg-surface-container/50">145</div>
+<div class="w-12 py-1 px-space-xs text-right text-text-muted select-none bg-surface-container/30">145</div>
+<div class="w-6 py-1 text-center text-text-muted select-none"> </div>
+<div class="flex-1 py-1 px-space-sm text-text-primary overflow-x-auto whitespace-pre">를 목적으로 다음의 전력 효율 가이드라인을 엄격히 준수한다.</div>
+</div>
+<!-- Diff Row 6: MODIFIED BLOCK (Yellow / Amber) -->
+<div class="flex items-stretch bg-diff-modified-bg text-diff-modified-text transition-colors">
+<div class="w-12 py-1 px-space-xs text-right font-bold select-none bg-yellow-200/50">146</div>
+<div class="w-12 py-1 px-space-xs text-right font-bold select-none bg-yellow-200/50">146</div>
+<div class="w-6 py-1 text-center font-bold select-none">~</div>
+<div class="flex-1 py-1 px-space-sm overflow-x-auto whitespace-pre font-semibold">연간 전력비: 184.2억원 -&gt; 112.8억원 (71.4억원 감축)</div>
+</div>
+<!-- Diff Row 7: DELETED LINE -->
+<div class="flex items-stretch bg-diff-removed-bg text-diff-removed-text transition-colors">
+<div class="w-12 py-1 px-space-xs text-right font-bold select-none bg-status-danger-bg">147</div>
+<div class="w-12 py-1 px-space-xs text-right text-text-muted select-none opacity-20"> </div>
+<div class="w-6 py-1 text-center font-bold select-none">-</div>
+<div class="flex-1 py-1 px-space-sm overflow-x-auto whitespace-pre">[냉각수 배관 직경: 150mm STS 강관, 항온항습기 12기 병렬배치 구성]</div>
+</div>
+<!-- Diff Row 8: ADDED LINE -->
+<div class="flex items-stretch bg-diff-added-bg text-diff-added-text transition-colors">
+<div class="w-12 py-1 px-space-xs text-right text-text-muted select-none opacity-20"> </div>
+<div class="w-12 py-1 px-space-xs text-right font-bold select-none bg-format-xlsx-bg">147</div>
+<div class="w-6 py-1 text-center font-bold select-none">+</div>
+<div class="flex-1 py-1 px-space-sm overflow-x-auto whitespace-pre">[불활성 유전체 절연유(Dielectric Fluid) 1차 탱크 8기 및 열교환기 4기 모듈]</div>
+</div>
+<!-- Diff Row 9: Unchanged Context -->
+<div class="flex items-stretch hover:bg-surface-container-low transition-colors">
+<div class="w-12 py-1 px-space-xs text-right text-text-muted select-none bg-surface-container/50">148</div>
+<div class="w-12 py-1 px-space-xs text-right text-text-muted select-none bg-surface-container/30">148</div>
+<div class="w-6 py-1 text-center text-text-muted select-none"> </div>
+<div class="flex-1 py-1 px-space-sm text-text-secondary overflow-x-auto whitespace-pre">※ 세부 장비 납품 및 시운전 일정표는 별첨 F-3를 참조할 것.</div>
+</div>
+</div>
+<!-- Embedded Visual Asset / Reference Diagram Placeholder -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-16 h-16 rounded-lg bg-surface-container flex items-center justify-center shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Technical blueprint diagram comparing standard data center water chiller cooling pipes against modern immersion cooling tanks with dielectric fluids, clean minimal technical vector line art in enterprise slate and navy blue style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyVVtGME3ECNbS9FOKxzAmdOeFP5dwAoDBhCwrjLN1yjOmu0xcujNnt05C63cPvRKtP4NW_isAGeokUtKy-wpKk8_Fnp4Hs_OZ50o0DZlNzFVsCoQzsaaR0nPjdUtv1AKaBDprRSBAfyMRe-JuSSlKDSgxqxzfEfHXB27XJHexeBVSWVYQSHTZwqdGe4NBftQBCF6z4JYQF_5XyZol_J3Oph22BmJE8wrnm7QryOG1hkhZr1RNYHLMZw"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-semibold text-body-semibold text-text-primary truncate">냉각 시스템 아키텍처 변경 대조도 (참조 첨부)</span>
+<span class="font-caption text-caption text-text-secondary truncate">도면 번호: DWG-DC-2026-COOL-01 · 2개 문서 간 기술 불일치 자동 플래깅 완료</span>
+</div>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-caption text-caption font-semibold shrink-0" type="button">
+            전체 도면 검토
+          </button>
+</div>
+</section>
+</div>
+<!-- Section 4: Bottom Numerical Delta Table Widget -->
+<section class="bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">table_chart</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-primary">표·수치 변동 전용 분석 테이블 (Numerical Delta Matrix)</h3>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-status-local-bg text-status-local-text">정량적 검증 완료</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-text-secondary font-caption text-caption" type="button">
+            CSV 내보내기
+          </button>
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-text-secondary font-caption text-caption" type="button">
+            수치 변동만 필터
+          </button>
+</div>
+</div>
+<!-- Delta Table -->
+<div class="overflow-x-auto rounded-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container text-text-secondary font-caption text-caption uppercase">
+<th class="py-2.5 px-space-md font-semibold">항목명</th>
+<th class="py-2.5 px-space-md font-semibold">2025 기준안 (v1.2)</th>
+<th class="py-2.5 px-space-md font-semibold">2026 수정안 (v2.0)</th>
+<th class="py-2.5 px-space-md font-semibold">변동폭 (Delta)</th>
+<th class="py-2.5 px-space-md font-semibold">비고 및 주요 원인</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle font-body-dense text-body-dense">
+<!-- Row 1: CAPEX -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-md font-body-semibold text-body-semibold text-text-primary">총 사업비 (CAPEX)</td>
+<td class="py-3 px-space-md font-code-mono text-code-mono text-text-secondary">350.0 억원</td>
+<td class="py-3 px-space-md font-code-mono text-code-mono font-bold text-text-primary">421.4 억원</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded font-code-mono text-code-mono font-bold bg-diff-removed-bg text-diff-removed-text">
+<span class="material-symbols-outlined text-[12px]">arrow_upward</span>
+                  +71.4 억원 (+20.4%)
+                </span>
+</td>
+<td class="py-3 px-space-md text-text-secondary">
+                액침냉각 모듈 신규 편입 및 특수 유전체 냉매 초기 충진비 반영
+              </td>
+</tr>
+<!-- Row 2: PUE -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-md font-body-semibold text-body-semibold text-text-primary">연간 목표 PUE</td>
+<td class="py-3 px-space-md font-code-mono text-code-mono text-text-secondary">1.45</td>
+<td class="py-3 px-space-md font-code-mono text-code-mono font-bold text-text-primary">1.15</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded font-code-mono text-code-mono font-bold bg-diff-added-bg text-diff-added-text">
+<span class="material-symbols-outlined text-[12px]">arrow_downward</span>
+                  -0.30 개선 (-20.7%)
+                </span>
+</td>
+<td class="py-3 px-space-md text-text-secondary">
+                글로벌 Tier 4 인증 기준 충족, 연간 전력비 71.4억원 지속 절감 효과
+              </td>
+</tr>
+<!-- Row 3: Warranty Deposit -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-md font-body-semibold text-body-semibold text-text-primary">계약 보증금율</td>
+<td class="py-3 px-space-md font-code-mono text-code-mono text-text-secondary">10 %</td>
+<td class="py-3 px-space-md font-code-mono text-code-mono font-bold text-text-primary">20 %</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded font-code-mono text-code-mono font-bold bg-diff-modified-bg text-diff-modified-text">
+<span class="material-symbols-outlined text-[12px]">add</span>
+                  +10 %p
+                </span>
+</td>
+<td class="py-3 px-space-md text-text-secondary">
+                위험관리 규정 및 이사회 승인 가이드라인 제4조에 의거 보증 요율 상향
+              </td>
+</tr>
+<!-- Row 4: Completion Schedule -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-space-md font-body-semibold text-body-semibold text-text-primary">준공 및 시운전 일정</td>
+<td class="py-3 px-space-md font-code-mono text-code-mono text-text-secondary">2026. 11. 30</td>
+<td class="py-3 px-space-md font-code-mono text-code-mono font-bold text-text-primary">2026. 09. 30</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded font-code-mono text-code-mono font-bold bg-diff-added-bg text-diff-added-text">
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+                  2개월 단축 (Early Completion)
+                </span>
+</td>
+<td class="py-3 px-space-md text-text-secondary">
+                모듈형 사전조립(Prefab) 공법 적용으로 현장 배관 공정 60일 축소
+              </td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div>
+<script>
+  (function initDiffInteractions() {
+    // Tab switching interactions
+    const tabs = document.querySelectorAll('.tab-btn');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('bg-surface-container', 'text-primary', 'shadow-sm', 'font-body-semibold');
+          t.classList.add('text-text-secondary', 'font-body-default');
+        });
+        tab.classList.add('bg-surface-container', 'text-primary', 'shadow-sm', 'font-body-semibold');
+        tab.classList.remove('text-text-secondary', 'font-body-default');
+      });
+    });
+
+    // Granularity mode toggles
+    const granBtns = document.querySelectorAll('.granularity-btn');
+    granBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        granBtns.forEach(b => {
+          b.classList.remove('bg-surface-card', 'text-primary', 'shadow-sm');
+          b.classList.add('text-text-secondary');
+        });
+        btn.classList.add('bg-surface-card', 'text-primary', 'shadow-sm');
+        btn.classList.remove('text-text-secondary');
+      });
+    });
+
+    // Re-compare button micro interaction
+    const refreshBtn = document.getElementById('btn-recompare');
+    if (refreshBtn) {
+      refreshBtn.addEventListener('click', () => {
+        const icon = refreshBtn.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.classList.add('animate-spin');
+          setTimeout(() => icon.classList.remove('animate-spin'), 650);
+        }
+      });
+    }
+  })();
+</script></main></div></div><footer class="fixed bottom-0 left-0 right-0 z-50 h-7 bg-surface-card border-t border-border-subtle flex items-center justify-between px-gutter font-caption text-caption"><div class="flex items-center gap-space-md text-text-secondary"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span>진행 중 작업: 로컬 문서 증분 색인 63%</span><span class="font-code-mono text-code-mono text-primary font-medium">[██████████░░░░░░]</span><span class="font-code-mono text-code-mono text-text-muted">(2,418 / 3,840 파일)</span></div><button class="px-space-xs py-0.5 rounded bg-surface-container text-text-secondary hover:text-on-surface hover:bg-border-subtle font-caption text-caption border border-border-subtle" type="button">일시정지</button></div><div class="flex items-center gap-space-md text-text-muted font-code-mono text-code-mono"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[13px] text-text-secondary">memory</span><span>NPU: 42%</span></div><span class="text-border-strong">|</span><div class="flex items-center gap-space-xs"><span>RAM: 18.2GB / 32GB</span></div><span class="text-border-strong">|</span><div class="flex items-center gap-space-xs"><span>Local Engine: Ollama v0.3.14</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-status-danger-text font-medium cursor-pointer hover:underline"><span class="material-symbols-outlined text-[14px]">warning</span><span>손상/암호 오류 목록 (2건)</span></div><div class="h-3 w-px bg-border-subtle"></div><div class="flex items-center gap-space-xs text-status-local-text font-semibold"><span class="material-symbols-outlined text-[14px]">check_circle</span><span>Ready (온디바이스 전용 모드)</span></div></div></footer></body></html>

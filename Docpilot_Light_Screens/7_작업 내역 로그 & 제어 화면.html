@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-container": "var(--color-on-primary-container)", "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)", "error-container": "var(--color-error-container)", "surface-container-highest": "var(--color-surface-container-highest)", "on-error": "var(--color-on-error)", "secondary-container": "var(--color-secondary-container)", "text-primary": "var(--color-text-primary)", "surface-container-high": "var(--color-surface-container-high)", "surface-container": "var(--color-surface-container)", "status-local-bg": "var(--color-status-local-bg)", "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)", "format-pptx-bg": "var(--color-format-pptx-bg)", "format-xlsx-border": "var(--color-format-xlsx-border)", "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)", "outline-variant": "var(--color-outline-variant)", "status-cloud-bg": "var(--color-status-cloud-bg)", "primary-container": "var(--color-primary-container)", "primary": "var(--color-primary)", "tertiary-container": "var(--color-tertiary-container)", "on-tertiary": "var(--color-on-tertiary)", "on-background": "var(--color-on-background)", "on-primary": "var(--color-on-primary)", "format-docx-border": "var(--color-format-docx-border)", "border-strong": "var(--color-border-strong)", "format-pptx-border": "var(--color-format-pptx-border)", "surface-card": "var(--color-surface-card)", "on-surface": "var(--color-on-surface)", "on-secondary-container": "var(--color-on-secondary-container)", "status-local-text": "var(--color-status-local-text)", "secondary-fixed": "var(--color-secondary-fixed)", "on-tertiary-container": "var(--color-on-tertiary-container)", "tertiary": "var(--color-tertiary)", "primary-fixed-dim": "var(--color-primary-fixed-dim)", "secondary-fixed-dim": "var(--color-secondary-fixed-dim)", "border-subtle": "var(--color-border-subtle)", "surface-canvas": "var(--color-surface-canvas)", "inverse-on-surface": "var(--color-inverse-on-surface)", "format-xlsx-text": "var(--color-format-xlsx-text)", "status-danger-text": "var(--color-status-danger-text)", "surface": "var(--color-surface)", "text-secondary": "var(--color-text-secondary)", "format-pdf-text": "var(--color-format-pdf-text)", "surface-bright": "var(--color-surface-bright)", "format-pdf-bg": "var(--color-format-pdf-bg)", "on-secondary-fixed": "var(--color-on-secondary-fixed)", "surface-dim": "var(--color-surface-dim)", "format-hwp-border": "var(--color-format-hwp-border)", "format-docx-text": "var(--color-format-docx-text)", "surface-variant": "var(--color-surface-variant)", "diff-added-text": "var(--color-diff-added-text)", "status-danger-bg": "var(--color-status-danger-bg)", "diff-added-bg": "var(--color-diff-added-bg)", "format-pdf-border": "var(--color-format-pdf-border)", "on-primary-fixed": "var(--color-on-primary-fixed)", "surface-container-low": "var(--color-surface-container-low)", "on-error-container": "var(--color-on-error-container)", "background": "var(--color-background)", "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)", "surface-tint": "var(--color-surface-tint)", "diff-removed-bg": "var(--color-diff-removed-bg)", "on-surface-variant": "var(--color-on-surface-variant)", "diff-modified-bg": "var(--color-diff-modified-bg)", "on-secondary": "var(--color-on-secondary)", "security-dlp-breach": "var(--color-security-dlp-breach)", "tertiary-fixed": "var(--color-tertiary-fixed)", "on-tertiary-fixed": "var(--color-on-tertiary-fixed)", "format-xlsx-bg": "var(--color-format-xlsx-bg)", "error": "var(--color-error)", "diff-modified-text": "var(--color-diff-modified-text)", "outline": "var(--color-outline)", "format-docx-bg": "var(--color-format-docx-bg)", "security-dlp-pass": "var(--color-security-dlp-pass)", "status-cloud-text": "var(--color-status-cloud-text)", "diff-removed-text": "var(--color-diff-removed-text)", "format-hwp-text": "var(--color-format-hwp-text)", "primary-fixed": "var(--color-primary-fixed)", "format-hwp-bg": "var(--color-format-hwp-bg)", "inverse-primary": "var(--color-inverse-primary)", "surface-container-lowest": "var(--color-surface-container-lowest)", "format-pptx-text": "var(--color-format-pptx-text)", "secondary": "var(--color-secondary)", "inverse-surface": "var(--color-inverse-surface)", "text-muted": "var(--color-text-muted)"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xl":"1.5rem","space-xs":"0.25rem","space-sm":"0.375rem",gutter:"1rem","space-lg":"1rem","space-md":"0.75rem",margin:"1rem"},fontFamily:{"headline-md":["Inter"],"display-lg":["Inter"],"body-dense":["Inter"],"body-default":["Inter"],"code-mono":["JetBrains Mono"],"title-sm":["Inter"],"badge-label":["Inter"],"body-semibold":["Inter"],"caption":["Inter"]},fontSize:{"headline-md":["18px",{lineHeight:"24px",letterSpacing:"-0.015em",fontWeight:"600"}],"display-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-dense":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"400"}],"body-default":["13px",{lineHeight:"18px",letterSpacing:"-0.005em",fontWeight:"400"}],"code-mono":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"title-sm":["15px",{lineHeight:"20px",letterSpacing:"-0.01em",fontWeight:"600"}],"badge-label":["10px",{lineHeight:"12px",letterSpacing:"0.04em",fontWeight:"700"}],"body-semibold":["13px",{lineHeight:"18px",letterSpacing:"-0.005em",fontWeight:"600"}],"caption":["11px",{lineHeight:"14px",letterSpacing:"0.01em",fontWeight:"500"}]}}}};</script><style>
+:root {
+  --color-on-primary-container: #7a92b7;
+  --color-on-secondary-fixed-variant: #003ea8;
+  --color-error-container: #ffdad6;
+  --color-surface-container-highest: #d3e4fe;
+  --color-on-error: #ffffff;
+  --color-secondary-container: #316bf3;
+  --color-text-primary: #1E293B;
+  --color-surface-container-high: #dce9ff;
+  --color-surface-container: #F1F5F9;
+  --color-status-local-bg: #CCFBF1;
+  --color-tertiary-fixed-dim: #6bd8cb;
+  --color-format-pptx-bg: #FFEDD5;
+  --color-format-xlsx-border: #BBF7D0;
+  --color-on-tertiary-fixed-variant: #005049;
+  --color-outline-variant: #c4c6cf;
+  --color-status-cloud-bg: #FEF3C7;
+  --color-primary-container: #0f2a4a;
+  --color-primary: #00152f;
+  --color-tertiary-container: #00302b;
+  --color-on-tertiary: #ffffff;
+  --color-on-background: #0b1c30;
+  --color-on-primary: #ffffff;
+  --color-format-docx-border: #BFDBFE;
+  --color-border-strong: #CBD5E1;
+  --color-format-pptx-border: #FED7AA;
+  --color-surface-card: #FFFFFF;
+  --color-on-surface: #0b1c30;
+  --color-on-secondary-container: #fefcff;
+  --color-status-local-text: #0D9488;
+  --color-secondary-fixed: #dbe1ff;
+  --color-on-tertiary-container: #29a195;
+  --color-tertiary: #001916;
+  --color-primary-fixed-dim: #b0c8f0;
+  --color-secondary-fixed-dim: #b4c5ff;
+  --color-border-subtle: #E2E8F0;
+  --color-surface-canvas: #F8FAFC;
+  --color-inverse-on-surface: #eaf1ff;
+  --color-format-xlsx-text: #16A34A;
+  --color-status-danger-text: #DC2626;
+  --color-surface: #f8f9ff;
+  --color-text-secondary: #64748B;
+  --color-format-pdf-text: #DC2626;
+  --color-surface-bright: #f8f9ff;
+  --color-format-pdf-bg: #FEE2E2;
+  --color-on-secondary-fixed: #00174b;
+  --color-surface-dim: #cbdbf5;
+  --color-format-hwp-border: #BAE6FD;
+  --color-format-docx-text: #2563EB;
+  --color-surface-variant: #d3e4fe;
+  --color-diff-added-text: #166534;
+  --color-status-danger-bg: #FEE2E2;
+  --color-diff-added-bg: #DCFCE7;
+  --color-format-pdf-border: #FECACA;
+  --color-on-primary-fixed: #001c3a;
+  --color-surface-container-low: #eff4ff;
+  --color-on-error-container: #93000a;
+  --color-background: #f8f9ff;
+  --color-on-primary-fixed-variant: #304869;
+  --color-surface-tint: #485f82;
+  --color-diff-removed-bg: #FEE2E2;
+  --color-on-surface-variant: #43474e;
+  --color-diff-modified-bg: #FEF9C3;
+  --color-on-secondary: #ffffff;
+  --color-security-dlp-breach: #E11D48;
+  --color-tertiary-fixed: #89f5e7;
+  --color-on-tertiary-fixed: #00201d;
+  --color-format-xlsx-bg: #DCFCE7;
+  --color-error: #ba1a1a;
+  --color-diff-modified-text: #854D0E;
+  --color-outline: #74777f;
+  --color-format-docx-bg: #DBEAFE;
+  --color-security-dlp-pass: #059669;
+  --color-status-cloud-text: #D97706;
+  --color-diff-removed-text: #991B1B;
+  --color-format-hwp-text: #0284C7;
+  --color-primary-fixed: #d4e3ff;
+  --color-format-hwp-bg: #E0F2FE;
+  --color-inverse-primary: #b0c8f0;
+  --color-surface-container-lowest: #ffffff;
+  --color-format-pptx-text: #EA580C;
+  --color-secondary: #0051d5;
+  --color-inverse-surface: #213145;
+  --color-text-muted: #94A3B8;
+}
+html.dark {
+  --color-on-primary-container: #eeefff;
+  --color-on-secondary-fixed-variant: #005049;
+  --color-error-container: #93000a;
+  --color-surface-container-highest: #2d3449;
+  --color-on-error: #690005;
+  --color-secondary-container: #005049;
+  --color-text-primary: #F8FAFC;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container: #171f33;
+  --color-status-local-bg: #064E3B;
+  --color-tertiary-fixed-dim: #ffb95f;
+  --color-format-pptx-bg: #431407;
+  --color-format-xlsx-border: #064E3B;
+  --color-on-tertiary-fixed-variant: #653e00;
+  --color-outline-variant: #434655;
+  --color-status-cloud-bg: #78350F;
+  --color-primary-container: #2563eb;
+  --color-primary: #b4c5ff;
+  --color-tertiary-container: #996100;
+  --color-on-tertiary: #472a00;
+  --color-on-background: #dae2fd;
+  --color-on-primary: #002a78;
+  --color-format-docx-border: #1E3A8A;
+  --color-border-strong: #334155;
+  --color-format-pptx-border: #431407;
+  --color-surface-card: #0F172A;
+  --color-on-surface: #dae2fd;
+  --color-on-secondary-container: #00302b;
+  --color-status-local-text: #10B981;
+  --color-secondary-fixed: #89f5e7;
+  --color-on-tertiary-container: #ffeedd;
+  --color-tertiary: #ffb95f;
+  --color-primary-fixed-dim: #b4c5ff;
+  --color-secondary-fixed-dim: #6bd8cb;
+  --color-border-subtle: #1E293B;
+  --color-surface-canvas: #0A0F1D;
+  --color-inverse-on-surface: #283044;
+  --color-format-xlsx-text: #10B981;
+  --color-status-danger-text: #EF4444;
+  --color-surface: #0b1326;
+  --color-text-secondary: #94A3B8;
+  --color-format-pdf-text: #EF4444;
+  --color-surface-bright: #31394d;
+  --color-format-pdf-bg: #450A0A;
+  --color-on-secondary-fixed: #00201d;
+  --color-surface-dim: #0b1326;
+  --color-format-hwp-border: #164E63;
+  --color-format-docx-text: #3B82F6;
+  --color-surface-variant: #2d3449;
+  --color-diff-added-text: #10B981;
+  --color-status-danger-bg: #450A0A;
+  --color-diff-added-bg: #064E3B;
+  --color-format-pdf-border: #450A0A;
+  --color-on-primary-fixed: #00174b;
+  --color-surface-container-low: #131b2e;
+  --color-on-error-container: #ffdad6;
+  --color-background: #0b1326;
+  --color-on-primary-fixed-variant: #003ea8;
+  --color-surface-tint: #b4c5ff;
+  --color-diff-removed-bg: #450A0A;
+  --color-on-surface-variant: #c3c6d7;
+  --color-diff-modified-bg: #451A03;
+  --color-on-secondary: #003732;
+  --color-security-dlp-breach: #E11D48;
+  --color-tertiary-fixed: #ffddb8;
+  --color-on-tertiary-fixed: #2a1700;
+  --color-format-xlsx-bg: #064E3B;
+  --color-error: #ffb4ab;
+  --color-diff-modified-text: #F59E0B;
+  --color-outline: #8d90a0;
+  --color-format-docx-bg: #1E3A8A;
+  --color-security-dlp-pass: #059669;
+  --color-status-cloud-text: #D97706;
+  --color-diff-removed-text: #EF4444;
+  --color-format-hwp-text: #06B6D4;
+  --color-primary-fixed: #dbe1ff;
+  --color-format-hwp-bg: #164E63;
+  --color-inverse-primary: #0053db;
+  --color-surface-container-lowest: #060e20;
+  --color-format-pptx-text: #EA580C;
+  --color-secondary: #6bd8cb;
+  --color-inverse-surface: #dae2fd;
+  --color-text-muted: #64748B;
+}
+</style>
+</head><body class="bg-surface-canvas font-body-default text-body-default text-text-primary antialiased select-none"><header class="fixed top-0 left-0 right-0 h-12 z-50 bg-surface-card border-b border-border-subtle flex items-center justify-between px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="hidden md:flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container border border-border-subtle text-text-secondary cursor-pointer hover:text-text-primary"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-caption text-caption">Ctrl+K</span></div><button class="relative p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-security-dlp-breach"></span></button><button class="p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+<script>
+function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+}
+</script>
+<button onclick="toggleDarkMode()" class="p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors ml-2" title="Toggle Dark Mode">
+    <span class="material-symbols-outlined text-[18px]">dark_mode</span>
+</button>
+<div class="h-4 w-px bg-border-subtle mx-space-xs"></div><div class="flex items-center gap-space-sm cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="hidden lg:inline-block font-body-semibold text-body-semibold text-text-primary">워크스페이스</span></div></div></header>
+
+<aside class="fixed left-0 top-12 bottom-7 w-64 bg-surface-card border-r border-border-subtle z-40 flex flex-col justify-between overflow-y-auto"><div class="p-space-md"><div class="flex items-center justify-between mb-space-sm px-1"><span class="font-caption text-caption uppercase text-text-secondary font-semibold">내 로컬 라이브러리</span><button class="text-text-secondary hover:text-text-primary"><span class="material-symbols-outlined text-[16px]">create_new_folder</span></button></div><div class="flex flex-col gap-0.5 mb-space-lg"><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">folder</span><span class="truncate font-code-mono text-code-mono">C:\DocArchive\2025</span></div><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">lock</span><span class="truncate font-code-mono text-code-mono">C:\HQ_Legal\HWP_Vault</span></div><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">folder</span><span class="truncate font-code-mono text-code-mono">D:\Presentations\Q1</span></div><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">cloud</span><span class="truncate font-code-mono text-code-mono">네트워크 공유 드라이브 (Z:)</span></div></div><div class="mb-space-md px-1"><div class="font-caption text-caption uppercase text-text-secondary font-semibold mb-space-sm">포맷 필터</div><div class="flex flex-wrap gap-1.5"><span class="h-[18px] px-1.5 rounded border border-format-hwp-border bg-format-hwp-bg text-format-hwp-text font-badge-label text-badge-label flex items-center cursor-pointer">HWP/HWPX</span><span class="h-[18px] px-1.5 rounded border border-format-docx-border bg-format-docx-bg text-format-docx-text font-badge-label text-badge-label flex items-center cursor-pointer">DOCX</span><span class="h-[18px] px-1.5 rounded border border-format-xlsx-border bg-format-xlsx-bg text-format-xlsx-text font-badge-label text-badge-label flex items-center cursor-pointer">XLSX</span><span class="h-[18px] px-1.5 rounded border border-format-pptx-border bg-format-pptx-bg text-format-pptx-text font-badge-label text-badge-label flex items-center cursor-pointer">PPTX</span><span class="h-[18px] px-1.5 rounded border border-format-pdf-border bg-format-pdf-bg text-format-pdf-text font-badge-label text-badge-label flex items-center cursor-pointer">PDF</span></div></div></div><div class="p-space-md border-t border-border-subtle bg-surface-canvas/50"><div class="p-space-sm rounded bg-surface-card border border-border-subtle"><div class="flex items-center gap-1.5 mb-1"><span class="material-symbols-outlined text-[16px] text-security-dlp-pass">verified_user</span><span class="font-caption text-caption font-semibold text-text-primary">보안 격리 상태 Safe</span></div><p class="font-caption text-caption text-text-secondary leading-tight">외부 클라우드 전송이 완전히 차단된 온디바이스 샌드박스입니다.</p></div></div></aside><div class="pl-64 pb-7"><main class="w-full pt-12 min-h-screen bg-surface-canvas"><div class="flex flex-col w-full">
+<!-- Top View Heading & Operational Controls -->
+<section class="p-space-lg bg-surface-card shadow-sm">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-sm mb-1">
+<span class="px-2 py-0.5 rounded bg-primary-container text-white font-badge-label text-badge-label tracking-wider uppercase">Engine Operations</span>
+<span class="font-caption text-caption text-text-secondary">Tauri Core RPC • v3.2.4-hotfix</span>
+</div>
+<div class="flex items-baseline gap-space-md">
+<h1 class="font-display-lg text-display-lg text-text-primary tracking-tight">작업 내역 로그 & 작업 제어 센터</h1>
+<span class="font-caption text-caption text-text-secondary hidden sm:inline">로컬 파이프라인 무결성 감시 및 비동기 작업 큐 실시간 스케줄러</span>
+</div>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex items-center gap-space-sm self-start xl:self-auto flex-wrap">
+<button class="h-8 px-space-md rounded bg-surface-container hover:bg-surface-variant text-text-secondary hover:text-text-primary font-body-semibold text-body-semibold transition-colors flex items-center gap-1.5 shadow-sm" id="btn-purge-logs">
+<span class="material-symbols-outlined text-[16px]">cleaning_services</span>
+<span>로그 정리</span>
+</button>
+<button class="h-8 px-space-md rounded bg-surface-container hover:bg-surface-variant text-text-secondary hover:text-text-primary font-body-semibold text-body-semibold transition-colors flex items-center gap-1.5 shadow-sm" id="btn-export-all-diag">
+<span class="material-symbols-outlined text-[16px]">ios_share</span>
+<span>진단 패키지 (.tar.gz)</span>
+</button>
+<button class="h-8 px-space-md rounded bg-status-danger-bg hover:bg-format-pdf-border text-status-danger-text font-body-semibold text-body-semibold transition-colors flex items-center gap-1.5 shadow-sm" id="btn-emergency-halt">
+<span class="material-symbols-outlined text-[16px]">pause_circle</span>
+<span>모든 큐 일시정단</span>
+</button>
+</div>
+</div>
+<!-- 1. Operational Overview Dashboard Bento -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mt-space-lg">
+<!-- Metric 1: 누적 처리 작업 -->
+<div class="bg-surface-canvas p-space-md rounded shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-text-secondary font-semibold">누적 처리 작업</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">layers</span>
+</div>
+<div class="mt-2 flex items-baseline gap-space-sm">
+<span class="font-display-lg text-display-lg text-text-primary font-bold">1,428</span>
+<span class="font-caption text-caption text-text-secondary">건 완료</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-xs bg-surface-card px-2 py-1 rounded">
+<div class="flex items-center gap-1 text-diff-added-text">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span class="font-code-mono text-code-mono font-semibold">+34건 오늘 실행</span>
+</div>
+<span class="font-badge-label text-badge-label text-text-muted">성공률 99.86%</span>
+</div>
+<!-- Sparkline indicator -->
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-secondary-container/20">
+<div class="h-full bg-secondary" style="width: 88%"></div>
+</div>
+</div>
+<!-- Metric 2: 평균 바이너리 병합 소요 시간 -->
+<div class="bg-surface-canvas p-space-md rounded shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-text-secondary font-semibold">평균 바이너리 병합</span>
+<span class="material-symbols-outlined text-[18px] text-format-pptx-text">speed</span>
+</div>
+<div class="mt-2 flex items-baseline gap-space-sm">
+<span class="font-display-lg text-display-lg text-text-primary font-bold">1.84</span>
+<span class="font-caption text-caption text-text-secondary">초 / 작업</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-xs bg-surface-card px-2 py-1 rounded">
+<span class="font-code-mono text-code-mono text-format-pptx-text font-semibold">OpenXML 무손실 파싱</span>
+<span class="font-badge-label text-badge-label text-text-muted">Direct Memory Map</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-format-pptx-border">
+<div class="h-full bg-format-pptx-text" style="width: 94%"></div>
+</div>
+</div>
+<!-- Metric 3: 벡터 증분 색인 완료 -->
+<div class="bg-surface-canvas p-space-md rounded shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-text-secondary font-semibold">벡터 증분 색인</span>
+<span class="material-symbols-outlined text-[18px] text-security-dlp-pass">database</span>
+</div>
+<div class="mt-2 flex items-baseline gap-space-sm">
+<span class="font-display-lg text-display-lg text-text-primary font-bold">3,840</span>
+<span class="font-caption text-caption text-text-secondary">/ 3,840 건</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-xs bg-surface-card px-2 py-1 rounded">
+<span class="flex items-center gap-1 font-caption text-caption text-security-dlp-pass font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-security-dlp-pass"></span>
+            100% 최신 동기화
+          </span>
+<span class="font-code-mono text-code-mono text-text-muted">BGE-M3 (0-Loss)</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-format-xlsx-border">
+<div class="h-full bg-security-dlp-pass" style="width: 100%"></div>
+</div>
+</div>
+<!-- Metric 4: 실패 및 오류 건수 -->
+<div class="bg-surface-canvas p-space-md rounded shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-text-secondary font-semibold">격리된 실패/오류</span>
+<span class="material-symbols-outlined text-[18px] text-status-danger-text">error_outline</span>
+</div>
+<div class="mt-2 flex items-baseline gap-space-sm">
+<span class="font-display-lg text-display-lg text-status-danger-text font-bold">2</span>
+<span class="font-caption text-caption text-text-secondary">건 조치 필요</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between pt-space-xs bg-surface-card px-2 py-1 rounded">
+<span class="font-caption text-caption text-status-danger-text truncate">암호 잠김 1 • 손상 헤더 1</span>
+<span class="font-badge-label text-badge-label text-status-danger-text uppercase font-bold">Check Req</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-status-danger-bg">
+<div class="h-full bg-status-danger-text" style="width: 30%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Task Filter & Search Toolbar -->
+<section class="px-space-lg pt-space-md pb-space-sm bg-surface-canvas">
+<div class="p-space-sm bg-surface-card rounded shadow-sm flex flex-col gap-space-sm">
+<!-- Top Filter Row: Search, Time range, View toggle -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-sm">
+<!-- Search bar with icon -->
+<div class="relative flex-1 min-w-[280px]">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-[18px] text-text-secondary">search</span>
+<input class="w-full h-8 pl-8 pr-8 bg-surface-container rounded font-body-default text-body-default text-text-primary placeholder:text-text-muted focus:bg-surface-card focus:outline-none transition-colors" id="job-search-input" placeholder="작업 ID 또는 대상 파일명 검색... (예: JOB-2026, IDC_통합보고서, .xlsx)" type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 text-text-muted hover:text-text-primary hidden" id="job-search-clear">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Filter Dropdowns & Range -->
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex items-center gap-1 bg-surface-container px-2.5 py-1 rounded text-text-secondary">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<select class="bg-transparent font-caption text-caption text-text-primary focus:outline-none cursor-pointer" id="time-range-select">
+<option value="today">오늘 (24시간)</option>
+<option selected="" value="7d">최근 7일</option>
+<option value="30d">최근 30일</option>
+<option value="custom">사용자 지정 기간</option>
+</select>
+</div>
+<button class="h-8 px-space-md rounded bg-surface-container hover:bg-surface-variant text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1 font-caption text-caption" id="btn-refresh-jobs">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span class="hidden sm:inline">새로고침</span>
+</button>
+</div>
+</div>
+<!-- Bottom Filter Row: Status Segment & Operation Type Pills -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm pt-space-xs bg-surface-canvas/50 p-2 rounded">
+<!-- Status Filter Segmented Controls -->
+<div class="flex items-center gap-1 flex-wrap">
+<span class="font-caption text-caption text-text-secondary uppercase font-semibold mr-1">상태:</span>
+<button class="filter-status-btn px-2.5 py-1 rounded bg-primary-container text-white font-badge-label text-badge-label shadow-sm" data-status="all">
+            전체 (5)
+          </button>
+<button class="filter-status-btn px-2.5 py-1 rounded bg-surface-container text-text-secondary hover:text-text-primary font-badge-label text-badge-label transition-colors" data-status="success">
+            완료 (Success) (2)
+          </button>
+<button class="filter-status-btn px-2.5 py-1 rounded bg-surface-container text-text-secondary hover:text-text-primary font-badge-label text-badge-label transition-colors" data-status="inflight">
+            진행 중 (In-Flight) (1)
+          </button>
+<button class="filter-status-btn px-2.5 py-1 rounded bg-surface-container text-text-secondary hover:text-text-primary font-badge-label text-badge-label transition-colors" data-status="failed">
+            오류/중단 (Failed) (2)
+          </button>
+</div>
+<!-- Operation Type Tags -->
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-caption text-caption text-text-secondary uppercase font-semibold mr-1">작업 유형:</span>
+<button class="filter-type-btn px-2 py-0.5 rounded bg-surface-card text-text-primary font-badge-label text-badge-label shadow-sm" data-type="all">전체</button>
+<button class="filter-type-btn px-2 py-0.5 rounded bg-surface-container text-text-secondary hover:text-text-primary font-badge-label text-badge-label transition-colors" data-type="index">증분 색인</button>
+<button class="filter-type-btn px-2 py-0.5 rounded bg-surface-container text-text-secondary hover:text-text-primary font-badge-label text-badge-label transition-colors" data-type="merge">바이너리 병합</button>
+<button class="filter-type-btn px-2 py-0.5 rounded bg-surface-container text-text-secondary hover:text-text-primary font-badge-label text-badge-label transition-colors" data-type="ocr">PDF 양방향 변환</button>
+<button class="filter-type-btn px-2 py-0.5 rounded bg-surface-container text-text-secondary hover:text-text-primary font-badge-label text-badge-label transition-colors" data-type="diff">다중 문서 Diff</button>
+<button class="filter-type-btn px-2 py-0.5 rounded bg-surface-container text-text-secondary hover:text-text-primary font-badge-label text-badge-label transition-colors" data-type="dlp">DLP 마스킹</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Detailed Job History Log Table & Interactive Grid -->
+<section class="p-space-lg pt-space-xs flex-1 flex flex-col">
+<div class="bg-surface-card rounded shadow-sm overflow-hidden flex flex-col">
+<!-- Table Responsive Container -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<!-- Table Header -->
+<thead class="bg-surface-canvas text-text-secondary font-caption text-caption uppercase select-none">
+<tr>
+<th class="py-2.5 px-3 w-10 text-center" scope="col">
+<input class="rounded bg-surface-container cursor-pointer" id="check-all-jobs" type="checkbox"/>
+</th>
+<th class="py-2.5 px-3 min-w-[130px]" scope="col">작업 ID</th>
+<th class="py-2.5 px-3 min-w-[110px]" scope="col">작업 유형</th>
+<th class="py-2.5 px-3 min-w-[320px]" scope="col">작업명 및 대상 파일 요약</th>
+<th class="py-2.5 px-3 min-w-[130px]" scope="col">처리 볼륨 / 페이지</th>
+<th class="py-2.5 px-3 min-w-[90px]" scope="col">소요 시간</th>
+<th class="py-2.5 px-3 min-w-[130px]" scope="col">실행 일시</th>
+<th class="py-2.5 px-3 min-w-[140px]" scope="col">상태</th>
+<th class="py-2.5 px-3 min-w-[130px]" scope="col">시스템 리소스</th>
+<th class="py-2.5 px-3 min-w-[190px] text-right" scope="col">작업 제어 및 액션</th>
+</tr>
+</thead>
+<!-- Table Body -->
+<tbody class="font-body-default text-body-default divide-y-0" id="job-table-body">
+<!-- Row 1: 바이너리 병합 (JOB-20260218-0941) -->
+<tr class="job-row hover:bg-surface-container/60 transition-colors cursor-pointer bg-surface-card" data-job="JOB-20260218-0941" data-status="success" data-type="merge">
+<td class="py-2.5 px-3 text-center" onclick="event.stopPropagation();">
+<input class="job-checkbox rounded bg-surface-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-2.5 px-3 font-code-mono text-code-mono text-primary font-semibold">
+                JOB-20260218-0941
+              </td>
+<td class="py-2.5 px-3">
+<span class="px-2 py-0.5 rounded bg-format-pptx-bg text-format-pptx-text font-badge-label text-badge-label uppercase inline-block">
+                  바이너리 병합
+                </span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex flex-col">
+<span class="text-text-primary font-body-semibold truncate max-w-md">2026_AI_IDC_통합보고서_합성본.pptx 생성</span>
+<span class="font-caption text-caption text-text-secondary truncate max-w-md">4종 포맷 (HWP, DOCX, XLSX, PPTX) 9p 합성 처리</span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-primary">9 Slides / 14.2MB</span>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-secondary">2.1s</span>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-secondary">2026.02.18 10:14</span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-diff-added-bg text-diff-added-text w-max">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="font-badge-label text-badge-label uppercase">성공 / 완료</span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1 font-code-mono text-code-mono text-text-secondary">
+<span class="text-status-local-text font-bold">NPU 68%</span>
+<span>/ 1.2GB</span>
+</div>
+</td>
+<td class="py-2.5 px-3 text-right" onclick="event.stopPropagation();">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded bg-surface-container hover:bg-surface-variant text-text-primary transition-colors" title="결과 파일 폴더 열기">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+</button>
+<button class="p-1 rounded bg-surface-container hover:bg-surface-variant text-text-primary transition-colors" title="재실행">
+<span class="material-symbols-outlined text-[16px]">replay</span>
+</button>
+<button class="btn-inspect-log px-2 py-1 rounded bg-primary-container text-white font-badge-label text-badge-label transition-colors" title="원시 로그 보기">
+                    로그
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 2: 다중 문서 Diff (JOB-20260218-0812) -->
+<tr class="job-row hover:bg-surface-container/60 transition-colors cursor-pointer bg-surface-canvas/30" data-job="JOB-20260218-0812" data-status="success" data-type="diff">
+<td class="py-2.5 px-3 text-center" onclick="event.stopPropagation();">
+<input class="job-checkbox rounded bg-surface-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-2.5 px-3 font-code-mono text-code-mono text-primary font-semibold">
+                JOB-20260218-0812
+              </td>
+<td class="py-2.5 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-text-primary font-badge-label text-badge-label uppercase inline-block">
+                  다중 문서 Diff
+                </span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex flex-col">
+<span class="text-text-primary font-body-semibold truncate max-w-md">2025_사업계획서 vs 2026_신규_사업계획서_수정안</span>
+<span class="font-caption text-caption text-text-secondary truncate max-w-md">형상 비교 및 OpenXML 토큰 차분 분석</span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-primary">2개 파일 (48페이지)</span>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-secondary">482ms</span>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-secondary">2026.02.18 09:32</span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-diff-added-bg text-diff-added-text w-max">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="font-badge-label text-badge-label uppercase">성공 / 완료</span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1 font-code-mono text-code-mono text-text-secondary">
+<span>CPU 45%</span>
+<span>/ 340MB</span>
+</div>
+</td>
+<td class="py-2.5 px-3 text-right" onclick="event.stopPropagation();">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 rounded bg-secondary text-white font-badge-label text-badge-label transition-colors flex items-center gap-1" title="비교 리포트 보기">
+<span class="material-symbols-outlined text-[14px]">difference</span>
+                    리포트
+                  </button>
+<button class="btn-inspect-log px-2 py-1 rounded bg-surface-container hover:bg-surface-variant text-text-primary font-badge-label text-badge-label transition-colors" title="로그 확인">
+                    로그
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 3: 증분 벡터 색인 (JOB-20260218-0705) - IN-FLIGHT ACTIVE -->
+<tr class="job-row bg-surface-container-low/70 hover:bg-surface-container transition-colors cursor-pointer" data-job="JOB-20260218-0705" data-status="inflight" data-type="index">
+<td class="py-2.5 px-3 text-center" onclick="event.stopPropagation();">
+<input class="job-checkbox rounded bg-surface-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-2.5 px-3 font-code-mono text-code-mono text-secondary font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+                JOB-20260218-0705
+              </td>
+<td class="py-2.5 px-3">
+<span class="px-2 py-0.5 rounded bg-status-local-bg text-status-local-text font-badge-label text-badge-label uppercase inline-block">
+                  증분 벡터 색인
+                </span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex flex-col">
+<span class="text-text-primary font-body-semibold truncate max-w-md">D:\Enterprise_Data\2026_전략기획실 전체 폴더 동기화</span>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 63%"></div>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-primary">2,419 / 3,840 건</span>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-secondary font-semibold">4분 12초 (진행)</span>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-secondary">2026.02.18 08:30</span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant w-max font-semibold">
+<span class="material-symbols-outlined text-[14px] animate-spin">autorenew</span>
+<span class="font-badge-label text-badge-label uppercase">진행 중 63%</span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1 font-code-mono text-code-mono text-text-secondary">
+<span class="text-status-local-text font-bold">NPU 42%</span>
+<span>/ 2.1GB</span>
+</div>
+</td>
+<td class="py-2.5 px-3 text-right" onclick="event.stopPropagation();">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 rounded bg-status-cloud-bg text-status-cloud-text hover:bg-yellow-200 font-badge-label text-badge-label transition-colors flex items-center gap-1" title="일시정지">
+<span class="material-symbols-outlined text-[14px]">pause</span>
+                    일시정지
+                  </button>
+<button class="p-1 rounded bg-surface-container hover:bg-format-pdf-bg text-status-danger-text transition-colors" title="작업 강제 중지">
+<span class="material-symbols-outlined text-[16px]">stop</span>
+</button>
+<button class="btn-inspect-log px-2 py-1 rounded bg-primary-container text-white font-badge-label text-badge-label" title="스트림 모니터링">
+                    로그
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 4: DLP 마스킹 (JOB-20260217-1520) - WARNING / PASSWORD REQ -->
+<tr class="job-row hover:bg-surface-container/60 transition-colors cursor-pointer bg-surface-card" data-job="JOB-20260217-1520" data-status="failed" data-type="dlp">
+<td class="py-2.5 px-3 text-center" onclick="event.stopPropagation();">
+<input class="job-checkbox rounded bg-surface-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-2.5 px-3 font-code-mono text-code-mono text-primary font-semibold">
+                JOB-20260217-1520
+              </td>
+<td class="py-2.5 px-3">
+<span class="px-2 py-0.5 rounded bg-status-cloud-bg text-status-cloud-text font-badge-label text-badge-label uppercase inline-block">
+                  DLP 마스킹
+                </span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex flex-col">
+<span class="text-text-primary font-body-semibold truncate max-w-md">2024_임원급여_보안.xlsx 주민번호/계좌 마스킹</span>
+<span class="font-caption text-caption text-status-cloud-text truncate max-w-md">시트 레벨 암호화 감지 (AES-128 Lock)</span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-primary">1개 파일 (14 Sheets)</span>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-secondary">850ms</span>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-secondary">2026.02.17 18:40</span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-status-cloud-bg text-status-cloud-text w-max">
+<span class="material-symbols-outlined text-[14px]">lock_reset</span>
+<span class="font-badge-label text-badge-label uppercase">암호 입력 필요</span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-status-cloud-text font-semibold">AES-128 잠김</span>
+</td>
+<td class="py-2.5 px-3 text-right" onclick="event.stopPropagation();">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 rounded bg-status-cloud-text text-white hover:opacity-90 font-badge-label text-badge-label transition-opacity flex items-center gap-1 shadow-sm" title="비밀번호 입력 재시도">
+<span class="material-symbols-outlined text-[14px]">key</span>
+                    암호 해제
+                  </button>
+<button class="btn-inspect-log px-2 py-1 rounded bg-surface-container hover:bg-surface-variant text-text-primary font-badge-label text-badge-label transition-colors" title="원시 진단 로그">
+                    상세 로그
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 5: PDF 변환 OCR (JOB-20260217-1102) - CRITICAL FAIL / CORRUPTED -->
+<tr class="job-row hover:bg-surface-container/60 transition-colors cursor-pointer bg-surface-canvas/30" data-job="JOB-20260217-1102" data-status="failed" data-type="ocr">
+<td class="py-2.5 px-3 text-center" onclick="event.stopPropagation();">
+<input class="job-checkbox rounded bg-surface-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-2.5 px-3 font-code-mono text-code-mono text-status-danger-text font-semibold">
+                JOB-20260217-1102
+              </td>
+<td class="py-2.5 px-3">
+<span class="px-2 py-0.5 rounded bg-format-pdf-bg text-format-pdf-text font-badge-label text-badge-label uppercase inline-block">
+                  PDF 변환 (OCR)
+                </span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex flex-col">
+<span class="text-text-primary font-body-semibold truncate max-w-md">회계감사_스캔본_v1.pdf → DOCX 양방향 변환</span>
+<span class="font-caption text-caption text-status-danger-text truncate max-w-md">Stream 파서 예외: Trailing garbage or missing EOF marker</span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-primary">82 Pages (중단)</span>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-muted">-</span>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-text-secondary">2026.02.17 14:15</span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-status-danger-bg text-status-danger-text w-max">
+<span class="material-symbols-outlined text-[14px]">dangerous</span>
+<span class="font-badge-label text-badge-label uppercase">헤더 손상 실패</span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-code-mono text-code-mono text-status-danger-text font-semibold">EOF Marker 누락</span>
+</td>
+<td class="py-2.5 px-3 text-right" onclick="event.stopPropagation();">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 rounded bg-status-danger-text text-white hover:opacity-90 font-badge-label text-badge-label transition-opacity flex items-center gap-1 shadow-sm" title="강제 복구 파서 실행">
+<span class="material-symbols-outlined text-[14px]">build</span>
+                    강제 복구
+                  </button>
+<button class="btn-inspect-log px-2 py-1 rounded bg-surface-container hover:bg-surface-variant text-text-primary font-badge-label text-badge-label transition-colors" title="오류 트레이스백 로그">
+                    로그
+                  </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Status and Pagination -->
+<div class="px-space-md py-space-sm bg-surface-canvas flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="font-caption text-caption text-text-secondary">총 5개 작업 중 <strong class="text-text-primary font-semibold" id="visible-row-count">5</strong>개 표시됨</span>
+<span class="font-caption text-caption text-text-muted">|</span>
+<div class="flex items-center gap-1 font-caption text-caption text-text-secondary">
+<span>페이지당 표시:</span>
+<select class="bg-surface-card rounded px-1.5 py-0.5 font-code-mono text-code-mono text-text-primary focus:outline-none">
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-1 font-code-mono text-code-mono text-caption">
+<button class="w-6 h-6 rounded bg-surface-card flex items-center justify-center text-text-muted hover:text-text-primary transition-colors disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[14px]">chevron_left</span>
+</button>
+<span class="px-2 py-0.5 rounded bg-primary-container text-white font-semibold">1</span>
+<button class="w-6 h-6 rounded bg-surface-card flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors">
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Bottom Drawer / Side Detail View: Live System Terminal Log Panel -->
+<section class="p-space-lg pt-0">
+<div class="rounded bg-primary text-white shadow-xl overflow-hidden flex flex-col">
+<!-- Terminal Header -->
+<div class="h-10 px-space-md bg-primary-container flex items-center justify-between select-none">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-status-danger-text inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-status-cloud-text inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-security-dlp-pass inline-block"></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">terminal</span>
+<span class="font-code-mono text-code-mono text-white font-bold tracking-tight">System Stdout/Stderr Monitor</span>
+<span class="font-badge-label text-badge-label px-1.5 py-0.5 rounded bg-surface-container-highest/20 text-tertiary-fixed" id="active-terminal-job">JOB-20260218-0941</span>
+</div>
+</div>
+<!-- Terminal Utility Buttons -->
+<div class="flex items-center gap-space-xs">
+<button class="h-7 px-2.5 rounded bg-primary/40 hover:bg-primary text-on-primary font-caption text-caption flex items-center gap-1 transition-colors" id="btn-copy-terminal">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>로그 전체 복사</span>
+</button>
+<button class="h-7 px-2.5 rounded bg-primary/40 hover:bg-primary text-on-primary font-caption text-caption flex items-center gap-1 transition-colors" id="btn-export-json">
+<span class="material-symbols-outlined text-[14px]">data_object</span>
+<span>JSON 진단 리포트 내보내기</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-primary flex items-center justify-center text-on-primary-container hover:text-white transition-colors" id="btn-toggle-terminal">
+<span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Terminal Body Content -->
+<div class="p-space-md font-code-mono text-code-mono leading-relaxed bg-[#001024] max-h-56 overflow-y-auto space-y-1 select-text" id="terminal-content">
+<div class="text-text-muted flex items-start gap-2">
+<span class="text-on-primary-container shrink-0">[10:14:00.010]</span>
+<span class="text-format-docx-text shrink-0 font-semibold">[KERNEL]</span>
+<span>DocPilot Orchestration v3.2 daemon initial handshake... OK (PID: 10428)</span>
+</div>
+<div class="text-text-muted flex items-start gap-2">
+<span class="text-on-primary-container shrink-0">[10:14:01.884]</span>
+<span class="text-secondary-fixed shrink-0 font-semibold">[SCHEDULER]</span>
+<span>Acquiring thread pool lock (Direct I/O async pool 8 workers)... Granted.</span>
+</div>
+<div class="text-white flex items-start gap-2 bg-primary-container/20 px-1 rounded">
+<span class="text-on-primary-container shrink-0">[10:14:02.112]</span>
+<span class="text-tertiary-fixed shrink-0 font-bold">[INFO]</span>
+<span class="text-on-primary-container shrink-0">[DocPilot-Engine]</span>
+<span>Loading binary schema for PPTX OpenXML packaging structure...</span>
+</div>
+<div class="text-white flex items-start gap-2">
+<span class="text-on-primary-container shrink-0">[10:14:02.940]</span>
+<span class="text-status-local-text shrink-0 font-bold">[NPU-ACCEL]</span>
+<span>Vector tensor core initialized: 48.2 TOPS available on Core 0.</span>
+</div>
+<div class="text-white flex items-start gap-2 bg-primary-container/20 px-1 rounded">
+<span class="text-on-primary-container shrink-0">[10:14:03.450]</span>
+<span class="text-tertiary-fixed shrink-0 font-bold">[INFO]</span>
+<span class="text-status-local-text shrink-0 font-bold">[Local-NPU]</span>
+<span>Embedding 482 tokens via BGE-M3 model... Latency 12.4ms per block.</span>
+</div>
+<div class="text-white flex items-start gap-2">
+<span class="text-on-primary-container shrink-0">[10:14:03.880]</span>
+<span class="text-tertiary-fixed shrink-0 font-bold">[INFO]</span>
+<span class="text-format-pptx-text shrink-0 font-bold">[OpenXML-Zip]</span>
+<span>Merging slide layouts: ppt/slides/slide1.xml -> ppt/slides/slide9.xml zero copy complete.</span>
+</div>
+<div class="text-diff-added-bg flex items-start gap-2 bg-diff-added-text/20 px-1 rounded">
+<span class="text-on-primary-container shrink-0">[10:14:04.254]</span>
+<span class="text-security-dlp-pass shrink-0 font-bold">[SUCCESS]</span>
+<span class="text-white">Output generated at <code class="text-tertiary-fixed">D:\Enterprise_Data\2026_전략기획실\Output\2026_AI_IDC_통합보고서_합성본.pptx</code> (Size: 14.2MB, Time: 2.14s)</span>
+</div>
+<div class="text-text-muted flex items-start gap-2">
+<span class="text-on-primary-container shrink-0">[10:14:04.301]</span>
+<span class="text-secondary-fixed shrink-0 font-semibold">[IPC-RPC]</span>
+<span>Tauri Event <code class="text-white">job:completed</code> dispatched with status: Ok(0). Waiting next batch...</span>
+</div>
+</div>
+<!-- Terminal Footer Bar -->
+<div class="px-space-md py-1 bg-primary text-on-primary-container font-caption text-caption flex items-center justify-between select-none">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-security-dlp-pass"></span>
+<span>Realtime RPC Stream: Connected</span>
+</span>
+<span>Buffer: 128 KB (Auto-scroll ON)</span>
+</div>
+<span class="font-code-mono text-code-mono">Encoding: UTF-8 / CRLF</span>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript Controller -->
+<script>
+    (function initJobOperations() {
+      // Elements
+      const searchInput = document.getElementById('job-search-input');
+      const searchClear = document.getElementById('job-search-clear');
+      const statusBtns = document.querySelectorAll('.filter-status-btn');
+      const typeBtns = document.querySelectorAll('.filter-type-btn');
+      const rows = document.querySelectorAll('.job-row');
+      const rowCountEl = document.getElementById('visible-row-count');
+      const checkAll = document.getElementById('check-all-jobs');
+      const rowCheckboxes = document.querySelectorAll('.job-checkbox');
+      const activeJobEl = document.getElementById('active-terminal-job');
+      const terminalContent = document.getElementById('terminal-content');
+      const btnCopyTerminal = document.getElementById('btn-copy-terminal');
+      const btnExportJson = document.getElementById('btn-export-json');
+      const btnPurge = document.getElementById('btn-purge-logs');
+      const btnHalt = document.getElementById('btn-emergency-halt');
+      const btnToggleTerminal = document.getElementById('btn-toggle-terminal');
+
+      let currentStatusFilter = 'all';
+      let currentTypeFilter = 'all';
+      let currentQuery = '';
+
+      // Sample mock logs for click inspect
+      const jobLogs = {
+        'JOB-20260218-0941': [
+          '[10:14:00.010] [KERNEL] DocPilot Orchestration v3.2 daemon initial handshake... OK (PID: 10428)',
+          '[10:14:01.884] [SCHEDULER] Acquiring thread pool lock (Direct I/O async pool 8 workers)... Granted.',
+          '[10:14:02.112] [INFO] [DocPilot-Engine] Loading binary schema for PPTX OpenXML packaging structure...',
+          '[10:14:02.940] [NPU-ACCEL] Vector tensor core initialized: 48.2 TOPS available on Core 0.',
+          '[10:14:03.450] [INFO] [Local-NPU] Embedding 482 tokens via BGE-M3 model... Latency 12.4ms per block.',
+          '[10:14:03.880] [INFO] [OpenXML-Zip] Merging slide layouts: ppt/slides/slide1.xml -> ppt/slides/slide9.xml zero copy complete.',
+          '[10:14:04.254] [SUCCESS] Output generated at D:\\Enterprise_Data\\2026_전략기획실\\Output\\2026_AI_IDC_통합보고서_합성본.pptx'
+        ],
+        'JOB-20260218-0812': [
+          '[09:32:10.021] [DIFF-ENGINE] Loading left source: 2025_사업계획서.docx (DocxPackage)',
+          '[09:32:10.145] [DIFF-ENGINE] Loading right source: 2026_신규_사업계획서_수정안.docx',
+          '[09:32:10.300] [COMPARE] Myers Diff Algorithm running across 48 pages and 2,410 XML paragraphs...',
+          '[09:32:10.482] [DIFF-ENGINE] 14 modifications, 3 additions, 2 deletions identified.',
+          '[09:32:10.503] [SUCCESS] Visual Diff matrix rendered. Ready in 482ms.'
+        ],
+        'JOB-20260218-0705': [
+          '[08:30:00.000] [INCR-SYNC] Watcher event received on folder: D:\\Enterprise_Data\\2026_전략기획실',
+          '[08:30:12.450] [INCR-SYNC] 3,840 files detected. Comparing hash cache (Blake3)...',
+          '[08:34:12.000] [NPU-PIPELINE] Batch 151/240: Generating 1,024-dim dense vectors. Progress: 63%',
+          '[08:34:12.100] [STATS] NPU Load: 42% | Current file: 2026_Q1_전략_부속합의서.hwpx'
+        ],
+        'JOB-20260217-1520': [
+          '[18:40:01.120] [DLP-GUARD] Inspecting 2024_임원급여_보안.xlsx for PII signatures (RRN, Bank Acc)...',
+          '[18:40:01.850] [SECURITY-WARN] Workbook protected with password (AES-128 Encryption stream detected).',
+          '[18:40:01.851] [DLP-GUARD] Operation halted. User password authorization required for non-destructive masking.'
+        ],
+        'JOB-20260217-1102': [
+          '[14:15:00.220] [PDF-PARSER] Reading header tokens for 회계감사_스캔본_v1.pdf...',
+          '[14:15:00.350] [PDF-PARSER] Trailing stream corrupt at byte offset 0x48FA2. Missing %%EOF indicator.',
+          '[14:15:00.355] [CRITICAL-ERROR] CorruptedHeaderException: File corrupted or truncated unexpectedly.',
+          '[14:15:00.360] [TASK-FAILED] Operation aborted. Suggested action: Run forced binary recovery parser.'
+        ]
+      };
+
+      // Filter Evaluation
+      function evaluateRows() {
+        let visibleCount = 0;
+        rows.forEach(row => {
+          const rowStatus = row.getAttribute('data-status');
+          const rowType = row.getAttribute('data-type');
+          const rowText = row.innerText.toLowerCase();
+
+          const matchesStatus = (currentStatusFilter === 'all' || rowStatus === currentStatusFilter);
+          const matchesType = (currentTypeFilter === 'all' || rowType === currentTypeFilter);
+          const matchesSearch = (!currentQuery || rowText.includes(currentQuery));
+
+          if (matchesStatus && matchesType && matchesSearch) {
+            row.style.display = '';
+            visibleCount++;
+          } else {
+            row.style.display = 'none';
+          }
+        });
+        if (rowCountEl) rowCountEl.textContent = visibleCount;
+      }
+
+      // Search events
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentQuery = e.target.value.trim().toLowerCase();
+          if (searchClear) searchClear.classList.toggle('hidden', currentQuery.length === 0);
+          evaluateRows();
+        });
+      }
+
+      if (searchClear) {
+        searchClear.addEventListener('click', () => {
+          if (searchInput) {
+            searchInput.value = '';
+            currentQuery = '';
+            searchClear.classList.add('hidden');
+            evaluateRows();
+          }
+        });
+      }
+
+      // Status Filter Pills
+      statusBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          statusBtns.forEach(b => {
+            b.classList.remove('bg-primary-container', 'text-white', 'shadow-sm');
+            b.classList.add('bg-surface-container', 'text-text-secondary');
+          });
+          btn.classList.remove('bg-surface-container', 'text-text-secondary');
+          btn.classList.add('bg-primary-container', 'text-white', 'shadow-sm');
+          currentStatusFilter = btn.getAttribute('data-status');
+          evaluateRows();
+        });
+      });
+
+      // Type Filter Pills
+      typeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          typeBtns.forEach(b => {
+            b.classList.remove('bg-surface-card', 'text-text-primary', 'shadow-sm');
+            b.classList.add('bg-surface-container', 'text-text-secondary');
+          });
+          btn.classList.remove('bg-surface-container', 'text-text-secondary');
+          btn.classList.add('bg-surface-card', 'text-text-primary', 'shadow-sm');
+          currentTypeFilter = btn.getAttribute('data-type');
+          evaluateRows();
+        });
+      });
+
+      // Checkbox Select All
+      if (checkAll) {
+        checkAll.addEventListener('change', (e) => {
+          const checked = e.target.checked;
+          rowCheckboxes.forEach(cb => {
+            if (cb.closest('tr').style.display !== 'none') {
+              cb.checked = checked;
+            }
+          });
+        });
+      }
+
+      // Row Click Log Inspection
+      rows.forEach(row => {
+        row.addEventListener('click', () => {
+          const jobId = row.getAttribute('data-job');
+          renderJobTerminal(jobId);
+          // Highlight selected row
+          rows.forEach(r => r.classList.remove('bg-surface-container-high/40'));
+          row.classList.add('bg-surface-container-high/40');
+        });
+
+        const logBtn = row.querySelector('.btn-inspect-log');
+        if (logBtn) {
+          logBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const jobId = row.getAttribute('data-job');
+            renderJobTerminal(jobId);
+          });
+        }
+      });
+
+      function renderJobTerminal(jobId) {
+        if (!jobId || !jobLogs[jobId]) return;
+        if (activeJobEl) activeJobEl.textContent = jobId;
+        if (terminalContent) {
+          terminalContent.innerHTML = '';
+          jobLogs[jobId].forEach(line => {
+            const lineDiv = document.createElement('div');
+            lineDiv.className = 'flex items-start gap-2';
+            
+            let color = 'text-white';
+            if (line.includes('[SUCCESS]')) color = 'text-security-dlp-pass font-bold';
+            else if (line.includes('[CRITICAL-ERROR]')) color = 'text-status-danger-text font-bold';
+            else if (line.includes('[SECURITY-WARN]')) color = 'text-status-cloud-text font-bold';
+            else if (line.includes('[INFO]')) color = 'text-white';
+
+            lineDiv.innerHTML = `<span class="text-on-primary-container shrink-0">` + line.slice(0, 14) + `</span>` +
+                                `<span class="${color}">` + line.slice(14) + `</span>`;
+            terminalContent.appendChild(lineDiv);
+          });
+          terminalContent.scrollTop = terminalContent.scrollHeight;
+        }
+      }
+
+      // Copy Terminal
+      if (btnCopyTerminal) {
+        btnCopyTerminal.addEventListener('click', () => {
+          if (!terminalContent) return;
+          const text = terminalContent.innerText;
+          navigator.clipboard.writeText(text).then(() => {
+            const original = btnCopyTerminal.innerHTML;
+            btnCopyTerminal.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span><span>복사 완료</span>';
+            setTimeout(() => { btnCopyTerminal.innerHTML = original; }, 1800);
+          });
+        });
+      }
+
+      // Export JSON Report
+      if (btnExportJson) {
+        btnExportJson.addEventListener('click', () => {
+          const report = {
+            docpilot_version: "3.2.0-enterprise",
+            timestamp: new Date().toISOString(),
+            active_node: activeJobEl ? activeJobEl.textContent : "GLOBAL",
+            metrics: {
+              cumulative_jobs: 1428,
+              daily_jobs: 34,
+              avg_binary_merge_sec: 1.84,
+              vector_indexed_files: 3840,
+              failures_isolated: 2
+            }
+          };
+          const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `DocPilot_Diagnostics_${Date.now()}.json`;
+          a.click();
+          URL.revokeObjectURL(url);
+        });
+      }
+
+      // Purge Logs Button
+      if (btnPurge) {
+        btnPurge.addEventListener('click', () => {
+          if (confirm('완료된 작업의 캐시 로그를 정리하시겠습니까? (미해결 오류 로그는 보존됩니다)')) {
+            alert('완료 작업 캐시 로그 142건이 정리되었습니다. 디스크 공간 312MB가 확보되었습니다.');
+          }
+        });
+      }
+
+      // Emergency Halt Button
+      if (btnHalt) {
+        btnHalt.addEventListener('click', () => {
+          if (confirm('현재 진행 중인 모든 백그라운드 색인 및 변환 작업을 즉시 일시 중단하시겠습니까?')) {
+            const inFlightBadge = document.querySelector('[data-job="JOB-20260218-0705"] [data-status="inflight"]');
+            alert('모든 비동기 큐 작업이 안전하게 일시 정지(Paused) 상태로 전환되었습니다.');
+          }
+        });
+      }
+
+      // Toggle Terminal Visibility
+      if (btnToggleTerminal && terminalContent) {
+        let isExpanded = true;
+        btnToggleTerminal.addEventListener('click', () => {
+          isExpanded = !isExpanded;
+          terminalContent.style.display = isExpanded ? '' : 'none';
+          btnToggleTerminal.innerHTML = isExpanded 
+            ? '<span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>' 
+            : '<span class="material-symbols-outlined text-[18px]">keyboard_arrow_up</span>';
+        });
+      }
+
+    })();
+  </script>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-7 z-50 bg-primary-container text-white px-space-md flex items-center justify-between font-caption text-caption border-t border-primary/20"><div class="flex items-center gap-space-lg overflow-hidden"><div class="flex items-center gap-1.5 truncate"><span class="material-symbols-outlined text-[14px] text-tertiary-fixed">sync</span><span>진행 중 작업: 로컬 문서 증분 색인 63%</span><button class="underline text-on-primary-container hover:text-white ml-1">[일시정지]</button></div><div class="hidden md:flex items-center gap-space-md text-on-primary-container"><span class="font-code-mono text-code-mono">NPU: 42%</span><span>|</span><span class="font-code-mono text-code-mono">RAM: 18.2GB / 32GB</span><span>|</span><span class="font-code-mono text-code-mono">Local Engine: Ollama v0.3.14</span></div></div><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-1 text-diff-removed-bg font-semibold cursor-pointer"><span class="material-symbols-outlined text-[14px]">warning</span><span>손상/암호 오류 목록 (2건)</span></div><span>|</span><div class="flex items-center gap-1 text-tertiary-fixed font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span><span>Ready (온디바이스 전용 모드)</span></div></div></footer></body></html>

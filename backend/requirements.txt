@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+python-docx
+python-pptx
+openpyxl
+pdfplumber
+pypdf
+pdf2docx

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-container": "var(--color-on-primary-container)", "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)", "error-container": "var(--color-error-container)", "surface-container-highest": "var(--color-surface-container-highest)", "on-error": "var(--color-on-error)", "secondary-container": "var(--color-secondary-container)", "text-primary": "var(--color-text-primary)", "surface-container-high": "var(--color-surface-container-high)", "surface-container": "var(--color-surface-container)", "status-local-bg": "var(--color-status-local-bg)", "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)", "format-pptx-bg": "var(--color-format-pptx-bg)", "format-xlsx-border": "var(--color-format-xlsx-border)", "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)", "outline-variant": "var(--color-outline-variant)", "status-cloud-bg": "var(--color-status-cloud-bg)", "primary-container": "var(--color-primary-container)", "primary": "var(--color-primary)", "tertiary-container": "var(--color-tertiary-container)", "on-tertiary": "var(--color-on-tertiary)", "on-background": "var(--color-on-background)", "on-primary": "var(--color-on-primary)", "format-docx-border": "var(--color-format-docx-border)", "border-strong": "var(--color-border-strong)", "format-pptx-border": "var(--color-format-pptx-border)", "surface-card": "var(--color-surface-card)", "on-surface": "var(--color-on-surface)", "on-secondary-container": "var(--color-on-secondary-container)", "status-local-text": "var(--color-status-local-text)", "secondary-fixed": "var(--color-secondary-fixed)", "on-tertiary-container": "var(--color-on-tertiary-container)", "tertiary": "var(--color-tertiary)", "primary-fixed-dim": "var(--color-primary-fixed-dim)", "secondary-fixed-dim": "var(--color-secondary-fixed-dim)", "border-subtle": "var(--color-border-subtle)", "surface-canvas": "var(--color-surface-canvas)", "inverse-on-surface": "var(--color-inverse-on-surface)", "format-xlsx-text": "var(--color-format-xlsx-text)", "status-danger-text": "var(--color-status-danger-text)", "surface": "var(--color-surface)", "text-secondary": "var(--color-text-secondary)", "format-pdf-text": "var(--color-format-pdf-text)", "surface-bright": "var(--color-surface-bright)", "format-pdf-bg": "var(--color-format-pdf-bg)", "on-secondary-fixed": "var(--color-on-secondary-fixed)", "surface-dim": "var(--color-surface-dim)", "format-hwp-border": "var(--color-format-hwp-border)", "format-docx-text": "var(--color-format-docx-text)", "surface-variant": "var(--color-surface-variant)", "diff-added-text": "var(--color-diff-added-text)", "status-danger-bg": "var(--color-status-danger-bg)", "diff-added-bg": "var(--color-diff-added-bg)", "format-pdf-border": "var(--color-format-pdf-border)", "on-primary-fixed": "var(--color-on-primary-fixed)", "surface-container-low": "var(--color-surface-container-low)", "on-error-container": "var(--color-on-error-container)", "background": "var(--color-background)", "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)", "surface-tint": "var(--color-surface-tint)", "diff-removed-bg": "var(--color-diff-removed-bg)", "on-surface-variant": "var(--color-on-surface-variant)", "diff-modified-bg": "var(--color-diff-modified-bg)", "on-secondary": "var(--color-on-secondary)", "security-dlp-breach": "var(--color-security-dlp-breach)", "tertiary-fixed": "var(--color-tertiary-fixed)", "on-tertiary-fixed": "var(--color-on-tertiary-fixed)", "format-xlsx-bg": "var(--color-format-xlsx-bg)", "error": "var(--color-error)", "diff-modified-text": "var(--color-diff-modified-text)", "outline": "var(--color-outline)", "format-docx-bg": "var(--color-format-docx-bg)", "security-dlp-pass": "var(--color-security-dlp-pass)", "status-cloud-text": "var(--color-status-cloud-text)", "diff-removed-text": "var(--color-diff-removed-text)", "format-hwp-text": "var(--color-format-hwp-text)", "primary-fixed": "var(--color-primary-fixed)", "format-hwp-bg": "var(--color-format-hwp-bg)", "inverse-primary": "var(--color-inverse-primary)", "surface-container-lowest": "var(--color-surface-container-lowest)", "format-pptx-text": "var(--color-format-pptx-text)", "secondary": "var(--color-secondary)", "inverse-surface": "var(--color-inverse-surface)", "text-muted": "var(--color-text-muted)"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xl":"1.5rem","space-xs":"0.25rem","space-sm":"0.375rem",gutter:"1rem","space-lg":"1rem","space-md":"0.75rem",margin:"1rem"},fontFamily:{"headline-md":["Inter"],"display-lg":["Inter"],"body-dense":["Inter"],"body-default":["Inter"],"code-mono":["JetBrains Mono"],"title-sm":["Inter"],"badge-label":["Inter"],"body-semibold":["Inter"],"caption":["Inter"]},fontSize:{"headline-md":["18px",{lineHeight:"24px",letterSpacing:"-0.015em",fontWeight:"600"}],"display-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-dense":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"400"}],"body-default":["13px",{lineHeight:"18px",letterSpacing:"-0.005em",fontWeight:"400"}],"code-mono":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"title-sm":["15px",{lineHeight:"20px",letterSpacing:"-0.01em",fontWeight:"600"}],"badge-label":["10px",{lineHeight:"12px",letterSpacing:"0.04em",fontWeight:"700"}],"body-semibold":["13px",{lineHeight:"18px",letterSpacing:"-0.005em",fontWeight:"600"}],"caption":["11px",{lineHeight:"14px",letterSpacing:"0.01em",fontWeight:"500"}]}}}};</script><style>
+:root {
+  --color-on-primary-container: #7a92b7;
+  --color-on-secondary-fixed-variant: #003ea8;
+  --color-error-container: #ffdad6;
+  --color-surface-container-highest: #d3e4fe;
+  --color-on-error: #ffffff;
+  --color-secondary-container: #316bf3;
+  --color-text-primary: #1E293B;
+  --color-surface-container-high: #dce9ff;
+  --color-surface-container: #F1F5F9;
+  --color-status-local-bg: #CCFBF1;
+  --color-tertiary-fixed-dim: #6bd8cb;
+  --color-format-pptx-bg: #FFEDD5;
+  --color-format-xlsx-border: #BBF7D0;
+  --color-on-tertiary-fixed-variant: #005049;
+  --color-outline-variant: #c4c6cf;
+  --color-status-cloud-bg: #FEF3C7;
+  --color-primary-container: #0f2a4a;
+  --color-primary: #00152f;
+  --color-tertiary-container: #00302b;
+  --color-on-tertiary: #ffffff;
+  --color-on-background: #0b1c30;
+  --color-on-primary: #ffffff;
+  --color-format-docx-border: #BFDBFE;
+  --color-border-strong: #CBD5E1;
+  --color-format-pptx-border: #FED7AA;
+  --color-surface-card: #FFFFFF;
+  --color-on-surface: #0b1c30;
+  --color-on-secondary-container: #fefcff;
+  --color-status-local-text: #0D9488;
+  --color-secondary-fixed: #dbe1ff;
+  --color-on-tertiary-container: #29a195;
+  --color-tertiary: #001916;
+  --color-primary-fixed-dim: #b0c8f0;
+  --color-secondary-fixed-dim: #b4c5ff;
+  --color-border-subtle: #E2E8F0;
+  --color-surface-canvas: #F8FAFC;
+  --color-inverse-on-surface: #eaf1ff;
+  --color-format-xlsx-text: #16A34A;
+  --color-status-danger-text: #DC2626;
+  --color-surface: #f8f9ff;
+  --color-text-secondary: #64748B;
+  --color-format-pdf-text: #DC2626;
+  --color-surface-bright: #f8f9ff;
+  --color-format-pdf-bg: #FEE2E2;
+  --color-on-secondary-fixed: #00174b;
+  --color-surface-dim: #cbdbf5;
+  --color-format-hwp-border: #BAE6FD;
+  --color-format-docx-text: #2563EB;
+  --color-surface-variant: #d3e4fe;
+  --color-diff-added-text: #166534;
+  --color-status-danger-bg: #FEE2E2;
+  --color-diff-added-bg: #DCFCE7;
+  --color-format-pdf-border: #FECACA;
+  --color-on-primary-fixed: #001c3a;
+  --color-surface-container-low: #eff4ff;
+  --color-on-error-container: #93000a;
+  --color-background: #f8f9ff;
+  --color-on-primary-fixed-variant: #304869;
+  --color-surface-tint: #485f82;
+  --color-diff-removed-bg: #FEE2E2;
+  --color-on-surface-variant: #43474e;
+  --color-diff-modified-bg: #FEF9C3;
+  --color-on-secondary: #ffffff;
+  --color-security-dlp-breach: #E11D48;
+  --color-tertiary-fixed: #89f5e7;
+  --color-on-tertiary-fixed: #00201d;
+  --color-format-xlsx-bg: #DCFCE7;
+  --color-error: #ba1a1a;
+  --color-diff-modified-text: #854D0E;
+  --color-outline: #74777f;
+  --color-format-docx-bg: #DBEAFE;
+  --color-security-dlp-pass: #059669;
+  --color-status-cloud-text: #D97706;
+  --color-diff-removed-text: #991B1B;
+  --color-format-hwp-text: #0284C7;
+  --color-primary-fixed: #d4e3ff;
+  --color-format-hwp-bg: #E0F2FE;
+  --color-inverse-primary: #b0c8f0;
+  --color-surface-container-lowest: #ffffff;
+  --color-format-pptx-text: #EA580C;
+  --color-secondary: #0051d5;
+  --color-inverse-surface: #213145;
+  --color-text-muted: #94A3B8;
+}
+html.dark {
+  --color-on-primary-container: #eeefff;
+  --color-on-secondary-fixed-variant: #005049;
+  --color-error-container: #93000a;
+  --color-surface-container-highest: #2d3449;
+  --color-on-error: #690005;
+  --color-secondary-container: #005049;
+  --color-text-primary: #F8FAFC;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container: #171f33;
+  --color-status-local-bg: #064E3B;
+  --color-tertiary-fixed-dim: #ffb95f;
+  --color-format-pptx-bg: #431407;
+  --color-format-xlsx-border: #064E3B;
+  --color-on-tertiary-fixed-variant: #653e00;
+  --color-outline-variant: #434655;
+  --color-status-cloud-bg: #78350F;
+  --color-primary-container: #2563eb;
+  --color-primary: #b4c5ff;
+  --color-tertiary-container: #996100;
+  --color-on-tertiary: #472a00;
+  --color-on-background: #dae2fd;
+  --color-on-primary: #002a78;
+  --color-format-docx-border: #1E3A8A;
+  --color-border-strong: #334155;
+  --color-format-pptx-border: #431407;
+  --color-surface-card: #0F172A;
+  --color-on-surface: #dae2fd;
+  --color-on-secondary-container: #00302b;
+  --color-status-local-text: #10B981;
+  --color-secondary-fixed: #89f5e7;
+  --color-on-tertiary-container: #ffeedd;
+  --color-tertiary: #ffb95f;
+  --color-primary-fixed-dim: #b4c5ff;
+  --color-secondary-fixed-dim: #6bd8cb;
+  --color-border-subtle: #1E293B;
+  --color-surface-canvas: #0A0F1D;
+  --color-inverse-on-surface: #283044;
+  --color-format-xlsx-text: #10B981;
+  --color-status-danger-text: #EF4444;
+  --color-surface: #0b1326;
+  --color-text-secondary: #94A3B8;
+  --color-format-pdf-text: #EF4444;
+  --color-surface-bright: #31394d;
+  --color-format-pdf-bg: #450A0A;
+  --color-on-secondary-fixed: #00201d;
+  --color-surface-dim: #0b1326;
+  --color-format-hwp-border: #164E63;
+  --color-format-docx-text: #3B82F6;
+  --color-surface-variant: #2d3449;
+  --color-diff-added-text: #10B981;
+  --color-status-danger-bg: #450A0A;
+  --color-diff-added-bg: #064E3B;
+  --color-format-pdf-border: #450A0A;
+  --color-on-primary-fixed: #00174b;
+  --color-surface-container-low: #131b2e;
+  --color-on-error-container: #ffdad6;
+  --color-background: #0b1326;
+  --color-on-primary-fixed-variant: #003ea8;
+  --color-surface-tint: #b4c5ff;
+  --color-diff-removed-bg: #450A0A;
+  --color-on-surface-variant: #c3c6d7;
+  --color-diff-modified-bg: #451A03;
+  --color-on-secondary: #003732;
+  --color-security-dlp-breach: #E11D48;
+  --color-tertiary-fixed: #ffddb8;
+  --color-on-tertiary-fixed: #2a1700;
+  --color-format-xlsx-bg: #064E3B;
+  --color-error: #ffb4ab;
+  --color-diff-modified-text: #F59E0B;
+  --color-outline: #8d90a0;
+  --color-format-docx-bg: #1E3A8A;
+  --color-security-dlp-pass: #059669;
+  --color-status-cloud-text: #D97706;
+  --color-diff-removed-text: #EF4444;
+  --color-format-hwp-text: #06B6D4;
+  --color-primary-fixed: #dbe1ff;
+  --color-format-hwp-bg: #164E63;
+  --color-inverse-primary: #0053db;
+  --color-surface-container-lowest: #060e20;
+  --color-format-pptx-text: #EA580C;
+  --color-secondary: #6bd8cb;
+  --color-inverse-surface: #dae2fd;
+  --color-text-muted: #64748B;
+}
+</style>
+</head><body class="bg-surface-canvas font-body-default text-body-default text-text-primary antialiased select-none"><header class="fixed top-0 left-0 right-0 h-12 z-50 bg-surface-card border-b border-border-subtle flex items-center justify-between px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="hidden md:flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container border border-border-subtle text-text-secondary cursor-pointer hover:text-text-primary"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-caption text-caption">Ctrl+K</span></div><button class="relative p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-security-dlp-breach"></span></button><button class="p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+<script>
+function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+}
+</script>
+<button onclick="toggleDarkMode()" class="p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors ml-2" title="Toggle Dark Mode">
+    <span class="material-symbols-outlined text-[18px]">dark_mode</span>
+</button>
+<div class="h-4 w-px bg-border-subtle mx-space-xs"></div><div class="flex items-center gap-space-sm cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="hidden lg:inline-block font-body-semibold text-body-semibold text-text-primary">워크스페이스</span></div></div></header>
+
+<aside class="fixed left-0 top-12 bottom-7 w-64 bg-surface-card border-r border-border-subtle z-40 flex flex-col justify-between overflow-y-auto"><div class="p-space-md"><div class="flex items-center justify-between mb-space-sm px-1"><span class="font-caption text-caption uppercase text-text-secondary font-semibold">내 로컬 라이브러리</span><button class="text-text-secondary hover:text-text-primary"><span class="material-symbols-outlined text-[16px]">create_new_folder</span></button></div><div class="flex flex-col gap-0.5 mb-space-lg"><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">folder</span><span class="truncate font-code-mono text-code-mono">C:\DocArchive\2025</span></div><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">lock</span><span class="truncate font-code-mono text-code-mono">C:\HQ_Legal\HWP_Vault</span></div><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">folder</span><span class="truncate font-code-mono text-code-mono">D:\Presentations\Q1</span></div><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">cloud</span><span class="truncate font-code-mono text-code-mono">네트워크 공유 드라이브 (Z:)</span></div></div><div class="mb-space-md px-1"><div class="font-caption text-caption uppercase text-text-secondary font-semibold mb-space-sm">포맷 필터</div><div class="flex flex-wrap gap-1.5"><span class="h-[18px] px-1.5 rounded border border-format-hwp-border bg-format-hwp-bg text-format-hwp-text font-badge-label text-badge-label flex items-center cursor-pointer">HWP/HWPX</span><span class="h-[18px] px-1.5 rounded border border-format-docx-border bg-format-docx-bg text-format-docx-text font-badge-label text-badge-label flex items-center cursor-pointer">DOCX</span><span class="h-[18px] px-1.5 rounded border border-format-xlsx-border bg-format-xlsx-bg text-format-xlsx-text font-badge-label text-badge-label flex items-center cursor-pointer">XLSX</span><span class="h-[18px] px-1.5 rounded border border-format-pptx-border bg-format-pptx-bg text-format-pptx-text font-badge-label text-badge-label flex items-center cursor-pointer">PPTX</span><span class="h-[18px] px-1.5 rounded border border-format-pdf-border bg-format-pdf-bg text-format-pdf-text font-badge-label text-badge-label flex items-center cursor-pointer">PDF</span></div></div></div><div class="p-space-md border-t border-border-subtle bg-surface-canvas/50"><div class="p-space-sm rounded bg-surface-card border border-border-subtle"><div class="flex items-center gap-1.5 mb-1"><span class="material-symbols-outlined text-[16px] text-security-dlp-pass">verified_user</span><span class="font-caption text-caption font-semibold text-text-primary">보안 격리 상태 Safe</span></div><p class="font-caption text-caption text-text-secondary leading-tight">외부 클라우드 전송이 완전히 차단된 온디바이스 샌드박스입니다.</p></div></div></aside><div class="pl-64 pb-7"><main class="w-full pt-12 min-h-screen bg-surface-canvas"><div class="flex flex-col w-full">
+<!-- Top Command & Semantic Search Header Bar -->
+<section class="p-space-lg bg-surface-card shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Search Input Section -->
+<div class="flex-1 flex flex-col gap-space-xs">
+<div class="relative flex items-center">
+<div class="absolute left-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]">magic_button</span>
+</div>
+<input class="w-full h-10 pl-10 pr-28 rounded-lg bg-surface-container text-text-primary font-body-default text-body-default placeholder-text-muted focus:outline-none focus:bg-white shadow-inner" id="query-input" placeholder="자연어로 이미지 또는 동영상 속 장면을 검색하세요 (예: 데이터센터 블루 랙 서버 냉각 팬 모듈)" type="text" value="파란색 셔츠를 입고 회의실에서 발표하는 장면"/>
+<div class="absolute right-1.5 flex items-center gap-1">
+<button class="h-7 px-3 rounded-lg bg-primary-container text-white font-body-semibold text-body-dense flex items-center gap-1 hover:bg-primary transition-all">
+<span class="material-symbols-outlined text-[15px]">search</span>
+<span>특징 검색</span>
+</button>
+</div>
+</div>
+<!-- Semantic Quick Suggestions -->
+<div class="flex items-center gap-2 overflow-x-auto pt-0.5">
+<span class="font-caption text-caption text-text-secondary whitespace-nowrap flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">bolt</span>추천 시드:
+          </span>
+<button class="h-6 px-2 rounded-lg bg-surface-container text-text-secondary font-caption text-caption hover:bg-surface-variant hover:text-text-primary whitespace-nowrap transition-colors" onclick="setQuery('데이터센터 서버실 랙 교체')">
+            #데이터센터 서버실 랙 교체
+          </button>
+<button class="h-6 px-2 rounded-lg bg-surface-container text-text-secondary font-caption text-caption hover:bg-surface-variant hover:text-text-primary whitespace-nowrap transition-colors" onclick="setQuery('친환경 풍력발전 조감도')">
+            #친환경 풍력발전 조감도
+          </button>
+<button class="h-6 px-2 rounded-lg bg-surface-container text-text-secondary font-caption text-caption hover:bg-surface-variant hover:text-text-primary whitespace-nowrap transition-colors" onclick="setQuery('서명 날인된 계약서 스캔본')">
+            #서명 날인된 계약서 스캔본
+          </button>
+<button class="h-6 px-2 rounded-lg bg-format-docx-bg text-format-docx-text font-caption text-caption whitespace-nowrap" onclick="setQuery('파란색 셔츠를 입고 회의실에서 발표하는 장면')">
+            ✓ 파란색 셔츠 발표 장면
+          </button>
+</div>
+</div>
+<!-- Engine Hardware Telemetry Card -->
+<div class="shrink-0 flex items-center gap-3 p-space-sm rounded-lg bg-status-local-bg/60 text-status-local-text">
+<div class="w-8 h-8 rounded-lg bg-status-local-bg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px] text-status-local-text animate-pulse">visibility</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-semibold text-body-dense text-status-local-text">ViT-B/16 멀티모달 임베딩</span>
+<span class="px-1.5 py-0.2 rounded bg-white text-status-local-text font-badge-label text-badge-label">NPU Active</span>
+</div>
+<span class="font-caption text-caption text-text-secondary truncate">On-Device GPU 가속 • 임베딩 인덱스 1,424건 즉시 매칭</span>
+</div>
+</div>
+</div>
+<!-- Filter & Precision Slider Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<!-- Media Category Badges -->
+<div class="flex items-center rounded-lg bg-surface-container p-0.5">
+<button class="h-7 px-3 rounded-lg text-text-secondary font-caption text-caption hover:text-text-primary transition-colors">전체 (1,424)</button>
+<button class="h-7 px-3 rounded-lg text-text-secondary font-caption text-caption hover:text-text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">image</span>이미지 (1,240건)
+          </button>
+<button class="h-7 px-3 rounded-lg bg-surface-card text-text-primary font-body-semibold text-caption shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">movie</span>동영상 (184건)
+          </button>
+</div>
+<div class="h-4 w-px bg-surface-container-high hidden sm:block"></div>
+<!-- Resolution & Time Scope Pills -->
+<div class="hidden md:flex items-center gap-1.5">
+<span class="h-6 px-2 rounded-lg bg-surface-container text-text-secondary font-caption text-caption">해상도: 1080p 이상</span>
+<span class="h-6 px-2 rounded-lg bg-surface-container text-text-secondary font-caption text-caption">최근 90일</span>
+</div>
+</div>
+<!-- Similarity Metric Slider & Density Controls -->
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-2">
+<span class="font-caption text-caption text-text-secondary">유사도 임계치:</span>
+<input class="w-28 h-1.5 bg-surface-container rounded-lg appearance-none cursor-pointer accent-secondary" id="threshold-slider" max="95" min="50" oninput="document.getElementById('threshold-val').innerText = this.value + '% 이상'" type="range" value="75"/>
+<span class="font-code-mono text-code-mono text-text-primary font-semibold w-16" id="threshold-val">75% 이상</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg bg-surface-container text-text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">grid_view</span>
+</button>
+<button class="w-7 h-7 rounded-lg text-text-secondary hover:bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">view_agenda</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Search Visual Analytics & Gallery Viewport -->
+<div class="p-space-lg flex flex-col xl:flex-row gap-space-lg items-start">
+<!-- Left / Center Gallery Grid -->
+<div class="flex-1 min-w-0 w-full flex flex-col gap-space-md">
+<!-- Segment Insight Overline -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-text-primary">검색 결과</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-code-mono text-caption font-semibold">4건 최적 매칭 (0.042초 소요)</span>
+</div>
+<div class="flex items-center gap-2 text-text-secondary font-caption text-caption">
+<span>정렬: 비전 유사도순</span>
+<span class="material-symbols-outlined text-[14px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Bento Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md w-full">
+<!-- Video Card 1: Primary Match with Keyframe Strip -->
+<article class="group rounded-xl bg-surface-card overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative w-full aspect-video bg-surface-container overflow-hidden cursor-pointer" onclick="openPlayerModal()">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A corporate boardroom presentation scene where an executive wearing a crisp navy-blue business shirt stands by a holographic digital screen explaining server infrastructure graphs, illuminated with professional ambient office lighting, clean minimalist corporate interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH29SHj3qPD3vL6PebwNWDeCnl-gXRZcpvJ2qTW0oV3Px25QxosEz4SoKwWRAwNtIn4JTJbKqcYBbNAxxSzSYc685Z6_15IS3j62-Tq-HP2a-HQbWqwU5s3pzH9PM3ZX9slq73RcBMVnFwjyi7iJ5irRmmALxO5XYCG4__TtbPyQ4x9euEvxxnKOKIb6f8WCODvbIDk0W0qtYt1RS6ZzdPKZgao3UPn47TVpbR_4uV2rKU-C3BiEN0pA"/>
+<!-- Video Overlay Badges -->
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-primary/80 backdrop-blur-md text-white font-code-mono text-badge-label flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-diff-added-bg">play_circle</span> 01:23 ~ 01:45
+              </span>
+<span class="px-2 py-0.5 rounded-md bg-secondary text-white font-code-mono text-badge-label font-bold">
+                94.8% 매칭
+              </span>
+</div>
+<div class="absolute top-2.5 right-2.5">
+<span class="h-5 px-1.5 rounded bg-surface-card/90 backdrop-blur-sm text-text-primary font-code-mono text-badge-label flex items-center">
+                42:15 전체
+              </span>
+</div>
+<!-- Instant Hover Play Overlay -->
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<div class="w-12 h-12 rounded-full bg-white/95 shadow-xl flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[28px] translate-x-0.5">play_arrow</span>
+</div>
+</div>
+<!-- Video Keyframe Hover Scrubber Bar Strip -->
+<div class="absolute bottom-0 inset-x-0 h-9 bg-primary-container/85 backdrop-blur-md px-2 flex items-center justify-between gap-1 opacity-90 group-hover:opacity-100">
+<div class="flex items-center gap-1.5 w-full">
+<div class="w-7 h-5 rounded overflow-hidden bg-surface-container shrink-0">
+<div class="w-full h-full bg-secondary-container/40"></div>
+</div>
+<div class="relative w-full h-2 bg-white/20 rounded-full overflow-hidden">
+<div class="absolute left-1/4 w-1/5 h-full bg-diff-added-bg rounded-full shadow-[0_0_8px_#10b981]"></div>
+<div class="absolute left-[32%] top-0 bottom-0 w-1 bg-white"></div>
+</div>
+<span class="font-code-mono text-badge-label text-white/90 whitespace-nowrap">01:28</span>
+</div>
+</div>
+</div>
+<!-- Metadata & Operational Actions -->
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div>
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-body-semibold text-body-default text-text-primary truncate">
+                  2026_신사옥_건립_설계보고회_녹화.mp4
+                </h3>
+<span class="h-4 px-1.5 rounded bg-format-pptx-bg text-format-pptx-text font-badge-label text-badge-label shrink-0">
+                  MP4 / 4K
+                </span>
+</div>
+<p class="font-caption text-caption text-text-secondary mt-0.5 line-clamp-1">
+                대회의실 A • 참석자: 인프라혁신팀 • 화자: 김수현 수석
+              </p>
+</div>
+<!-- Semantic Tags Recognized -->
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-text-secondary font-caption text-badge-label">#블루셔츠_발표자</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-text-secondary font-caption text-badge-label">#회의실_스크린</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-text-secondary font-caption text-badge-label">#에너지절감표</span>
+</div>
+<!-- Card Actions Strip -->
+<div class="pt-space-xs flex items-center justify-between gap-1">
+<button class="h-7 px-2.5 rounded-lg bg-surface-container text-text-primary font-caption text-caption hover:bg-surface-variant flex items-center gap-1 transition-colors" onclick="openPlayerModal()">
+<span class="material-symbols-outlined text-[14px] text-secondary">play_circle</span>
+<span>구간 재생</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg text-text-secondary hover:bg-surface-container hover:text-text-primary flex items-center justify-center transition-colors" title="원본 폴더 열기">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+</button>
+<button class="w-7 h-7 rounded-lg text-text-secondary hover:bg-surface-container hover:text-text-primary flex items-center justify-center transition-colors" onclick="copyToClipboard('2026_신사옥_건립_설계보고회_녹화.mp4')" title="오피스 삽입 클립보드 복사">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Image Card 1: High Resolution Still -->
+<article class="group rounded-xl bg-surface-card overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative w-full aspect-video bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An engineer wearing a royal blue button-down shirt gesturing toward a liquid cooling server rack unit in a high-tech modern enterprise data center, sharp lighting highlighting metallic server components and blue cooling LEDs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVJ3PFq5szOWCA5vnOTkWMPZOVJrlKTjraJh77GTrkmV_v92MOxqEPIg-2LdmrFqRB7PqPvQLjDDIjt9sfV6KSkKhEnpF8pFTqeW6UFdp3YLfb5H2-gBdnMLVl-z4X3QG36SXFFM-WpNlBQBtEhBACg8TPHcSPIK78wSxLosiOOnN83l3t794jxxIBkKTIYAXdDcbKZHtBrcOo68nTvEM-kCy_5OJt-mwDkV8aa6TE0RE-Yufbmb_8uw"/>
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-secondary text-white font-code-mono text-badge-label font-bold">
+                92.4% 유사도
+              </span>
+<span class="px-2 py-0.5 rounded-md bg-surface-card/90 text-text-primary font-code-mono text-badge-label font-semibold">
+                RAW STILL
+              </span>
+</div>
+<div class="absolute bottom-2.5 right-2.5">
+<span class="px-2 py-0.5 rounded-md bg-primary-container/80 backdrop-blur-sm text-white font-code-mono text-badge-label">
+                4032 × 3024 • 12.4MB
+              </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div>
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-body-semibold text-body-default text-text-primary truncate">
+                  차세대_냉각시스템_실증실험_촬영.png
+                </h3>
+<span class="h-4 px-1.5 rounded bg-format-xlsx-bg text-format-xlsx-text font-badge-label text-badge-label shrink-0">
+                  PNG
+                </span>
+</div>
+<p class="font-caption text-caption text-text-secondary mt-0.5 line-clamp-1">
+                경북 제2데이터센터 IDC R&D Lab 4실
+              </p>
+</div>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-text-secondary font-caption text-badge-label">#서버랙</span>
+<span class="px-1.5 py-0.5 rounded bg-status-local-bg text-status-local-text font-caption text-badge-label">#블루셔츠_발표자</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-text-secondary font-caption text-badge-label">#프레젠테이션</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between gap-1">
+<button class="h-7 px-2.5 rounded-lg bg-surface-container text-text-primary font-caption text-caption hover:bg-surface-variant flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">zoom_in</span>
+<span>원본 뷰어</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg text-text-secondary hover:bg-surface-container hover:text-text-primary flex items-center justify-center transition-colors" title="원본 폴더 열기">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+</button>
+<button class="w-7 h-7 rounded-lg text-text-secondary hover:bg-surface-container hover:text-text-primary flex items-center justify-center transition-colors" onclick="copyToClipboard('차세대_냉각시스템_실증실험_촬영.png')" title="오피스 삽입 클립보드 복사">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Video Card 2: Field Audit Video Clip -->
+<article class="group rounded-xl bg-surface-card overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative w-full aspect-video bg-surface-container overflow-hidden cursor-pointer" onclick="openPlayerModal()">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An operations supervisor in a dark blue collared shirt standing in front of high-density blade servers with glass reflective floor panels, pointing at network topology charts on a wall mounted TV display" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-MOXaiJLuimX_tMXp9lkYHDbvJ9iS-6gU4Ouw2BZ6iN6HQrL7DiVbrgFMS2RIS345x4TH-GMHb2ajyrpcB-7v_t_WaOC-BbnpyQUuJlPh5uMSkSDNLkZMwKq_IBSfyb2ie94-TfDZy6eBO247uh8Tr7MkpeyqZQPEjGRK9QkgZcYPr6qllSqqBxolAf3lkiOmh3G13mH--k2slYvp_z1TU49SjZXnYi33WKb-7xkpy3QFAHonmNG1Kw"/>
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-primary/80 backdrop-blur-md text-white font-code-mono text-badge-label flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-diff-added-bg">play_circle</span> 08:12 ~ 08:35
+              </span>
+<span class="px-2 py-0.5 rounded-md bg-secondary text-white font-code-mono text-badge-label font-bold">
+                89.2% 매칭
+              </span>
+</div>
+<div class="absolute bottom-2.5 right-2.5">
+<span class="px-2 py-0.5 rounded-md bg-primary-container/80 backdrop-blur-sm text-white font-code-mono text-badge-label">
+                24:30
+              </span>
+</div>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<div class="w-10 h-10 rounded-full bg-white/95 shadow-xl flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[24px] translate-x-0.5">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div>
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-body-semibold text-body-default text-text-primary truncate">
+                  AI_데이터센터_현장점검_클립.mp4
+                </h3>
+<span class="h-4 px-1.5 rounded bg-format-docx-bg text-format-docx-text font-badge-label text-badge-label shrink-0">
+                  MP4
+                </span>
+</div>
+<p class="font-caption text-caption text-text-secondary mt-0.5 line-clamp-1">
+                상암 디지털단지 메인 백본망 설비실 점검 녹화
+              </p>
+</div>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-text-secondary font-caption text-badge-label">#통신랙</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-text-secondary font-caption text-badge-label">#블루셔츠</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-text-secondary font-caption text-badge-label">#모니터링</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between gap-1">
+<button class="h-7 px-2.5 rounded-lg bg-surface-container text-text-primary font-caption text-caption hover:bg-surface-variant flex items-center gap-1 transition-colors" onclick="openPlayerModal()">
+<span class="material-symbols-outlined text-[14px] text-secondary">play_circle</span>
+<span>구간 재생</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg text-text-secondary hover:bg-surface-container hover:text-text-primary flex items-center justify-center transition-colors" title="원본 폴더 열기">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+</button>
+<button class="w-7 h-7 rounded-lg text-text-secondary hover:bg-surface-container hover:text-text-primary flex items-center justify-center transition-colors" onclick="copyToClipboard('AI_데이터센터_현장점검_클립.mp4')" title="오피스 삽입 클립보드 복사">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Image Card 2: Boardroom Snapshot -->
+<article class="group rounded-xl bg-surface-card overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative w-full aspect-video bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A brightly lit executive boardroom where a presenter in light blue tailored shirt speaks while holding a remote clicker pointing at an overhead presentation screen displaying quarterly metrics, glass table reflects warm interior light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ9y_OvhVGag1NjUgeM6r9Eno8St2Q9UIBWJJI19FleBhSmHYpMarHyCS3F4HjAisVIaKdJP0TncsqpLYF9g1Pm8jvcoF9Z0ofbdVRFN5gZSOOg-9icCouNhmwrY-jFNL-Y_ZUvWo2r-RMWde5J-bwv-mWXY325Sh0lKn5Bwuj1s4pyUe8do4rgLu65wXGvg_HhrBeny0srDgpAYjJlRY3PH81pmXVeasfQtN0w5bLBVeD29cYzQY8uA"/>
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-secondary text-white font-code-mono text-badge-label font-bold">
+                88.1% 유사도
+              </span>
+</div>
+<div class="absolute bottom-2.5 right-2.5">
+<span class="px-2 py-0.5 rounded-md bg-primary-container/80 backdrop-blur-sm text-white font-code-mono text-badge-label">
+                1920 × 1080 • 3.2MB
+              </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div>
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-body-semibold text-body-default text-text-primary truncate">
+                  Q3_이사회_설명회_스냅샷_04.jpg
+                </h3>
+<span class="h-4 px-1.5 rounded bg-format-pptx-bg text-format-pptx-text font-badge-label text-badge-label shrink-0">
+                  JPG
+                </span>
+</div>
+<p class="font-caption text-caption text-text-secondary mt-0.5 line-clamp-1">
+                본관 대회의실 3호 • 2025.10.14 촬영
+              </p>
+</div>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-text-secondary font-caption text-badge-label">#회의실</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-text-secondary font-caption text-badge-label">#빔프로젝터</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-text-secondary font-caption text-badge-label">#청중</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between gap-1">
+<button class="h-7 px-2.5 rounded-lg bg-surface-container text-text-primary font-caption text-caption hover:bg-surface-variant flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">zoom_in</span>
+<span>원본 뷰어</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 rounded-lg text-text-secondary hover:bg-surface-container hover:text-text-primary flex items-center justify-center transition-colors" title="원본 폴더 열기">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+</button>
+<button class="w-7 h-7 rounded-lg text-text-secondary hover:bg-surface-container hover:text-text-primary flex items-center justify-center transition-colors" onclick="copyToClipboard('Q3_이사회_설명회_스냅샷_04.jpg')" title="오피스 삽입 클립보드 복사">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Right Pane: Interactive Docked Multimodal Vision Inspector & Synchronized Player -->
+<aside class="w-full xl:w-[440px] shrink-0 rounded-xl bg-surface-card shadow-sm overflow-hidden flex flex-col" id="inspector-dock">
+<!-- Player Header -->
+<div class="p-space-md bg-primary-container text-white flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-2.5 h-2.5 rounded-full bg-status-local-text animate-pulse"></span>
+<span class="font-body-semibold text-body-default truncate">타깃 장면 포커스 뷰어</span>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<span class="font-code-mono text-badge-label text-tertiary-fixed bg-tertiary-container px-2 py-0.5 rounded">
+            FRAME ID #4180
+          </span>
+<button class="p-1 rounded text-white/80 hover:text-white hover:bg-white/10">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Live Video View with AI Bounding Box -->
+<div class="relative w-full aspect-video bg-black flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up framing of an engineering speaker standing in front of high-tech presentation slides wearing a blue dress shirt, realistic surveillance and conference camera angle, focused crisp subject lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsohrnao4Jf0N9HP40n8LM-ynM2MyuoG3EfT3Lr3uZyW6mr-_h6cmSsQ0r6ArRm4AULMAC00hoTyE4ivQUILC92M5EOKNogbK676mNl7FUZl753h-6YdYkmEp0BeGLutjmByHDxDVck82xBD4dmuqk2znQyZWE97qMoRUntc6hGN-xi_RLiyCuZ9LifmQpvBl5kC1yrYd1paTcxNMvEDCf3i4QTEcA2TrEcoekrSht04NFh3e_GJAcJQ"/>
+<!-- Detected Object Bounding Box with Label Tag -->
+<div class="absolute inset-y-[15%] left-[28%] w-[42%] pointer-events-none">
+<div class="w-full h-full border-2 border-secondary rounded shadow-[0_0_15px_rgba(37,99,235,0.45)] relative animate-pulse">
+<div class="absolute -top-6 left-0 px-1.5 py-0.5 rounded bg-secondary text-white font-code-mono text-badge-label whitespace-nowrap flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[10px]">person</span>
+<span>Person (Blue Shirt): 98.4%</span>
+</div>
+<div class="absolute -bottom-5 right-0 px-1.5 py-0.2 rounded bg-primary-container/90 text-white font-code-mono text-[9px]">
+              BB: [X:320, Y:110, W:240, H:410]
+            </div>
+</div>
+</div>
+<!-- Floating Player Controls Overlay -->
+<div class="absolute bottom-2.5 inset-x-3 bg-primary-container/90 backdrop-blur-md rounded-lg p-2 flex flex-col gap-1.5 text-white">
+<!-- Playhead Progress Bar with Multiple Hitmarkers -->
+<div class="relative w-full h-2 bg-white/20 rounded-full cursor-pointer">
+<!-- Relevant segment hit-marker zone 1 -->
+<div class="absolute left-[3%] w-[6%] h-full bg-secondary-container/70 rounded-full" title="00:15~00:40 서론"></div>
+<!-- Query Best match zone (Active glowing green) -->
+<div class="absolute left-[18%] w-[12%] h-full bg-status-local-text rounded-full shadow-[0_0_8px_#0d9488]" title="01:23~01:45 핵심 발표 구간"></div>
+<!-- Secondary segment -->
+<div class="absolute left-[64%] w-[8%] h-full bg-secondary-container/70 rounded-full" title="04:12 질의응답"></div>
+<!-- Scrubber thumb -->
+<div class="absolute left-[22%] -top-1 w-4 h-4 rounded-full bg-white shadow-md flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-primary-container"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-badge-label font-code-mono">
+<div class="flex items-center gap-2">
+<button class="hover:text-tertiary-fixed"><span class="material-symbols-outlined text-[16px]">pause</span></button>
+<button class="hover:text-tertiary-fixed"><span class="material-symbols-outlined text-[16px]">replay_10</span></button>
+<button class="hover:text-tertiary-fixed"><span class="material-symbols-outlined text-[16px]">forward_10</span></button>
+<span class="text-white/80">01:28 / 42:15</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-1 rounded bg-white/20 text-white">1.0x</span>
+<button class="hover:text-tertiary-fixed"><span class="material-symbols-outlined text-[16px]">volume_up</span></button>
+<button class="hover:text-tertiary-fixed"><span class="material-symbols-outlined text-[16px]">fullscreen</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Synchronized STT & Scene Semantics Feed -->
+<div class="p-space-md flex flex-col gap-space-sm bg-surface-canvas/50">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-secondary uppercase font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">graphic_eq</span>음성 자막 싱크 (STT On-Device)
+          </span>
+<span class="font-code-mono text-badge-label text-status-local-text">Confidence 96.7%</span>
+</div>
+<!-- STT Block -->
+<div class="p-space-sm rounded-lg bg-surface-card shadow-sm flex flex-col gap-1">
+<div class="flex items-center gap-2 font-code-mono text-badge-label text-text-secondary">
+<span class="px-1 rounded bg-surface-container text-text-primary">01:25</span>
+<span>화자 1 (발표자):</span>
+</div>
+<p class="font-body-default text-body-default text-text-primary leading-relaxed">
+            "...신규 <mark class="bg-diff-modified-bg text-diff-modified-text px-1 rounded font-semibold">냉각 시스템</mark> 채택 시 연간 에너지 비용을 <mark class="bg-diff-added-bg text-diff-added-text px-1 rounded font-semibold">38% 이상 감축</mark>할 수 있음을 보고드립니다."
+          </p>
+</div>
+<!-- Vector Similarity Breakdown -->
+<div class="mt-1 flex flex-col gap-1">
+<span class="font-caption text-caption text-text-secondary uppercase font-semibold">비전/언어 다중 모달 매칭 분석</span>
+<div class="grid grid-cols-2 gap-2 text-caption">
+<div class="p-2 rounded bg-surface-card flex items-center justify-between">
+<span class="text-text-secondary">시각적 유사도</span>
+<span class="font-code-mono font-semibold text-text-primary">95.2%</span>
+</div>
+<div class="p-2 rounded bg-surface-card flex items-center justify-between">
+<span class="text-text-secondary">자막 맥락 일치</span>
+<span class="font-code-mono font-semibold text-text-primary">93.8%</span>
+</div>
+</div>
+</div>
+<!-- Rapid Actions for Office Interop -->
+<div class="pt-space-xs flex flex-col gap-1.5">
+<button class="h-8 w-full rounded-lg bg-primary-container text-white font-body-semibold text-caption hover:bg-primary flex items-center justify-center gap-1.5 shadow-sm transition-all" onclick="copyToClipboard('선택된 키프레임 및 발언 녹취록 클립보드 복사됨')">
+<span class="material-symbols-outlined text-[16px]">content_paste</span>
+<span>보고서에 타임스탬프 & 스크린샷 붙여넣기</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="h-7 flex-1 rounded-lg bg-surface-card text-text-secondary font-caption text-caption hover:bg-surface-container flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">download</span>
+<span>1080p 스틸 캡처</span>
+</button>
+<button class="h-7 flex-1 rounded-lg bg-surface-card text-text-secondary font-caption text-caption hover:bg-surface-container flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">share</span>
+<span>구간 공유 링크</span>
+</button>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Micro Toast Notification for Clipboard Action -->
+<div class="fixed bottom-12 right-6 bg-primary-container text-white px-4 py-2.5 rounded-lg shadow-xl font-body-default text-body-dense flex items-center gap-2 translate-y-20 opacity-0 transition-all pointer-events-none z-50" id="toast-notify">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">task_alt</span>
+<span id="toast-text">문서 첨부용 링크와 메타데이터가 클립보드에 복사되었습니다.</span>
+</div>
+</div>
+<script>
+  function setQuery(text) {
+    const input = document.getElementById('query-input');
+    if (input) {
+      input.value = text;
+      showToast('검색어가 변경되었습니다: "' + text + '"');
+    }
+  }
+
+  function copyToClipboard(val) {
+    showToast(val + ' 클립보드에 복사 완료!');
+  }
+
+  function openPlayerModal() {
+    const dock = document.getElementById('inspector-dock');
+    if (dock) {
+      dock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      dock.classList.add('ring-2', 'ring-secondary');
+      setTimeout(() => dock.classList.remove('ring-2', 'ring-secondary'), 1200);
+      showToast('01:28 타깃 장면이 검사기 뷰어에 로드되었습니다.');
+    }
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast-notify');
+    const toastText = document.getElementById('toast-text');
+    if (toast && toastText) {
+      toastText.innerText = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2500);
+    }
+  }
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-7 z-50 bg-primary-container text-white px-space-md flex items-center justify-between font-caption text-caption border-t border-primary/20"><div class="flex items-center gap-space-lg overflow-hidden"><div class="flex items-center gap-1.5 truncate"><span class="material-symbols-outlined text-[14px] text-tertiary-fixed">sync</span><span>진행 중 작업: 로컬 문서 증분 색인 63%</span><button class="underline text-on-primary-container hover:text-white ml-1">[일시정지]</button></div><div class="hidden md:flex items-center gap-space-md text-on-primary-container"><span class="font-code-mono text-code-mono">NPU: 42%</span><span>|</span><span class="font-code-mono text-code-mono">RAM: 18.2GB / 32GB</span><span>|</span><span class="font-code-mono text-code-mono">Local Engine: Ollama v0.3.14</span></div></div><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-1 text-diff-removed-bg font-semibold cursor-pointer"><span class="material-symbols-outlined text-[14px]">warning</span><span>손상/암호 오류 목록 (2건)</span></div><span>|</span><div class="flex items-center gap-1 text-tertiary-fixed font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span><span>Ready (온디바이스 전용 모드)</span></div></div></footer></body></html>

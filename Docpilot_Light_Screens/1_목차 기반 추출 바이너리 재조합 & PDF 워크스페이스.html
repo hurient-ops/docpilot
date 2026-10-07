@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-error": "var(--color-on-error)", "secondary-fixed-dim": "var(--color-secondary-fixed-dim)", "status-danger-text": "var(--color-status-danger-text)", "status-cloud-text": "var(--color-status-cloud-text)", "format-hwp-text": "var(--color-format-hwp-text)", "primary": "var(--color-primary)", "error": "var(--color-error)", "secondary-container": "var(--color-secondary-container)", "surface-container-lowest": "var(--color-surface-container-lowest)", "format-docx-text": "var(--color-format-docx-text)", "outline-variant": "var(--color-outline-variant)", "diff-modified-bg": "var(--color-diff-modified-bg)", "background": "var(--color-background)", "status-local-text": "var(--color-status-local-text)", "outline": "var(--color-outline)", "text-primary": "var(--color-text-primary)", "format-xlsx-bg": "var(--color-format-xlsx-bg)", "primary-fixed": "var(--color-primary-fixed)", "format-hwp-border": "var(--color-format-hwp-border)", "surface-container-low": "var(--color-surface-container-low)", "security-dlp-breach": "var(--color-security-dlp-breach)", "surface-container-highest": "var(--color-surface-container-highest)", "format-pdf-border": "var(--color-format-pdf-border)", "on-primary": "var(--color-on-primary)", "surface": "var(--color-surface)", "format-pptx-bg": "var(--color-format-pptx-bg)", "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)", "on-primary-fixed": "var(--color-on-primary-fixed)", "surface-container": "var(--color-surface-container)", "format-pdf-bg": "var(--color-format-pdf-bg)", "text-secondary": "var(--color-text-secondary)", "on-tertiary-fixed": "var(--color-on-tertiary-fixed)", "format-docx-bg": "var(--color-format-docx-bg)", "on-error-container": "var(--color-on-error-container)", "surface-tint": "var(--color-surface-tint)", "format-xlsx-text": "var(--color-format-xlsx-text)", "error-container": "var(--color-error-container)", "surface-dim": "var(--color-surface-dim)", "tertiary-container": "var(--color-tertiary-container)", "on-secondary-fixed": "var(--color-on-secondary-fixed)", "tertiary-fixed": "var(--color-tertiary-fixed)", "status-danger-bg": "var(--color-status-danger-bg)", "on-tertiary": "var(--color-on-tertiary)", "secondary": "var(--color-secondary)", "primary-container": "var(--color-primary-container)", "inverse-on-surface": "var(--color-inverse-on-surface)", "diff-removed-text": "var(--color-diff-removed-text)", "on-tertiary-container": "var(--color-on-tertiary-container)", "on-background": "var(--color-on-background)", "border-subtle": "var(--color-border-subtle)", "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)", "border-strong": "var(--color-border-strong)", "surface-variant": "var(--color-surface-variant)", "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)", "format-hwp-bg": "var(--color-format-hwp-bg)", "format-docx-border": "var(--color-format-docx-border)", "format-pdf-text": "var(--color-format-pdf-text)", "format-xlsx-border": "var(--color-format-xlsx-border)", "surface-canvas": "var(--color-surface-canvas)", "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)", "on-secondary": "var(--color-on-secondary)", "format-pptx-border": "var(--color-format-pptx-border)", "text-muted": "var(--color-text-muted)", "status-local-bg": "var(--color-status-local-bg)", "on-surface": "var(--color-on-surface)", "diff-removed-bg": "var(--color-diff-removed-bg)", "surface-bright": "var(--color-surface-bright)", "surface-container-high": "var(--color-surface-container-high)", "surface-card": "var(--color-surface-card)", "security-dlp-pass": "var(--color-security-dlp-pass)", "secondary-fixed": "var(--color-secondary-fixed)", "status-cloud-bg": "var(--color-status-cloud-bg)", "on-surface-variant": "var(--color-on-surface-variant)", "diff-added-bg": "var(--color-diff-added-bg)", "primary-fixed-dim": "var(--color-primary-fixed-dim)", "on-primary-container": "var(--color-on-primary-container)", "inverse-primary": "var(--color-inverse-primary)", "on-secondary-container": "var(--color-on-secondary-container)", "tertiary": "var(--color-tertiary)", "diff-added-text": "var(--color-diff-added-text)", "format-pptx-text": "var(--color-format-pptx-text)", "diff-modified-text": "var(--color-diff-modified-text)", "inverse-surface": "var(--color-inverse-surface)"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-sm":"0.375rem","space-xs":"0.25rem","space-md":"0.75rem","space-lg":"1rem","space-xl":"1.5rem","margin":"1rem","gutter":"1rem"},"fontFamily":{"code-mono":["JetBrains Mono"],"body-dense":["Inter"],"body-default":["Inter"],"display-lg":["Inter"],"caption":["Inter"],"title-sm":["Inter"],"body-semibold":["Inter"],"headline-md":["Inter"],"badge-label":["Inter"]},"fontSize":{"code-mono":["11px",{"lineHeight":"15px","letterSpacing":"0em","fontWeight":"400"}],"body-dense":["12px",{"lineHeight":"16px","letterSpacing":"0em","fontWeight":"400"}],"body-default":["13px",{"lineHeight":"18px","letterSpacing":"-0.005em","fontWeight":"400"}],"display-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"caption":["11px",{"lineHeight":"14px","letterSpacing":"0.01em","fontWeight":"500"}],"title-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-semibold":["13px",{"lineHeight":"18px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.015em","fontWeight":"600"}],"badge-label":["10px",{"lineHeight":"12px","letterSpacing":"0.04em","fontWeight":"700"}]}}}};</script><style>
+:root {
+  --color-on-error: #ffffff;
+  --color-secondary-fixed-dim: #b4c5ff;
+  --color-status-danger-text: #DC2626;
+  --color-status-cloud-text: #D97706;
+  --color-format-hwp-text: #0284C7;
+  --color-primary: #00152f;
+  --color-error: #ba1a1a;
+  --color-secondary-container: #316bf3;
+  --color-surface-container-lowest: #ffffff;
+  --color-format-docx-text: #2563EB;
+  --color-outline-variant: #c4c6cf;
+  --color-diff-modified-bg: #FEF9C3;
+  --color-background: #f8f9ff;
+  --color-status-local-text: #0D9488;
+  --color-outline: #74777f;
+  --color-text-primary: #1E293B;
+  --color-format-xlsx-bg: #DCFCE7;
+  --color-primary-fixed: #d4e3ff;
+  --color-format-hwp-border: #BAE6FD;
+  --color-surface-container-low: #eff4ff;
+  --color-security-dlp-breach: #E11D48;
+  --color-surface-container-highest: #d3e4fe;
+  --color-format-pdf-border: #FECACA;
+  --color-on-primary: #ffffff;
+  --color-surface: #f8f9ff;
+  --color-format-pptx-bg: #FFEDD5;
+  --color-on-tertiary-fixed-variant: #005049;
+  --color-on-primary-fixed: #001c3a;
+  --color-surface-container: #F1F5F9;
+  --color-format-pdf-bg: #FEE2E2;
+  --color-text-secondary: #64748B;
+  --color-on-tertiary-fixed: #00201d;
+  --color-format-docx-bg: #DBEAFE;
+  --color-on-error-container: #93000a;
+  --color-surface-tint: #485f82;
+  --color-format-xlsx-text: #16A34A;
+  --color-error-container: #ffdad6;
+  --color-surface-dim: #cbdbf5;
+  --color-tertiary-container: #00302b;
+  --color-on-secondary-fixed: #00174b;
+  --color-tertiary-fixed: #89f5e7;
+  --color-status-danger-bg: #FEE2E2;
+  --color-on-tertiary: #ffffff;
+  --color-secondary: #0051d5;
+  --color-primary-container: #0f2a4a;
+  --color-inverse-on-surface: #eaf1ff;
+  --color-diff-removed-text: #991B1B;
+  --color-on-tertiary-container: #29a195;
+  --color-on-background: #0b1c30;
+  --color-border-subtle: #E2E8F0;
+  --color-on-primary-fixed-variant: #304869;
+  --color-border-strong: #CBD5E1;
+  --color-surface-variant: #d3e4fe;
+  --color-tertiary-fixed-dim: #6bd8cb;
+  --color-format-hwp-bg: #E0F2FE;
+  --color-format-docx-border: #BFDBFE;
+  --color-format-pdf-text: #DC2626;
+  --color-format-xlsx-border: #BBF7D0;
+  --color-surface-canvas: #F8FAFC;
+  --color-on-secondary-fixed-variant: #003ea8;
+  --color-on-secondary: #ffffff;
+  --color-format-pptx-border: #FED7AA;
+  --color-text-muted: #94A3B8;
+  --color-status-local-bg: #CCFBF1;
+  --color-on-surface: #0b1c30;
+  --color-diff-removed-bg: #FEE2E2;
+  --color-surface-bright: #f8f9ff;
+  --color-surface-container-high: #dce9ff;
+  --color-surface-card: #FFFFFF;
+  --color-security-dlp-pass: #059669;
+  --color-secondary-fixed: #dbe1ff;
+  --color-status-cloud-bg: #FEF3C7;
+  --color-on-surface-variant: #43474e;
+  --color-diff-added-bg: #DCFCE7;
+  --color-primary-fixed-dim: #b0c8f0;
+  --color-on-primary-container: #7a92b7;
+  --color-inverse-primary: #b0c8f0;
+  --color-on-secondary-container: #fefcff;
+  --color-tertiary: #001916;
+  --color-diff-added-text: #166534;
+  --color-format-pptx-text: #EA580C;
+  --color-diff-modified-text: #854D0E;
+  --color-inverse-surface: #213145;
+}
+html.dark {
+  --color-on-error: #690005;
+  --color-secondary-fixed-dim: #6bd8cb;
+  --color-status-danger-text: #EF4444;
+  --color-status-cloud-text: #D97706;
+  --color-format-hwp-text: #06B6D4;
+  --color-primary: #b4c5ff;
+  --color-error: #ffb4ab;
+  --color-secondary-container: #005049;
+  --color-surface-container-lowest: #060e20;
+  --color-format-docx-text: #3B82F6;
+  --color-outline-variant: #434655;
+  --color-diff-modified-bg: #451A03;
+  --color-background: #0b1326;
+  --color-status-local-text: #10B981;
+  --color-outline: #8d90a0;
+  --color-text-primary: #F8FAFC;
+  --color-format-xlsx-bg: #064E3B;
+  --color-primary-fixed: #dbe1ff;
+  --color-format-hwp-border: #164E63;
+  --color-surface-container-low: #131b2e;
+  --color-security-dlp-breach: #E11D48;
+  --color-surface-container-highest: #2d3449;
+  --color-format-pdf-border: #450A0A;
+  --color-on-primary: #002a78;
+  --color-surface: #0b1326;
+  --color-format-pptx-bg: #431407;
+  --color-on-tertiary-fixed-variant: #653e00;
+  --color-on-primary-fixed: #00174b;
+  --color-surface-container: #171f33;
+  --color-format-pdf-bg: #450A0A;
+  --color-text-secondary: #94A3B8;
+  --color-on-tertiary-fixed: #2a1700;
+  --color-format-docx-bg: #1E3A8A;
+  --color-on-error-container: #ffdad6;
+  --color-surface-tint: #b4c5ff;
+  --color-format-xlsx-text: #10B981;
+  --color-error-container: #93000a;
+  --color-surface-dim: #0b1326;
+  --color-tertiary-container: #996100;
+  --color-on-secondary-fixed: #00201d;
+  --color-tertiary-fixed: #ffddb8;
+  --color-status-danger-bg: #450A0A;
+  --color-on-tertiary: #472a00;
+  --color-secondary: #6bd8cb;
+  --color-primary-container: #2563eb;
+  --color-inverse-on-surface: #283044;
+  --color-diff-removed-text: #EF4444;
+  --color-on-tertiary-container: #ffeedd;
+  --color-on-background: #dae2fd;
+  --color-border-subtle: #1E293B;
+  --color-on-primary-fixed-variant: #003ea8;
+  --color-border-strong: #334155;
+  --color-surface-variant: #2d3449;
+  --color-tertiary-fixed-dim: #ffb95f;
+  --color-format-hwp-bg: #164E63;
+  --color-format-docx-border: #1E3A8A;
+  --color-format-pdf-text: #EF4444;
+  --color-format-xlsx-border: #064E3B;
+  --color-surface-canvas: #0A0F1D;
+  --color-on-secondary-fixed-variant: #005049;
+  --color-on-secondary: #003732;
+  --color-format-pptx-border: #431407;
+  --color-text-muted: #64748B;
+  --color-status-local-bg: #064E3B;
+  --color-on-surface: #dae2fd;
+  --color-diff-removed-bg: #450A0A;
+  --color-surface-bright: #31394d;
+  --color-surface-container-high: #222a3d;
+  --color-surface-card: #0F172A;
+  --color-security-dlp-pass: #059669;
+  --color-secondary-fixed: #89f5e7;
+  --color-status-cloud-bg: #78350F;
+  --color-on-surface-variant: #c3c6d7;
+  --color-diff-added-bg: #064E3B;
+  --color-primary-fixed-dim: #b4c5ff;
+  --color-on-primary-container: #eeefff;
+  --color-inverse-primary: #0053db;
+  --color-on-secondary-container: #00302b;
+  --color-tertiary: #ffb95f;
+  --color-diff-added-text: #10B981;
+  --color-format-pptx-text: #EA580C;
+  --color-diff-modified-text: #F59E0B;
+  --color-inverse-surface: #dae2fd;
+}
+</style>
+</head><body class="bg-surface-canvas font-body-default text-body-default text-text-primary antialiased selection:bg-secondary selection:text-on-secondary"><header class="fixed top-0 left-0 right-0 z-50 h-12 bg-surface-card border-b border-border-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-12 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-xs"><img alt="DocPilot Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X4l-ue-zS7f63_a0Fbxlvu-6nC8TgBn_qzPL4qSNgJ9-1nmSW2pxHtqXbuNWmdt-hWcZlf7jBMF3o98D-JCWzTlJ_hxu6lRRJK8tkpav51hxNWGcqAEVOqEod-ICWQxDmpL79qWhTxUse_HxbQcU8WrRhkpiHps7SfSpgq7G7YxB037Hc7t6BD4hAdpLdWvSUj0_qNPASSaUDIh_6MarkLBuJXK2IVbWXmA9CxH0iaPC_jSLR0AYMnjyG-"/><span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">DocPilot</span></div><span class="px-space-xs py-0.5 rounded bg-surface-container text-text-secondary font-badge-label text-badge-label uppercase">v3.2 Enterprise</span></div><nav class="flex items-center gap-space-xs overflow-x-auto" data-active-classes="bg-surface-container text-primary font-body-semibold rounded"><a class="px-space-md py-1.5 rounded-lg font-body-default text-body-default text-text-secondary hover:text-on-surface hover:bg-surface-container transition-colors whitespace-nowrap" data-path="directory" href="#">디렉토리</a><a class="px-space-md py-1.5 rounded-lg font-body-default text-body-default text-text-secondary hover:text-on-surface hover:bg-surface-container transition-colors whitespace-nowrap" data-path="search" href="#">하이브리드 검색</a><a aria-current="page" class="px-space-md py-1.5 rounded-lg transition-colors whitespace-nowrap bg-primary text-on-primary font-body-semibold shadow-sm" data-path="merger" href="#">문서 병합 &amp; 변환</a><a class="px-space-md py-1.5 rounded-lg font-body-default text-body-default text-text-secondary hover:text-on-surface hover:bg-surface-container transition-colors whitespace-nowrap" data-path="compare" href="#">다중 비교</a><a class="px-space-md py-1.5 rounded-lg font-body-default text-body-default text-text-secondary hover:text-on-surface hover:bg-surface-container transition-colors whitespace-nowrap" data-path="media" href="#">미디어 검색</a><a class="px-space-md py-1.5 rounded-lg font-body-default text-body-default text-text-secondary hover:text-on-surface hover:bg-surface-container transition-colors whitespace-nowrap" data-path="security" href="#">AI DLP / 보안</a><a class="px-space-md py-1.5 rounded-lg font-body-default text-body-default text-text-secondary hover:text-on-surface hover:bg-surface-container transition-colors whitespace-nowrap" data-path="history" href="#">작업 내역</a><div class="flex items-center gap-1.5 px-space-sm py-1.5 ml-space-sm rounded-lg bg-status-local-bg border border-status-local-text/30 cursor-pointer hover:bg-surface-container transition-colors shrink-0">
+<span class="w-2 h-2 rounded-full bg-status-local-text animate-pulse"></span>
+<span class="font-caption text-caption font-semibold text-status-local-text">로컬 AI [NPU 가속 Standard]</span>
+<span class="material-symbols-outlined text-[14px] text-status-local-text">arrow_drop_down</span>
+</div></nav><div class="flex items-center gap-space-sm shrink-0"><button class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container border border-border-subtle text-text-secondary hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-code-mono text-code-mono text-text-muted">Ctrl+K</span></button><button class="w-7 h-7 rounded flex items-center justify-center text-text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span></button><button class="w-7 h-7 rounded flex items-center justify-center text-text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+<script>
+function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+}
+</script>
+<button onclick="toggleDarkMode()" class="p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors ml-2" title="Toggle Dark Mode">
+    <span class="material-symbols-outlined text-[18px]">dark_mode</span>
+</button>
+<div class="h-4 w-px bg-border-subtle mx-space-xs"></div><div class="flex items-center gap-space-xs pl-space-xs cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="font-body-dense text-body-dense font-medium text-text-primary hidden xl:inline">워크스페이스</span><span class="material-symbols-outlined text-[14px] text-text-secondary">unfold_more</span></div></div></div></header>
+
+<div class="w-full flex"><aside class="fixed left-0 top-12 bottom-7 w-64 bg-surface-card border-r border-border-subtle z-30 flex flex-col justify-between p-space-md"><div class="flex flex-col gap-space-md"><div class="flex items-center justify-between px-space-xs"><span class="font-caption text-caption uppercase font-semibold text-text-secondary">내 로컬 라이브러리</span><button class="w-6 h-6 rounded flex items-center justify-center text-text-secondary hover:bg-surface-container" type="button"><span class="material-symbols-outlined text-[16px]">create_new_folder</span></button></div><div class="space-y-space-xs font-body-dense text-body-dense"><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded bg-surface-container text-primary font-body-semibold cursor-pointer"><span class="material-symbols-outlined text-[16px] text-secondary">folder_open</span><span class="truncate">C:\DocArchive\2025</span></div><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[16px]">folder</span><span class="truncate">C:\HQ_Legal\HWP_Vault</span></div><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[16px]">folder</span><span class="truncate">D:\Presentations\Q1</span></div><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined text-[16px]">folder_shared</span><span class="truncate">네트워크 공유 드라이브 (Z:)</span></div></div><div class="h-px bg-border-subtle my-space-xs"></div><div class="flex items-center justify-between px-space-xs"><span class="font-caption text-caption uppercase font-semibold text-text-secondary">포맷 필터</span><span class="font-code-mono text-code-mono text-text-muted">5개 유형</span></div><div class="flex flex-wrap gap-space-xs"><span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-hwp-bg text-format-hwp-text border border-format-hwp-border">HWP/HWPX</span><span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-docx-bg text-format-docx-text border border-format-docx-border">DOCX</span><span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-xlsx-bg text-format-xlsx-text border border-format-xlsx-border">XLSX</span><span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-pptx-bg text-format-pptx-text border border-format-pptx-border">PPTX</span><span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-pdf-bg text-format-pdf-text border border-format-pdf-border">PDF</span></div></div><div class="p-space-sm bg-surface-container rounded border border-border-subtle"><div class="flex items-center justify-between text-caption font-caption mb-1"><span class="text-text-secondary">보안 격리 상태</span><span class="text-security-dlp-pass font-semibold flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]">verified_user</span>Safe</span></div><p class="font-caption text-caption text-text-muted leading-tight">외부 클라우드 전송이 완전히 차단된 온디바이스 샌드박스입니다.</p></div></aside><div class="w-full pl-64 pb-7"><main class="w-full pt-12 min-h-screen bg-surface-canvas"><div class="flex flex-col w-full">
+<!-- Interactive Style Helpers -->
+<style>
+    .ghost-card { opacity: 0.45; }
+    .drag-hover-zone { background-color: rgba(37, 99, 235, 0.08); }
+    .thumbnail-scroll::-webkit-scrollbar { display: none; }
+  </style>
+<!-- 1. Top Workflow Control Bar (No border, soft shadow, clean tone separation) -->
+<section class="w-full px-gutter pt-space-md pb-space-sm bg-surface-card shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-space-md">
+<!-- Breadcrumb / Workflow Pipeline Title -->
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs text-text-muted font-caption text-caption">
+<span>스마트 파이프라인</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span class="text-text-secondary font-medium">문서 조립 워크스페이스</span>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight truncate">
+            새 보고서 합성 파이프라인 (신규 오피스 생성 / 바이너리 변환)
+          </h1>
+</div>
+</div>
+<!-- Action Cluster: Mode Segment & Template Dropdown -->
+<div class="flex items-center gap-space-md flex-wrap">
+<!-- Segmented Mode Control -->
+<div class="flex items-center p-0.5 rounded-lg bg-surface-container shadow-inner">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-card text-primary font-body-semibold text-body-dense shadow-sm transition-all" id="modeBtnReassembly" type="button">
+<span class="material-symbols-outlined text-[15px] text-secondary">layers</span>
+<span>바이너리 재조합 (오피스 합성)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg text-text-secondary hover:text-primary font-body-dense text-body-dense transition-all" id="modeBtnConverter" type="button">
+<span class="material-symbols-outlined text-[15px]">swap_horiz</span>
+<span>PDF ⇄ 5대 포맷 변환</span>
+</button>
+</div>
+<!-- Master Template Selector -->
+<div class="relative flex items-center">
+<div class="absolute left-3 flex items-center pointer-events-none">
+  <span class="material-symbols-outlined text-[16px] text-secondary">style</span>
+</div>
+<select class="pl-8 pr-12 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer text-text-primary font-body-dense text-body-dense font-medium border border-border-subtle focus:outline-none focus:ring-1 focus:ring-secondary appearance-none">
+  <option value="none">[기본 원본 서식 유지]</option>
+  <option value="pptx-a" selected>[기업 표준 PPTX 템플릿 A - 전략기획실 공통]</option>
+  <option value="word-hwp">[기업 표준 Word/HWP 양식]</option>
+</select>
+<div class="absolute right-2 flex items-center pointer-events-none text-text-muted">
+  <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+</div>
+<!-- Lineage History / Reset Button -->
+<button class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-text-secondary hover:text-primary flex items-center justify-center transition-colors" title="작업 히스토리 복원" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</div>
+<!-- Pre-Flight Smart Notice Banner -->
+<div class="w-full flex items-center justify-between px-space-md py-2 rounded-lg bg-gradient-to-r from-format-hwp-bg via-surface-container-low to-status-local-bg">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-format-docx-text text-[18px] shrink-0">verified</span>
+<p class="font-body-dense text-body-dense text-text-primary truncate">
+<span class="font-body-semibold text-format-docx-text">호환성 사전 점검 완료:</span> 
+          스캔본 비트맵 이미지 감지 2건
+</p>
+<label class="flex items-center gap-1.5 cursor-pointer text-status-local-text bg-status-local-bg/80 hover:bg-status-local-bg px-2 py-0.5 rounded font-body-semibold text-[12px] shadow-sm ml-2 border border-status-local-text/30 transition-colors">
+  <input type="checkbox" checked class="text-status-local-text focus:ring-0 rounded-sm w-3.5 h-3.5 cursor-pointer">
+  <span>Local OCR 적용</span>
+</label>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="px-space-xs py-0.5 rounded bg-surface-card text-text-secondary font-code-mono text-caption shadow-xs">
+          Engine: Tesseract v5 + CoreML v3.2
+        </span>
+<button class="font-caption text-caption text-secondary font-semibold hover:underline flex items-center gap-0.5" type="button">
+          옵션 변경 <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 2. Two-Column Split Workspace -->
+<div class="w-full px-gutter py-space-md grid grid-cols-12 gap-gutter items-start pb-24">
+<!-- LEFT PANEL: Outline Builder (40% on Desktop = 5 Cols) -->
+<section class="col-span-12 lg:col-span-5 flex flex-col gap-space-sm">
+<!-- Section Header Card -->
+<div class="p-space-md rounded-xl bg-surface-card shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">format_list_bulleted</span>
+<div class="flex flex-col">
+<h2 class="font-title-sm text-title-sm font-bold text-primary">합성 목차 및 추출 명세</h2>
+<span class="font-caption text-caption text-text-muted">Outline Tree &amp; Slice Mapping</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-caption text-caption font-semibold flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">library_add</span>
+<span>검색서재 추가</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-caption text-caption font-semibold flex items-center gap-1 shadow-sm transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+<span>목차 노드 추가</span>
+</button>
+</div>
+</div>
+<!-- Outline Draggable Tree Container -->
+<div class="flex flex-col gap-space-sm">
+<!-- Node 1: PPTX Slide Slices -->
+<article class="p-space-md rounded-xl bg-surface-card shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-format-pptx-text"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-secondary cursor-grab pt-0.5 text-[18px]">drag_indicator</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-format-pptx-bg text-format-pptx-text border border-format-pptx-border">PPTX</span>
+<h3 class="font-body-semibold text-body-semibold text-text-primary truncate">I. 2026 AI IDC 인프라 투자 개요</h3>
+</div>
+<div class="flex items-center gap-space-xs mt-1 text-text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[13px] text-text-muted">folder_open</span>
+<span class="truncate max-w-[190px]">2026_ESG_인프라투자계획서.pptx</span>
+<span class="text-border-strong">•</span>
+<span class="font-code-mono text-secondary font-medium">슬라이드 14~16</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<span class="px-space-xs py-0.5 rounded bg-surface-container font-code-mono text-caption font-bold text-text-primary">3 Slides</span>
+<button class="w-7 h-7 rounded hover:bg-surface-container text-text-secondary hover:text-primary flex items-center justify-center" title="슬라이드 미리보기" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-format-pdf-bg text-text-secondary hover:text-format-pdf-text flex items-center justify-center" title="노드 삭제" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Quick Range Config Form Strip -->
+<div class="mt-space-sm pt-space-xs flex items-center justify-between bg-surface-container-low px-space-sm py-1.5 rounded-lg text-caption font-caption">
+<div class="flex items-center gap-space-xs">
+<span class="text-text-muted">추출 범위:</span>
+<input class="w-14 px-1.5 py-0.5 bg-surface-card rounded font-code-mono text-center text-text-primary focus:outline-none focus:ring-1 focus:ring-secondary" type="text" value="14-16"/>
+<span class="text-text-muted text-[10px]">(총 38P 중)</span>
+</div>
+<label class="flex items-center gap-1 cursor-pointer select-none text-text-secondary">
+<input checked="" class="w-3.5 h-3.5 rounded text-secondary focus:ring-0" type="checkbox"/>
+<span>슬라이드 마스터 강제 일치</span>
+</label>
+</div>
+</article>
+<!-- Node 2: PDF Pages with OCR Flag -->
+<article class="p-space-md rounded-xl bg-surface-card shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-format-pdf-text"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-secondary cursor-grab pt-0.5 text-[18px]">drag_indicator</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-format-pdf-bg text-format-pdf-text border border-format-pdf-border">PDF</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-status-local-bg text-status-local-text">OCR 활성</span>
+<h3 class="font-body-semibold text-body-semibold text-text-primary truncate">II. 전력 소비량 및 PUE 효율성 검증</h3>
+</div>
+<div class="flex items-center gap-space-xs mt-1 text-text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[13px] text-text-muted">folder_open</span>
+<span class="truncate max-w-[190px]">2025_4분기_데이터센터_에너지감사보고서.pdf</span>
+<span class="text-border-strong">•</span>
+<span class="font-code-mono text-secondary font-medium">42p ~ 45p</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<span class="px-space-xs py-0.5 rounded bg-surface-container font-code-mono text-caption font-bold text-text-primary">4 Pages</span>
+<button class="w-7 h-7 rounded hover:bg-surface-container text-text-secondary hover:text-primary flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-format-pdf-bg text-text-secondary hover:text-format-pdf-text flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Quick Range Config Form Strip -->
+<div class="mt-space-sm pt-space-xs flex items-center justify-between bg-surface-container-low px-space-sm py-1.5 rounded-lg text-caption font-caption">
+<div class="flex items-center gap-space-xs">
+<span class="text-text-muted">페이지 지정:</span>
+<input class="w-24 px-1.5 py-0.5 bg-surface-card rounded font-code-mono text-center text-text-primary focus:outline-none focus:ring-1 focus:ring-secondary" type="text" value="42, 43, 44, 45"/>
+</div>
+<span class="flex items-center gap-1 text-status-local-text font-medium">
+<span class="material-symbols-outlined text-[14px]">spellcheck</span>
+              벡터 텍스트 + 테이블 객체 추출
+            </span>
+</div>
+</article>
+<!-- Node 3: Excel Table Range Slice -->
+<article class="p-space-md rounded-xl bg-surface-card shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-format-xlsx-text"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-secondary cursor-grab pt-0.5 text-[18px]">drag_indicator</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-format-xlsx-bg text-format-xlsx-text border border-format-xlsx-border">XLSX</span>
+<h3 class="font-body-semibold text-body-semibold text-text-primary truncate">III. 한전 요금 단가 변동 시뮬레이션</h3>
+</div>
+<div class="flex items-center gap-space-xs mt-1 text-text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[13px] text-text-muted">table_view</span>
+<span class="truncate max-w-[170px]">IDC_전력사용단가_비교시뮬레이션_v4.xlsx</span>
+<span class="text-border-strong">•</span>
+<span class="font-code-mono text-format-xlsx-text font-medium">'비용시뮬레이션'!C12:F48</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<span class="px-space-xs py-0.5 rounded bg-format-xlsx-bg text-format-xlsx-text font-code-mono text-caption font-bold">1개 표 개체</span>
+<button class="w-7 h-7 rounded hover:bg-surface-container text-text-secondary hover:text-primary flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-format-pdf-bg text-text-secondary hover:text-format-pdf-text flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Quick Range Config Form Strip -->
+<div class="mt-space-sm pt-space-xs flex items-center justify-between bg-surface-container-low px-space-sm py-1.5 rounded-lg text-caption font-caption">
+<div class="flex items-center gap-space-xs">
+<span class="text-text-muted">시트/셀:</span>
+<span class="font-code-mono text-text-primary font-medium">Sheet1 → C12:F48</span>
+</div>
+<label class="flex items-center gap-1 cursor-pointer select-none text-text-secondary">
+<input checked="" class="w-3.5 h-3.5 rounded text-secondary focus:ring-0" type="checkbox"/>
+<span>수식 보존형 오피스 네이티브 표로 변환</span>
+</label>
+</div>
+</article>
+<!-- Node 4: HWPX Document Fragment -->
+<article class="p-space-md rounded-xl bg-surface-card shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-format-hwp-text"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-secondary cursor-grab pt-0.5 text-[18px]">drag_indicator</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-format-hwp-bg text-format-hwp-text border border-format-hwp-border">HWPX</span>
+<h3 class="font-body-semibold text-body-semibold text-text-primary truncate">IV. 과기정통부 친환경 데이터센터 가이드라인</h3>
+</div>
+<div class="flex items-center gap-space-xs mt-1 text-text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[13px] text-text-muted">article</span>
+<span class="truncate max-w-[170px]">국내외_친환경_데이터센터_가이드라인_검토.hwpx</span>
+<span class="text-border-strong">•</span>
+<span class="font-code-mono text-format-hwp-text font-medium">8p [표 2-1]</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<span class="px-space-xs py-0.5 rounded bg-format-hwp-bg text-format-hwp-text font-code-mono text-caption font-bold">1개 복합 표</span>
+<button class="w-7 h-7 rounded hover:bg-surface-container text-text-secondary hover:text-primary flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-format-pdf-bg text-text-secondary hover:text-format-pdf-text flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Quick Range Config Form Strip -->
+<div class="mt-space-sm pt-space-xs flex items-center justify-between bg-surface-container-low px-space-sm py-1.5 rounded-lg text-caption font-caption">
+<div class="flex items-center gap-space-xs">
+<span class="text-text-muted">요소 태그:</span>
+<span class="font-code-mono bg-surface-card px-1.5 py-0.5 rounded text-text-primary">HWP_TABLE_ID#2041</span>
+</div>
+<span class="text-text-muted">폰트 스타일 자동 치환 (함초롬돋움 → 프리텐다드)</span>
+</div>
+</article>
+<!-- Drop target placeholder zone -->
+<div class="p-space-lg rounded-xl bg-surface-container-low border-2 border-dashed border-border-strong flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[28px] text-secondary mb-1">library_books</span>
+<span class="font-body-semibold text-body-semibold text-primary">파일 서재 또는 검색 결과에서 드래그하여 목차 추가</span>
+<span class="font-caption text-caption text-text-muted mt-0.5">PDF, HWP, HWPX, DOCX, XLSX, PPTX 문서 바이트 슬라이스 지원</span>
+</div>
+</div>
+</section>
+<!-- RIGHT PANEL: Live Preview Grid (60% on Desktop = 7 Cols) -->
+<section class="col-span-12 lg:col-span-7 flex flex-col gap-space-sm">
+<!-- Preview Canvas Controls Header -->
+<div class="p-space-md rounded-xl bg-surface-card shadow-sm flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">grid_view</span>
+<h2 class="font-title-sm text-title-sm font-bold text-primary">실시간 페이지 레이아웃 프리뷰</h2>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container font-code-mono text-caption text-text-secondary">
+            총 9페이지 / 예상 용량 14.2MB
+          </span>
+</div>
+<!-- Zoom & Ordering Tools -->
+<div class="flex items-center gap-space-xs">
+<div class="flex items-center p-0.5 rounded bg-surface-container text-text-secondary">
+<button class="px-2 py-0.5 hover:text-primary font-caption text-caption font-medium" type="button">75%</button>
+<button class="px-2 py-0.5 bg-surface-card rounded shadow-xs text-primary font-caption text-caption font-bold" type="button">100%</button>
+<button class="px-2 py-0.5 hover:text-primary font-caption text-caption font-medium" type="button">Fit</button>
+</div>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-caption text-caption font-semibold flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">auto_fix_high</span>
+<span>페이지 순서 자동 정렬</span>
+</button>
+</div>
+</div>
+<!-- Thumbnails Grid (3 Columns on Desktop, interactive cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-space-md">
+<!-- Card 1: PPTX Slide 14 -->
+<div class="group relative rounded-xl bg-surface-card shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col cursor-move">
+<!-- Thumbnail Header Bar -->
+<div class="px-space-sm py-1.5 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-text-muted">drag_handle</span>
+<span class="font-code-mono text-caption font-bold text-text-primary">#1 (P.1)</span>
+</div>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-format-pptx-bg text-format-pptx-text border border-format-pptx-border">PPTX</span>
+</div>
+<!-- Slide Preview Graphic Mockup -->
+<div class="relative w-full aspect-[16/10] bg-surface-container p-space-sm flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="h-2 w-16 bg-primary rounded"></div>
+<span class="font-code-mono text-[9px] text-text-muted">MASTER A</span>
+</div>
+<!-- Chart Graphic Simulation (Inline SVG under 2KB) -->
+<div class="w-full flex items-end gap-1.5 h-14 pt-2">
+<div class="w-1/4 h-60% bg-secondary rounded-t"></div>
+<div class="w-1/4 h-85% bg-secondary-container rounded-t"></div>
+<div class="w-1/4 h-40% bg-primary rounded-t"></div>
+<div class="w-1/4 h-100% bg-secondary rounded-t"></div>
+</div>
+<div class="text-[9px] font-caption text-text-muted truncate">
+              2026 AI 데이터센터 설비투자 집행계획
+            </div>
+<!-- Overlay Document Lineage Badge -->
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-primary/80 backdrop-blur text-on-primary font-caption text-[9px] tracking-tight">
+              Lineage: 2026_ESG... Slide 14
+            </div>
+</div>
+<!-- Card Footer Metadata -->
+<div class="p-space-xs px-space-sm bg-surface-card flex items-center justify-between text-caption font-caption text-text-muted">
+<span class="truncate">벡터 셰이프 원본 유지</span>
+<span class="text-security-dlp-pass flex items-center gap-0.5 font-medium"><span class="material-symbols-outlined text-[12px]">check_circle</span>정상</span>
+</div>
+</div>
+<!-- Card 2: PPTX Slide 15 -->
+<div class="group relative rounded-xl bg-surface-card shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col cursor-move">
+<div class="px-space-sm py-1.5 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-text-muted">drag_handle</span>
+<span class="font-code-mono text-caption font-bold text-text-primary">#2 (P.2)</span>
+</div>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-format-pptx-bg text-format-pptx-text border border-format-pptx-border">PPTX</span>
+</div>
+<div class="relative w-full aspect-[16/10] bg-surface-container p-space-sm flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="h-2 w-20 bg-secondary rounded"></div>
+<span class="font-code-mono text-[9px] text-text-muted">MASTER A</span>
+</div>
+<!-- 3 Column Cards Inside Slide Mockup -->
+<div class="grid grid-cols-3 gap-1 my-auto">
+<div class="bg-surface-card p-1 rounded shadow-xs flex flex-col gap-0.5">
+<div class="h-1.5 w-6 bg-border-strong rounded"></div>
+<div class="h-1 w-full bg-border-subtle rounded"></div>
+</div>
+<div class="bg-surface-card p-1 rounded shadow-xs flex flex-col gap-0.5">
+<div class="h-1.5 w-6 bg-border-strong rounded"></div>
+<div class="h-1 w-full bg-border-subtle rounded"></div>
+</div>
+<div class="bg-surface-card p-1 rounded shadow-xs flex flex-col gap-0.5">
+<div class="h-1.5 w-6 bg-border-strong rounded"></div>
+<div class="h-1 w-full bg-border-subtle rounded"></div>
+</div>
+</div>
+<div class="text-[9px] font-caption text-text-muted truncate">
+              연간 단계별 GPU 클러스터 증설 타임라인
+            </div>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-primary/80 backdrop-blur text-on-primary font-caption text-[9px]">
+              Lineage: 2026_ESG... Slide 15
+            </div>
+</div>
+<div class="p-space-xs px-space-sm bg-surface-card flex items-center justify-between text-caption font-caption text-text-muted">
+<span class="truncate">글꼴: Inter / Pretendard</span>
+<span class="text-security-dlp-pass flex items-center gap-0.5 font-medium"><span class="material-symbols-outlined text-[12px]">check_circle</span>정상</span>
+</div>
+</div>
+<!-- Card 3: PDF p.42 Converted to Native Office with OCR -->
+<div class="group relative rounded-xl bg-surface-card shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col cursor-move ring-2 ring-secondary/30">
+<div class="px-space-sm py-1.5 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-text-muted">drag_handle</span>
+<span class="font-code-mono text-caption font-bold text-text-primary">#3 (P.3)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-status-local-bg text-status-local-text">OCR 재구성</span>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-format-pdf-bg text-format-pdf-text border border-format-pdf-border">PDF</span>
+</div>
+</div>
+<div class="relative w-full aspect-[16/10] bg-surface-canvas p-space-sm flex flex-col justify-between overflow-hidden">
+<!-- Simulated PDF Document Layout -->
+<div class="space-y-1">
+<div class="h-2 w-28 bg-text-primary rounded"></div>
+<div class="h-1.5 w-full bg-border-strong rounded"></div>
+<div class="h-1.5 w-4/5 bg-border-subtle rounded"></div>
+</div>
+<!-- High density table outline -->
+<div class="bg-surface-card rounded p-1 shadow-xs border border-border-subtle space-y-0.5">
+<div class="h-1.5 bg-surface-container rounded"></div>
+<div class="h-1 bg-border-subtle rounded"></div>
+<div class="h-1 bg-border-subtle rounded"></div>
+</div>
+<div class="text-[9px] font-caption text-text-muted truncate">
+              [발췌] PUE 지수 연도별 감사 및 쿨링 전력
+            </div>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-primary/80 backdrop-blur text-on-primary font-caption text-[9px]">
+              Lineage: 에너지감사보고서.pdf p.42
+            </div>
+</div>
+<div class="p-space-xs px-space-sm bg-surface-card flex items-center justify-between text-caption font-caption text-text-muted">
+<span class="text-secondary font-medium">자동 텍스트 상자화</span>
+<span class="text-security-dlp-pass flex items-center gap-0.5 font-medium"><span class="material-symbols-outlined text-[12px]">verified</span>DLP Safe</span>
+</div>
+</div>
+<!-- Card 4: PDF p.43 -->
+<div class="group relative rounded-xl bg-surface-card shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col cursor-move">
+<div class="px-space-sm py-1.5 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-text-muted">drag_handle</span>
+<span class="font-code-mono text-caption font-bold text-text-primary">#4 (P.4)</span>
+</div>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-format-pdf-bg text-format-pdf-text border border-format-pdf-border">PDF</span>
+</div>
+<div class="relative w-full aspect-[16/10] bg-surface-canvas p-space-sm flex flex-col justify-between overflow-hidden">
+<div class="space-y-1">
+<div class="h-2 w-24 bg-text-primary rounded"></div>
+<div class="grid grid-cols-2 gap-1 pt-1">
+<div class="h-8 bg-surface-container rounded"></div>
+<div class="h-8 bg-surface-container-high rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-text-muted">pie_chart</span>
+</div>
+</div>
+</div>
+<div class="text-[9px] font-caption text-text-muted truncate">
+              [통계] 냉각 수자원 재활용 비율 산출도
+            </div>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-primary/80 backdrop-blur text-on-primary font-caption text-[9px]">
+              Lineage: 에너지감사보고서.pdf p.43
+            </div>
+</div>
+<div class="p-space-xs px-space-sm bg-surface-card flex items-center justify-between text-caption font-caption text-text-muted">
+<span class="truncate">비트맵 차트 → 600DPI 렌더</span>
+<span class="text-security-dlp-pass flex items-center gap-0.5 font-medium"><span class="material-symbols-outlined text-[12px]">check_circle</span>정상</span>
+</div>
+</div>
+<!-- Card 5: XLSX Native Table Insertion -->
+<div class="group relative rounded-xl bg-surface-card shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col cursor-move">
+<div class="px-space-sm py-1.5 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-text-muted">drag_handle</span>
+<span class="font-code-mono text-caption font-bold text-text-primary">#5 (P.5)</span>
+</div>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-format-xlsx-bg text-format-xlsx-text border border-format-xlsx-border">XLSX</span>
+</div>
+<div class="relative w-full aspect-[16/10] bg-surface-container p-space-sm flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-code-mono text-[9px] font-semibold text-format-xlsx-text">수식 연결 표 (Table Object)</span>
+<span class="material-symbols-outlined text-[14px] text-format-xlsx-text">calculate</span>
+</div>
+<!-- Simulated Excel Grid -->
+<div class="bg-surface-card rounded p-1 space-y-0.5 shadow-xs">
+<div class="grid grid-cols-4 gap-0.5 bg-format-xlsx-bg p-0.5 rounded text-[8px] font-code-mono font-bold text-format-xlsx-text">
+<div>구분</div><div>2024</div><div>2025</div><div>2026(E)</div>
+</div>
+<div class="grid grid-cols-4 gap-0.5 text-[7px] font-code-mono text-text-secondary px-0.5">
+<div>산업용(을)</div><div>154.2</div><div>168.9</div><div class="text-secondary font-bold">189.4</div>
+</div>
+<div class="grid grid-cols-4 gap-0.5 text-[7px] font-code-mono text-text-secondary px-0.5">
+<div>누적비용</div><div>12.8억</div><div>15.1억</div><div class="text-secondary font-bold">19.3억</div>
+</div>
+</div>
+<div class="text-[9px] font-caption text-text-muted truncate">
+              비용시뮬레이션 범위 C12:F48
+            </div>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-primary/80 backdrop-blur text-on-primary font-caption text-[9px]">
+              Lineage: 시뮬레이션_v4.xlsx
+            </div>
+</div>
+<div class="p-space-xs px-space-sm bg-surface-card flex items-center justify-between text-caption font-caption text-text-muted">
+<span class="text-format-xlsx-text font-medium">Office Native Table</span>
+<span class="text-security-dlp-pass flex items-center gap-0.5 font-medium"><span class="material-symbols-outlined text-[12px]">check_circle</span>정상</span>
+</div>
+</div>
+<!-- Card 6: Hancom HWPX Table Converted to Office Style -->
+<div class="group relative rounded-xl bg-surface-card shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col cursor-move">
+<div class="px-space-sm py-1.5 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-text-muted">drag_handle</span>
+<span class="font-code-mono text-caption font-bold text-text-primary">#6 (P.6)</span>
+</div>
+<span class="px-space-xs py-0.5 rounded font-badge-label text-badge-label bg-format-hwp-bg text-format-hwp-text border border-format-hwp-border">HWPX</span>
+</div>
+<div class="relative w-full aspect-[16/10] bg-surface-container p-space-sm flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-code-mono text-[9px] font-semibold text-format-hwp-text">한글 표 바이너리 복원</span>
+<span class="material-symbols-outlined text-[14px] text-format-hwp-text">difference</span>
+</div>
+<!-- Hancom cell format simulation -->
+<div class="bg-surface-card rounded p-1 space-y-0.5 shadow-xs border border-border-subtle">
+<div class="bg-format-hwp-bg/50 p-1 text-[8px] font-caption font-bold text-text-primary">
+                [표 2-1] 친환경 IDC 인증 요건 및 등급 기준
+              </div>
+<div class="grid grid-cols-3 gap-0.5 text-[7px] font-caption text-text-secondary px-0.5">
+<div>1등급 (최우수)</div><div>PUE 1.3 이하</div><div>100% RE100</div>
+</div>
+<div class="grid grid-cols-3 gap-0.5 text-[7px] font-caption text-text-secondary px-0.5">
+<div>2등급 (우수)</div><div>PUE 1.5 이하</div><div>50% 매칭</div>
+</div>
+</div>
+<div class="text-[9px] font-caption text-text-muted truncate">
+              HWPX_CELL_STYLE 자동 사상 완료
+            </div>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-primary/80 backdrop-blur text-on-primary font-caption text-[9px]">
+              Lineage: 가이드라인.hwpx p.8
+            </div>
+</div>
+<div class="p-space-xs px-space-sm bg-surface-card flex items-center justify-between text-caption font-caption text-text-muted">
+<span class="text-format-hwp-text font-medium">한글 문단 서식 변환</span>
+<span class="text-security-dlp-pass flex items-center gap-0.5 font-medium"><span class="material-symbols-outlined text-[12px]">check_circle</span>정상</span>
+</div>
+</div>
+</div>
+<!-- Additional Page Expansion Notice Strip -->
+<div class="p-space-md rounded-xl bg-surface-card shadow-sm flex items-center justify-between mt-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-status-local-bg text-status-local-text flex items-center justify-center font-bold">
+            +3
+          </div>
+<div class="flex flex-col">
+<span class="font-body-semibold text-body-semibold text-text-primary">나머지 3개 슬라이드/페이지가 대기열에 있습니다</span>
+<span class="font-caption text-caption text-text-muted">부록 및 서지정보 슬라이드 (P.7 ~ P.9)</span>
+</div>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-caption text-caption font-semibold" type="button">
+          전체 9페이지 펼쳐보기
+        </button>
+</div>
+</section>
+</div>
+<!-- 3. Bottom Floating Action Bar (Anchored above shell footer) -->
+<div class="fixed bottom-7 left-64 right-0 z-40 bg-surface-card/95 backdrop-blur-md shadow-[0_-4px_20px_rgba(0,21,47,0.06)] px-gutter py-2.5 flex items-center justify-between gap-space-md flex-wrap">
+<!-- Output Format Selector Radios -->
+<div class="flex items-center gap-space-md">
+<span class="font-caption text-caption font-bold text-text-secondary uppercase">출력 포맷:</span>
+<div class="flex items-center gap-space-sm">
+<label class="flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-format-pptx-bg text-format-pptx-text font-body-semibold text-body-dense cursor-pointer shadow-xs">
+<input checked="" class="text-format-pptx-text focus:ring-0" name="output_fmt" type="radio"/>
+<span>PPTX (오피스 원본 서식)</span>
+</label>
+<label class="flex items-center gap-1.5 px-space-sm py-1 rounded-lg hover:bg-surface-container text-text-secondary font-body-dense text-body-dense cursor-pointer transition-colors">
+<input class="text-secondary focus:ring-0" name="output_fmt" type="radio"/>
+<span>PDF (인쇄용 단일 문서)</span>
+</label>
+<label class="flex items-center gap-1.5 px-space-sm py-1 rounded-lg hover:bg-surface-container text-text-secondary font-body-dense text-body-dense cursor-pointer transition-colors">
+<input class="text-secondary focus:ring-0" name="output_fmt" type="radio"/>
+<span>DOCX</span>
+</label>
+<label class="flex items-center gap-1.5 px-space-sm py-1 rounded-lg hover:bg-surface-container text-text-secondary font-body-dense text-body-dense cursor-pointer transition-colors">
+<input class="text-secondary focus:ring-0" name="output_fmt" type="radio"/>
+<span>HWPX</span>
+</label>
+</div>
+</div>
+<!-- Output Path Display & Quick Change -->
+<div class="flex items-center gap-space-xs max-w-xl min-w-0 bg-surface-container px-space-sm py-1 rounded-lg">
+<span class="material-symbols-outlined text-[15px] text-text-muted shrink-0">save_as</span>
+<span class="font-code-mono text-caption text-text-primary truncate">
+        D:\Enterprise_Data\2026_전략기획실\Output\2026_AI_IDC_통합보고서_합성본.pptx
+      </span>
+<button class="text-secondary font-caption text-caption font-semibold shrink-0 hover:underline ml-1" type="button">
+        경로 변경
+      </button>
+</div>
+<!-- DLP Status & Primary Execution CTA -->
+<div class="flex items-center gap-space-md shrink-0">
+<div class="flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-status-local-bg text-security-dlp-pass font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[15px]">verified_user</span>
+<span>DLP 보안 검사: 0건 검출 (Safe)</span>
+</div>
+<button class="flex items-center gap-space-xs px-space-lg py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-body-semibold text-body-default shadow-md hover:shadow-lg transition-all active:scale-98" id="executeMergeBtn" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed animate-pulse">bolt</span>
+<span>비파괴 바이너리 병합 실행 (F5)</span>
+</button>
+</div>
+</div>
+<!-- Interactive Client-side Script for Micro-Interactions -->
+<script>
+    (function initWorkspaceInteractions() {
+      // Mode switch micro-interaction
+      const btnReassembly = document.getElementById('modeBtnReassembly');
+      const btnConverter = document.getElementById('modeBtnConverter');
+
+      if (btnReassembly && btnConverter) {
+        btnReassembly.addEventListener('click', () => {
+          btnReassembly.className = "flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-card text-primary font-body-semibold text-body-dense shadow-sm transition-all";
+          btnConverter.className = "flex items-center gap-space-xs px-space-md py-1.5 rounded-lg text-text-secondary hover:text-primary font-body-dense text-body-dense transition-all";
+        });
+
+        btnConverter.addEventListener('click', () => {
+          btnConverter.className = "flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-card text-primary font-body-semibold text-body-dense shadow-sm transition-all";
+          btnReassembly.className = "flex items-center gap-space-xs px-space-md py-1.5 rounded-lg text-text-secondary hover:text-primary font-body-dense text-body-dense transition-all";
+        });
+      }
+
+      // Execute button feedback
+      const execBtn = document.getElementById('executeMergeBtn');
+      if (execBtn) {
+        execBtn.addEventListener('click', () => {
+          const originalHTML = execBtn.innerHTML;
+          execBtn.disabled = true;
+          execBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span>
+            <span>바이너리 합성 조립 중 (78%)...</span>
+          `;
+          setTimeout(() => {
+            execBtn.innerHTML = `
+              <span class="material-symbols-outlined text-[18px] text-status-local-text">check</span>
+              <span>합성 완료! 파일 저장됨</span>
+            `;
+            setTimeout(() => {
+              execBtn.innerHTML = originalHTML;
+              execBtn.disabled = false;
+            }, 2500);
+          }, 1800);
+        });
+      }
+
+      // Keyboard shortcut F5 hook
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'F5' && !e.ctrlKey && !e.metaKey) {
+          e.preventDefault();
+          if (execBtn) execBtn.click();
+        }
+      });
+    })();
+  </script>
+</div></main></div></div><footer class="fixed bottom-0 left-0 right-0 z-50 h-7 bg-surface-card border-t border-border-subtle flex items-center justify-between px-gutter font-caption text-caption"><div class="flex items-center gap-space-md text-text-secondary"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span>진행 중 작업: 로컬 문서 증분 색인 63%</span><span class="font-code-mono text-code-mono text-primary font-medium">[██████████░░░░░░]</span><span class="font-code-mono text-code-mono text-text-muted">(2,418 / 3,840 파일)</span></div><button class="px-space-xs py-0.5 rounded bg-surface-container text-text-secondary hover:text-on-surface hover:bg-border-subtle font-caption text-caption border border-border-subtle" type="button">일시정지</button></div><div class="flex items-center gap-space-md text-text-muted font-code-mono text-code-mono"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[13px] text-text-secondary">memory</span><span>NPU: 42%</span></div><span class="text-border-strong">|</span><div class="flex items-center gap-space-xs"><span>RAM: 18.2GB / 32GB</span></div><span class="text-border-strong">|</span><div class="flex items-center gap-space-xs"><span>Local Engine: Ollama v0.3.14</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-status-danger-text font-medium cursor-pointer hover:underline"><span class="material-symbols-outlined text-[14px]">warning</span><span>손상/암호 오류 목록 (2건)</span></div><div class="h-3 w-px bg-border-subtle"></div><div class="flex items-center gap-space-xs text-status-local-text font-semibold"><span class="material-symbols-outlined text-[14px]">check_circle</span><span>Ready (온디바이스 전용 모드)</span></div></div></footer></body></html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-container": "var(--color-on-primary-container)", "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)", "error-container": "var(--color-error-container)", "surface-container-highest": "var(--color-surface-container-highest)", "on-error": "var(--color-on-error)", "secondary-container": "var(--color-secondary-container)", "text-primary": "var(--color-text-primary)", "surface-container-high": "var(--color-surface-container-high)", "surface-container": "var(--color-surface-container)", "status-local-bg": "var(--color-status-local-bg)", "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)", "format-pptx-bg": "var(--color-format-pptx-bg)", "format-xlsx-border": "var(--color-format-xlsx-border)", "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)", "outline-variant": "var(--color-outline-variant)", "status-cloud-bg": "var(--color-status-cloud-bg)", "primary-container": "var(--color-primary-container)", "primary": "var(--color-primary)", "tertiary-container": "var(--color-tertiary-container)", "on-tertiary": "var(--color-on-tertiary)", "on-background": "var(--color-on-background)", "on-primary": "var(--color-on-primary)", "format-docx-border": "var(--color-format-docx-border)", "border-strong": "var(--color-border-strong)", "format-pptx-border": "var(--color-format-pptx-border)", "surface-card": "var(--color-surface-card)", "on-surface": "var(--color-on-surface)", "on-secondary-container": "var(--color-on-secondary-container)", "status-local-text": "var(--color-status-local-text)", "secondary-fixed": "var(--color-secondary-fixed)", "on-tertiary-container": "var(--color-on-tertiary-container)", "tertiary": "var(--color-tertiary)", "primary-fixed-dim": "var(--color-primary-fixed-dim)", "secondary-fixed-dim": "var(--color-secondary-fixed-dim)", "border-subtle": "var(--color-border-subtle)", "surface-canvas": "var(--color-surface-canvas)", "inverse-on-surface": "var(--color-inverse-on-surface)", "format-xlsx-text": "var(--color-format-xlsx-text)", "status-danger-text": "var(--color-status-danger-text)", "surface": "var(--color-surface)", "text-secondary": "var(--color-text-secondary)", "format-pdf-text": "var(--color-format-pdf-text)", "surface-bright": "var(--color-surface-bright)", "format-pdf-bg": "var(--color-format-pdf-bg)", "on-secondary-fixed": "var(--color-on-secondary-fixed)", "surface-dim": "var(--color-surface-dim)", "format-hwp-border": "var(--color-format-hwp-border)", "format-docx-text": "var(--color-format-docx-text)", "surface-variant": "var(--color-surface-variant)", "diff-added-text": "var(--color-diff-added-text)", "status-danger-bg": "var(--color-status-danger-bg)", "diff-added-bg": "var(--color-diff-added-bg)", "format-pdf-border": "var(--color-format-pdf-border)", "on-primary-fixed": "var(--color-on-primary-fixed)", "surface-container-low": "var(--color-surface-container-low)", "on-error-container": "var(--color-on-error-container)", "background": "var(--color-background)", "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)", "surface-tint": "var(--color-surface-tint)", "diff-removed-bg": "var(--color-diff-removed-bg)", "on-surface-variant": "var(--color-on-surface-variant)", "diff-modified-bg": "var(--color-diff-modified-bg)", "on-secondary": "var(--color-on-secondary)", "security-dlp-breach": "var(--color-security-dlp-breach)", "tertiary-fixed": "var(--color-tertiary-fixed)", "on-tertiary-fixed": "var(--color-on-tertiary-fixed)", "format-xlsx-bg": "var(--color-format-xlsx-bg)", "error": "var(--color-error)", "diff-modified-text": "var(--color-diff-modified-text)", "outline": "var(--color-outline)", "format-docx-bg": "var(--color-format-docx-bg)", "security-dlp-pass": "var(--color-security-dlp-pass)", "status-cloud-text": "var(--color-status-cloud-text)", "diff-removed-text": "var(--color-diff-removed-text)", "format-hwp-text": "var(--color-format-hwp-text)", "primary-fixed": "var(--color-primary-fixed)", "format-hwp-bg": "var(--color-format-hwp-bg)", "inverse-primary": "var(--color-inverse-primary)", "surface-container-lowest": "var(--color-surface-container-lowest)", "format-pptx-text": "var(--color-format-pptx-text)", "secondary": "var(--color-secondary)", "inverse-surface": "var(--color-inverse-surface)", "text-muted": "var(--color-text-muted)"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xl":"1.5rem","space-xs":"0.25rem","space-sm":"0.375rem",gutter:"1rem","space-lg":"1rem","space-md":"0.75rem",margin:"1rem"},fontFamily:{"headline-md":["Inter"],"display-lg":["Inter"],"body-dense":["Inter"],"body-default":["Inter"],"code-mono":["JetBrains Mono"],"title-sm":["Inter"],"badge-label":["Inter"],"body-semibold":["Inter"],"caption":["Inter"]},fontSize:{"headline-md":["18px",{lineHeight:"24px",letterSpacing:"-0.015em",fontWeight:"600"}],"display-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-dense":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"400"}],"body-default":["13px",{lineHeight:"18px",letterSpacing:"-0.005em",fontWeight:"400"}],"code-mono":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"title-sm":["15px",{lineHeight:"20px",letterSpacing:"-0.01em",fontWeight:"600"}],"badge-label":["10px",{lineHeight:"12px",letterSpacing:"0.04em",fontWeight:"700"}],"body-semibold":["13px",{lineHeight:"18px",letterSpacing:"-0.005em",fontWeight:"600"}],"caption":["11px",{lineHeight:"14px",letterSpacing:"0.01em",fontWeight:"500"}]}}}};</script><style>
+:root {
+  --color-on-primary-container: #7a92b7;
+  --color-on-secondary-fixed-variant: #003ea8;
+  --color-error-container: #ffdad6;
+  --color-surface-container-highest: #d3e4fe;
+  --color-on-error: #ffffff;
+  --color-secondary-container: #316bf3;
+  --color-text-primary: #1E293B;
+  --color-surface-container-high: #dce9ff;
+  --color-surface-container: #F1F5F9;
+  --color-status-local-bg: #CCFBF1;
+  --color-tertiary-fixed-dim: #6bd8cb;
+  --color-format-pptx-bg: #FFEDD5;
+  --color-format-xlsx-border: #BBF7D0;
+  --color-on-tertiary-fixed-variant: #005049;
+  --color-outline-variant: #c4c6cf;
+  --color-status-cloud-bg: #FEF3C7;
+  --color-primary-container: #0f2a4a;
+  --color-primary: #00152f;
+  --color-tertiary-container: #00302b;
+  --color-on-tertiary: #ffffff;
+  --color-on-background: #0b1c30;
+  --color-on-primary: #ffffff;
+  --color-format-docx-border: #BFDBFE;
+  --color-border-strong: #CBD5E1;
+  --color-format-pptx-border: #FED7AA;
+  --color-surface-card: #FFFFFF;
+  --color-on-surface: #0b1c30;
+  --color-on-secondary-container: #fefcff;
+  --color-status-local-text: #0D9488;
+  --color-secondary-fixed: #dbe1ff;
+  --color-on-tertiary-container: #29a195;
+  --color-tertiary: #001916;
+  --color-primary-fixed-dim: #b0c8f0;
+  --color-secondary-fixed-dim: #b4c5ff;
+  --color-border-subtle: #E2E8F0;
+  --color-surface-canvas: #F8FAFC;
+  --color-inverse-on-surface: #eaf1ff;
+  --color-format-xlsx-text: #16A34A;
+  --color-status-danger-text: #DC2626;
+  --color-surface: #f8f9ff;
+  --color-text-secondary: #64748B;
+  --color-format-pdf-text: #DC2626;
+  --color-surface-bright: #f8f9ff;
+  --color-format-pdf-bg: #FEE2E2;
+  --color-on-secondary-fixed: #00174b;
+  --color-surface-dim: #cbdbf5;
+  --color-format-hwp-border: #BAE6FD;
+  --color-format-docx-text: #2563EB;
+  --color-surface-variant: #d3e4fe;
+  --color-diff-added-text: #166534;
+  --color-status-danger-bg: #FEE2E2;
+  --color-diff-added-bg: #DCFCE7;
+  --color-format-pdf-border: #FECACA;
+  --color-on-primary-fixed: #001c3a;
+  --color-surface-container-low: #eff4ff;
+  --color-on-error-container: #93000a;
+  --color-background: #f8f9ff;
+  --color-on-primary-fixed-variant: #304869;
+  --color-surface-tint: #485f82;
+  --color-diff-removed-bg: #FEE2E2;
+  --color-on-surface-variant: #43474e;
+  --color-diff-modified-bg: #FEF9C3;
+  --color-on-secondary: #ffffff;
+  --color-security-dlp-breach: #E11D48;
+  --color-tertiary-fixed: #89f5e7;
+  --color-on-tertiary-fixed: #00201d;
+  --color-format-xlsx-bg: #DCFCE7;
+  --color-error: #ba1a1a;
+  --color-diff-modified-text: #854D0E;
+  --color-outline: #74777f;
+  --color-format-docx-bg: #DBEAFE;
+  --color-security-dlp-pass: #059669;
+  --color-status-cloud-text: #D97706;
+  --color-diff-removed-text: #991B1B;
+  --color-format-hwp-text: #0284C7;
+  --color-primary-fixed: #d4e3ff;
+  --color-format-hwp-bg: #E0F2FE;
+  --color-inverse-primary: #b0c8f0;
+  --color-surface-container-lowest: #ffffff;
+  --color-format-pptx-text: #EA580C;
+  --color-secondary: #0051d5;
+  --color-inverse-surface: #213145;
+  --color-text-muted: #94A3B8;
+}
+html.dark {
+  --color-on-primary-container: #eeefff;
+  --color-on-secondary-fixed-variant: #005049;
+  --color-error-container: #93000a;
+  --color-surface-container-highest: #2d3449;
+  --color-on-error: #690005;
+  --color-secondary-container: #005049;
+  --color-text-primary: #F8FAFC;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container: #171f33;
+  --color-status-local-bg: #064E3B;
+  --color-tertiary-fixed-dim: #ffb95f;
+  --color-format-pptx-bg: #431407;
+  --color-format-xlsx-border: #064E3B;
+  --color-on-tertiary-fixed-variant: #653e00;
+  --color-outline-variant: #434655;
+  --color-status-cloud-bg: #78350F;
+  --color-primary-container: #2563eb;
+  --color-primary: #b4c5ff;
+  --color-tertiary-container: #996100;
+  --color-on-tertiary: #472a00;
+  --color-on-background: #dae2fd;
+  --color-on-primary: #002a78;
+  --color-format-docx-border: #1E3A8A;
+  --color-border-strong: #334155;
+  --color-format-pptx-border: #431407;
+  --color-surface-card: #0F172A;
+  --color-on-surface: #dae2fd;
+  --color-on-secondary-container: #00302b;
+  --color-status-local-text: #10B981;
+  --color-secondary-fixed: #89f5e7;
+  --color-on-tertiary-container: #ffeedd;
+  --color-tertiary: #ffb95f;
+  --color-primary-fixed-dim: #b4c5ff;
+  --color-secondary-fixed-dim: #6bd8cb;
+  --color-border-subtle: #1E293B;
+  --color-surface-canvas: #0A0F1D;
+  --color-inverse-on-surface: #283044;
+  --color-format-xlsx-text: #10B981;
+  --color-status-danger-text: #EF4444;
+  --color-surface: #0b1326;
+  --color-text-secondary: #94A3B8;
+  --color-format-pdf-text: #EF4444;
+  --color-surface-bright: #31394d;
+  --color-format-pdf-bg: #450A0A;
+  --color-on-secondary-fixed: #00201d;
+  --color-surface-dim: #0b1326;
+  --color-format-hwp-border: #164E63;
+  --color-format-docx-text: #3B82F6;
+  --color-surface-variant: #2d3449;
+  --color-diff-added-text: #10B981;
+  --color-status-danger-bg: #450A0A;
+  --color-diff-added-bg: #064E3B;
+  --color-format-pdf-border: #450A0A;
+  --color-on-primary-fixed: #00174b;
+  --color-surface-container-low: #131b2e;
+  --color-on-error-container: #ffdad6;
+  --color-background: #0b1326;
+  --color-on-primary-fixed-variant: #003ea8;
+  --color-surface-tint: #b4c5ff;
+  --color-diff-removed-bg: #450A0A;
+  --color-on-surface-variant: #c3c6d7;
+  --color-diff-modified-bg: #451A03;
+  --color-on-secondary: #003732;
+  --color-security-dlp-breach: #E11D48;
+  --color-tertiary-fixed: #ffddb8;
+  --color-on-tertiary-fixed: #2a1700;
+  --color-format-xlsx-bg: #064E3B;
+  --color-error: #ffb4ab;
+  --color-diff-modified-text: #F59E0B;
+  --color-outline: #8d90a0;
+  --color-format-docx-bg: #1E3A8A;
+  --color-security-dlp-pass: #059669;
+  --color-status-cloud-text: #D97706;
+  --color-diff-removed-text: #EF4444;
+  --color-format-hwp-text: #06B6D4;
+  --color-primary-fixed: #dbe1ff;
+  --color-format-hwp-bg: #164E63;
+  --color-inverse-primary: #0053db;
+  --color-surface-container-lowest: #060e20;
+  --color-format-pptx-text: #EA580C;
+  --color-secondary: #6bd8cb;
+  --color-inverse-surface: #dae2fd;
+  --color-text-muted: #64748B;
+}
+</style>
+</head><body class="bg-surface-canvas font-body-default text-body-default text-text-primary antialiased select-none"><header class="fixed top-0 left-0 right-0 h-12 z-50 bg-surface-card border-b border-border-subtle flex items-center justify-between px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="hidden md:flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container border border-border-subtle text-text-secondary cursor-pointer hover:text-text-primary"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-caption text-caption">Ctrl+K</span></div><button class="relative p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-security-dlp-breach"></span></button><button class="p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+<script>
+function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+}
+</script>
+<button onclick="toggleDarkMode()" class="p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors ml-2" title="Toggle Dark Mode">
+    <span class="material-symbols-outlined text-[18px]">dark_mode</span>
+</button>
+<div class="h-4 w-px bg-border-subtle mx-space-xs"></div><div class="flex items-center gap-space-sm cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="hidden lg:inline-block font-body-semibold text-body-semibold text-text-primary">워크스페이스</span></div></div></header>
+
+<aside class="fixed left-0 top-12 bottom-7 w-64 bg-surface-card border-r border-border-subtle z-40 flex flex-col justify-between overflow-y-auto"><div class="p-space-md"><div class="flex items-center justify-between mb-space-sm px-1"><span class="font-caption text-caption uppercase text-text-secondary font-semibold">내 로컬 라이브러리</span><button class="text-text-secondary hover:text-text-primary"><span class="material-symbols-outlined text-[16px]">create_new_folder</span></button></div><div class="flex flex-col gap-0.5 mb-space-lg"><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">folder</span><span class="truncate font-code-mono text-code-mono">C:\DocArchive\2025</span></div><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">lock</span><span class="truncate font-code-mono text-code-mono">C:\HQ_Legal\HWP_Vault</span></div><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">folder</span><span class="truncate font-code-mono text-code-mono">D:\Presentations\Q1</span></div><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">cloud</span><span class="truncate font-code-mono text-code-mono">네트워크 공유 드라이브 (Z:)</span></div></div><div class="mb-space-md px-1"><div class="font-caption text-caption uppercase text-text-secondary font-semibold mb-space-sm">포맷 필터</div><div class="flex flex-wrap gap-1.5"><span class="h-[18px] px-1.5 rounded border border-format-hwp-border bg-format-hwp-bg text-format-hwp-text font-badge-label text-badge-label flex items-center cursor-pointer">HWP/HWPX</span><span class="h-[18px] px-1.5 rounded border border-format-docx-border bg-format-docx-bg text-format-docx-text font-badge-label text-badge-label flex items-center cursor-pointer">DOCX</span><span class="h-[18px] px-1.5 rounded border border-format-xlsx-border bg-format-xlsx-bg text-format-xlsx-text font-badge-label text-badge-label flex items-center cursor-pointer">XLSX</span><span class="h-[18px] px-1.5 rounded border border-format-pptx-border bg-format-pptx-bg text-format-pptx-text font-badge-label text-badge-label flex items-center cursor-pointer">PPTX</span><span class="h-[18px] px-1.5 rounded border border-format-pdf-border bg-format-pdf-bg text-format-pdf-text font-badge-label text-badge-label flex items-center cursor-pointer">PDF</span></div></div></div><div class="p-space-md border-t border-border-subtle bg-surface-canvas/50"><div class="p-space-sm rounded bg-surface-card border border-border-subtle"><div class="flex items-center gap-1.5 mb-1"><span class="material-symbols-outlined text-[16px] text-security-dlp-pass">verified_user</span><span class="font-caption text-caption font-semibold text-text-primary">보안 격리 상태 Safe</span></div><p class="font-caption text-caption text-text-secondary leading-tight">외부 클라우드 전송이 완전히 차단된 온디바이스 샌드박스입니다.</p></div></div></aside><div class="pl-64 pb-7"><main class="w-full pt-12 min-h-screen bg-surface-canvas"><div class="flex flex-col w-full">
+<!-- Ribbon Toolbar Emulation Container (MS Word / Hancom Integrated Ribbon) -->
+<div class="w-full bg-surface-card shadow-sm select-none">
+<!-- Quick Access Title Bar -->
+<div class="w-full h-8 px-space-md bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-[15px] text-format-docx-text">description</span>
+<span class="font-code-mono text-code-mono font-medium text-text-primary truncate">2026년도 클라우드 AI 인프라 구축 추진안_v4.2.docx</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-card text-text-secondary font-badge-label text-badge-label shadow-sm">자동 저장됨</span>
+<span class="hidden sm:inline-flex px-1.5 py-0.5 rounded bg-status-local-bg text-status-local-text font-badge-label text-badge-label">Local Sandbox Validated</span>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="w-6 h-6 rounded flex items-center justify-center text-text-secondary hover:bg-surface-card hover:text-text-primary transition-colors">
+<span class="material-symbols-outlined text-[14px]">undo</span>
+</button>
+<button class="w-6 h-6 rounded flex items-center justify-center text-text-secondary hover:bg-surface-card hover:text-text-primary transition-colors">
+<span class="material-symbols-outlined text-[14px]">redo</span>
+</button>
+<div class="w-px h-3.5 bg-border-subtle mx-1"></div>
+<button class="w-6 h-6 rounded flex items-center justify-center text-text-secondary hover:bg-surface-card">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+</button>
+<button class="w-6 h-6 rounded flex items-center justify-center text-text-secondary hover:bg-surface-card">
+<span class="material-symbols-outlined text-[14px]">crop_square</span>
+</button>
+</div>
+</div>
+<!-- Office Ribbon Tab Header -->
+<div class="w-full px-space-md bg-surface-card flex items-center gap-0.5">
+<button class="px-3 py-1.5 text-text-secondary font-body-dense text-body-dense hover:text-text-primary transition-colors">홈</button>
+<button class="px-3 py-1.5 text-text-secondary font-body-dense text-body-dense hover:text-text-primary transition-colors">삽입</button>
+<button class="px-3 py-1.5 text-text-secondary font-body-dense text-body-dense hover:text-text-primary transition-colors">페이지 레이아웃</button>
+<button class="px-3 py-1.5 text-text-secondary font-body-dense text-body-dense hover:text-text-primary transition-colors">참조</button>
+<button class="px-3 py-1.5 text-text-secondary font-body-dense text-body-dense hover:text-text-primary transition-colors">검토</button>
+<button class="px-3 py-1.5 text-text-secondary font-body-dense text-body-dense hover:text-text-primary transition-colors">보기</button>
+<!-- Custom Highlighted In-App Plugin Ribbon Tab -->
+<button class="relative px-3.5 py-1.5 bg-primary-container text-white font-body-semibold text-body-dense rounded-t flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary-fixed">rocket_launch</span>
+<span>DocPilot Studio</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-pulse"></span>
+</button>
+<button class="px-3 py-1.5 text-text-secondary font-body-dense text-body-dense hover:text-text-primary transition-colors">도움말</button>
+</div>
+<!-- DocPilot Custom Ribbon Actions Group -->
+<div class="w-full px-space-md py-2 bg-surface-container-low flex items-center justify-between gap-space-lg overflow-x-auto">
+<div class="flex items-center gap-space-md shrink-0">
+<!-- Group 1: Search & Retrieval -->
+<div class="flex items-center gap-1.5 bg-surface-card px-2.5 py-1.5 rounded shadow-sm">
+<button class="flex flex-col items-center justify-center px-2 py-1 rounded hover:bg-surface-container transition-colors group" id="btnRibbonSearch">
+<span class="material-symbols-outlined text-[20px] text-secondary group-hover:scale-105 transition-transform">travel_explore</span>
+<span class="font-caption text-caption text-text-primary font-semibold mt-0.5">통합 검색</span>
+<span class="font-code-mono text-[9px] text-text-secondary">Alt+S</span>
+</button>
+<div class="w-px h-8 bg-surface-container"></div>
+<button class="flex flex-col items-center justify-center px-2 py-1 rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px] text-text-secondary">history_edu</span>
+<span class="font-caption text-caption text-text-primary font-semibold mt-0.5">단락 불러오기</span>
+<span class="font-code-mono text-[9px] text-text-secondary">기존 보고서</span>
+</button>
+<button class="flex flex-col items-center justify-center px-2 py-1 rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px] text-format-xlsx-text">table_chart</span>
+<span class="font-caption text-caption text-text-primary font-semibold mt-0.5">바이너리 삽입</span>
+<span class="font-code-mono text-[9px] text-text-secondary">표/차트 추출</span>
+</button>
+</div>
+<!-- Group 2: Comparison & Governance -->
+<div class="flex items-center gap-1.5 bg-surface-card px-2.5 py-1.5 rounded shadow-sm">
+<button class="flex flex-col items-center justify-center px-2 py-1 rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px] text-diff-modified-text">difference</span>
+<span class="font-caption text-caption text-text-primary font-semibold mt-0.5">라인 Diff 비교</span>
+<span class="font-code-mono text-[9px] text-text-secondary">초안 대조</span>
+</button>
+<button class="flex flex-col items-center justify-center px-2 py-1 rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px] text-security-dlp-pass">shield_person</span>
+<span class="font-caption text-caption text-text-primary font-semibold mt-0.5">DLP 실시간 검사</span>
+<span class="font-code-mono text-[9px] text-security-dlp-pass">0건 검출 (Safe)</span>
+</button>
+</div>
+<!-- Group 3: Add-In Automation Preset -->
+<div class="hidden xl:flex items-center gap-1.5 bg-surface-card px-2.5 py-1.5 rounded shadow-sm">
+<button class="flex flex-col items-center justify-center px-2 py-1 rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px] text-text-secondary">translate</span>
+<span class="font-caption text-caption text-text-primary font-semibold mt-0.5">전문 인-라인 번역</span>
+<span class="font-code-mono text-[9px] text-text-secondary">Ko-En Dual</span>
+</button>
+<button class="flex flex-col items-center justify-center px-2 py-1 rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px] text-text-secondary">fact_check</span>
+<span class="font-caption text-caption text-text-primary font-semibold mt-0.5">기술 규격 감사</span>
+<span class="font-code-mono text-[9px] text-text-secondary">K-Gov 통과</span>
+</button>
+</div>
+</div>
+<!-- Hardware Accelerator & Sync Status Tag -->
+<div class="flex items-center gap-2 bg-surface-card px-3 py-1.5 rounded shadow-sm shrink-0">
+<span class="w-2 h-2 rounded-full bg-status-local-text animate-ping"></span>
+<div class="flex flex-col">
+<span class="font-caption text-caption font-semibold text-status-local-text flex items-center gap-1">
+            온디바이스 NPU 가속기 연결됨
+            <span class="material-symbols-outlined text-[13px]">bolt</span>
+</span>
+<span class="font-code-mono text-[10px] text-text-secondary leading-none">Latency: 14ms | Local Only</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Workstation Layout (Split Canvas + Docked Task Pane) -->
+<div class="w-full flex flex-col lg:flex-row min-h-[calc(100vh-148px)] p-space-md gap-space-md">
+<!-- LEFT 65%: Authentic Live Document Viewport -->
+<div class="flex-1 lg:w-[65%] flex flex-col items-center bg-surface-canvas rounded-lg overflow-y-auto">
+<!-- Document Ruler & Page Margins Utility -->
+<div class="w-full max-w-[840px] px-8 py-1.5 flex items-center justify-between text-text-secondary font-code-mono text-[10px] opacity-80 select-none">
+<div class="flex items-center gap-2">
+<span>A4 (210 × 297 mm)</span>
+<span>•</span>
+<span>상하좌우 여백 20.0mm</span>
+</div>
+<div class="flex items-center gap-3">
+<span>배율: 125%</span>
+<span>3 / 18 페이지</span>
+<span class="px-1.5 py-0.5 bg-surface-container text-text-primary rounded">단어수: 4,892</span>
+</div>
+</div>
+<!-- Paper Sheet Page (Realistic Visual Card Layout) -->
+<div class="w-full max-w-[840px] bg-surface-card rounded-md shadow-md p-10 sm:p-14 my-2 flex flex-col relative">
+<!-- Header Note of Active Document -->
+<div class="flex items-center justify-between pb-6 mb-6 bg-gradient-to-r from-surface-container-high/30 to-transparent p-3 rounded">
+<div class="flex items-center gap-2">
+<span class="h-[18px] px-1.5 rounded border border-format-docx-border bg-format-docx-bg text-format-docx-text font-badge-label text-badge-label flex items-center">DOCX 2026 규격</span>
+<span class="font-caption text-caption text-text-secondary">기안 부서: 인프라기획본부 데이터플랫폼개발팀</span>
+</div>
+<span class="font-caption text-caption text-text-muted">보안등급: 대외비 (Grade II)</span>
+</div>
+<!-- Document Content Body -->
+<article class="space-y-6 text-text-primary font-body-default leading-relaxed">
+<div class="space-y-2">
+<span class="font-code-mono text-body-dense text-secondary font-semibold">SECTION 03</span>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">3. 차세대 인공지능 하이퍼스케일 IDC 전력 최적화 계획</h1>
+<p class="text-text-secondary text-body-default">
+              본 문서는 2026년도 AI 연구개발 클러스터 고도화를 위한 저전력 수냉식 랙 인프라 도입 방안을 확정하고, 단계별 총소유비용(TCO) 절감 방안을 수립하는 것을 목적으로 한다.
+            </p>
+</div>
+<div class="space-y-3">
+<h2 class="font-title-sm text-title-sm text-text-primary flex items-center gap-2">
+<span class="w-1.5 h-4 bg-primary-container rounded-full"></span>
+              3.1 인프라 전력 용량 산출 근거
+            </h2>
+<p class="text-text-secondary text-body-default">
+              기존 공랭식 전산실의 경우 최대 전력 밀도가 랙당 12kW에 불과하여 고성능 GPU(B200 / H200 등) 노드 집적에 물리적 한계가 상존한다. 직접 액체 냉각(Direct Liquid Cooling, DLC) 방식 적용을 통해 전력 사용 효율성을 획기적으로 개선하여야 한다.
+            </p>
+</div>
+<!-- Active Context Section with Cursor Position -->
+<div class="p-4 rounded-lg bg-surface-container-low relative">
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-title-sm text-title-sm text-primary flex items-center gap-2">
+<span class="w-1.5 h-4 bg-secondary rounded-full"></span>
+                3.2 에너지 효율성 검증 및 PUE 산출 지표
+              </h2>
+<span class="px-2 py-0.5 rounded bg-status-local-bg text-status-local-text font-caption text-caption font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-local-text"></span>
+                커서 위치 감지됨
+              </span>
+</div>
+<p class="text-text-primary font-body-default">
+              동남권 제2 데이터센터 도입 시 예상되는 연간 전력효율지수(PUE, Power Usage Effectiveness) 목표치는 글로벌 최상위 레벨인 1.15 이하를 지향한다. 이를 달성하기 위한 연간 기온 분포별 하이브리드 냉각 모드 전환 설계치는 다음과 같이 산정된다.
+            </p>
+<!-- DocPilot Context Prompt Inline Injection Placeholder -->
+<div class="mt-4 p-4 rounded bg-surface-card shadow-sm flex flex-col gap-2 transition-all" id="injectionTargetArea">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+</span>
+<span class="font-body-semibold text-body-dense text-secondary">DocPilot 추천 블록 삽입 대기 중...</span>
+</div>
+<span class="font-code-mono text-[11px] text-text-secondary">[F2 키 또는 사이드바 '삽입' 클릭]</span>
+</div>
+<!-- Ghost Skeleton of Proposed Table (Preview of Insertion) -->
+<div class="p-3 bg-surface-container rounded flex flex-col gap-2 opacity-75">
+<div class="flex items-center justify-between text-caption font-caption text-text-secondary">
+<span>추천 데이터: '2025_ESG_인프라투자계획서_최종' Slide 14 PUE 지표</span>
+<span class="text-format-xlsx-text font-semibold">+연간 71.4억원 절감 수치 포함</span>
+</div>
+<div class="grid grid-cols-4 gap-2 text-[11px] font-code-mono text-text-secondary pt-1">
+<div class="bg-surface-card p-1.5 rounded text-center">구분: 외기냉방+칠러</div>
+<div class="bg-surface-card p-1.5 rounded text-center">현재 PUE: 1.48</div>
+<div class="bg-surface-card p-1.5 rounded text-center font-bold text-diff-added-text">목표 PUE: 1.14 (-23%)</div>
+<div class="bg-surface-card p-1.5 rounded text-center font-semibold text-secondary">연간 절감: 7,140백만원</div>
+</div>
+</div>
+</div>
+<!-- Follow-up paragraph text -->
+<p class="text-text-secondary text-body-dense mt-4 leading-normal">
+              상기 산출 지표는 산업통상자원부 산하 한국에너지공단의 고효율 에너지기자재 인증 기준을 준수하였으며, 외부 대기 온도가 22°C 이하로 떨어지는 10월부터 이듬해 4월까지는 프리쿨링(Free-cooling) 바이패스 밸브를 완전 개방하여 압축기 운전 전력을 90% 이상 삭감한다.
+            </p>
+</div>
+<!-- Section 3.3 preview -->
+<div class="space-y-3 opacity-60">
+<h2 class="font-title-sm text-title-sm text-text-primary flex items-center gap-2">
+<span class="w-1.5 h-4 bg-border-strong rounded-full"></span>
+              3.3 단계별 CAPEX / OPEX 재무 모형
+            </h2>
+<p class="text-text-secondary text-body-default">
+              초기 설비 투자액은 전년 대비 약 18.4% 상승하나, 연간 전력비용 및 유지관리 비용 절감을 통해 투자회수기간(Payback Period)을 3.2년 이내로 단축할 수 있을 것으로 분석되었다...
+            </p>
+</div>
+</article>
+<!-- Document Footer Simulation -->
+<div class="mt-12 pt-4 flex items-center justify-between text-text-muted font-caption text-caption">
+<span>DocPilot In-App Bridge Native v3.2</span>
+<span>페이지 3 / 총 18 페이지</span>
+</div>
+</div>
+</div>
+<!-- RIGHT 35%: Docked DocPilot Sidebar Panel (Persistent Task Pane) -->
+<aside class="w-full lg:w-[35%] flex flex-col bg-surface-card rounded-lg shadow-md overflow-hidden">
+<!-- Task Pane Header -->
+<div class="p-3.5 bg-primary-container text-white flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px] text-tertiary-fixed">smart_toy</span>
+</div>
+<div>
+<h3 class="font-body-semibold text-body-default text-white flex items-center gap-1.5">
+              DocPilot Copilot
+              <span class="px-1.5 py-0.2 rounded bg-tertiary-container text-tertiary-fixed font-badge-label text-[9px]">V3.2 TASKPANE</span>
+</h3>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-primary-container">
+<button class="p-1 rounded hover:bg-primary hover:text-white transition-colors" title="패널 고정">
+<span class="material-symbols-outlined text-[16px]">push_pin</span>
+</button>
+<button class="p-1 rounded hover:bg-primary hover:text-white transition-colors" title="새로고침">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+</button>
+<button class="p-1 rounded hover:bg-primary hover:text-white transition-colors" title="최소화">
+<span class="material-symbols-outlined text-[16px]">dock_to_right</span>
+</button>
+</div>
+</div>
+<!-- Natural Language Semantic Search Prompt in Task Pane -->
+<div class="p-3.5 bg-surface-container flex flex-col gap-2.5">
+<div class="relative w-full">
+<input class="w-full h-9 pl-9 pr-8 bg-surface-card text-text-primary font-body-default text-body-default rounded focus:outline-none shadow-sm focus:ring-1 focus:ring-secondary transition-all" id="taskpaneSearchInput" placeholder="자연어 질의 또는 관련 사내 보고서 검색..." type="text" value="작년 PUE 실적표 및 절감액"/>
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-text-secondary text-[18px]">search</span>
+<button class="absolute right-2.5 top-2 text-text-muted hover:text-text-primary">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+</button>
+</div>
+<!-- Filter Chips in Dock -->
+<div class="flex items-center gap-1.5 overflow-x-auto text-[11px] font-caption py-0.5">
+<button class="px-2 py-0.5 rounded-full bg-secondary text-white font-medium shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">auto_awesome</span>추천 스니펫 3건
+          </button>
+<button class="px-2 py-0.5 rounded-full bg-surface-card text-text-secondary hover:text-text-primary shrink-0">
+            표/도표 객체
+          </button>
+<button class="px-2 py-0.5 rounded-full bg-surface-card text-text-secondary hover:text-text-primary shrink-0">
+            결재 완료본만
+          </button>
+</div>
+</div>
+<!-- Scrollable Recommended Assets & AI Blocks List -->
+<div class="flex-1 p-3.5 space-y-3.5 overflow-y-auto bg-surface-canvas">
+<!-- Banner Card 0: DLP Pre-Check Alert (Item 3 in Spec) -->
+<div class="p-3 bg-surface-card rounded shadow-sm flex items-start gap-2.5">
+<div class="w-7 h-7 rounded-full bg-status-local-bg flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-security-dlp-pass">verified_user</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-body-semibold text-body-dense text-text-primary">DLP 실시간 기밀 검사 통과</span>
+<span class="h-[16px] px-1.5 rounded bg-status-local-bg text-security-dlp-pass font-badge-label text-[9px] uppercase font-bold">Safe</span>
+</div>
+<p class="font-caption text-caption text-text-secondary mt-0.5">
+              현재 작성 중인 섹션 내 PII 감지: 주민등록번호 <strong class="text-text-primary">0건</strong>, 계좌번호 <strong class="text-text-primary">0건</strong>, 고객정보 <strong class="text-text-primary">0건</strong> (공공/금융 보안 가이드 충족)
+            </p>
+</div>
+</div>
+<!-- Recommended Asset Card 1: Slide Table Object (F2 Quick Insert) -->
+<div class="p-3.5 bg-surface-card rounded shadow-sm flex flex-col gap-2.5 hover:shadow-md transition-shadow group">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="h-[18px] px-1.5 rounded border border-format-pptx-border bg-format-pptx-bg text-format-pptx-text font-badge-label text-badge-label flex items-center shrink-0">PPTX 슬라이드</span>
+<span class="font-body-semibold text-body-dense text-text-primary truncate">2025_ESG_인프라투자계획서_최종.pptx</span>
+</div>
+<span class="font-code-mono text-[10px] text-text-muted shrink-0">Slide 14</span>
+</div>
+<!-- Snippet Preview Table -->
+<div class="bg-surface-container rounded p-2 overflow-x-auto text-[11px] font-body-dense">
+<div class="text-[10px] font-code-mono text-text-secondary mb-1 flex items-center justify-between">
+<span>[표 객체 미리보기: 냉각 모드별 PUE 및 전력비 비교]</span>
+<span class="text-format-xlsx-text font-bold">일치율 98.4%</span>
+</div>
+<table class="w-full text-left bg-surface-card rounded overflow-hidden">
+<thead class="bg-surface-container-high text-text-secondary text-[10px]">
+<tr>
+<th class="p-1.5">인프라 구분</th>
+<th class="p-1.5">기존 공랭식</th>
+<th class="p-1.5">DLC 수냉 도입안</th>
+<th class="p-1.5">절감 효과</th>
+</tr>
+</thead>
+<tbody class="text-text-primary font-code-mono text-[10px]">
+<tr class="hover:bg-surface-container">
+<td class="p-1.5 font-medium">연평균 PUE</td>
+<td class="p-1.5 text-text-secondary">1.48</td>
+<td class="p-1.5 text-secondary font-bold">1.14</td>
+<td class="p-1.5 text-diff-added-text bg-diff-added-bg font-bold">▲ 22.9% 향상</td>
+</tr>
+<tr class="hover:bg-surface-container">
+<td class="p-1.5 font-medium">연간 전력비</td>
+<td class="p-1.5 text-text-secondary">312.4억</td>
+<td class="p-1.5 text-secondary font-bold">241.0억</td>
+<td class="p-1.5 text-diff-added-text bg-diff-added-bg font-bold">-71.4억원/년</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Action Buttons for Card 1 -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 h-8 px-3 rounded bg-primary-container text-white hover:bg-primary font-body-semibold text-body-dense flex items-center justify-center gap-1.5 shadow-sm transition-colors" id="btnInsertTable">
+<span class="material-symbols-outlined text-[15px]">post_add</span>
+<span>현재 커서 위치에 표 서식 유지 삽입 (F2)</span>
+</button>
+<button class="h-8 px-2.5 rounded bg-surface-container text-text-primary hover:bg-surface-container-high font-body-dense text-body-dense flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[15px] text-text-secondary">format_quote</span>
+<span>각주 추가</span>
+</button>
+</div>
+</div>
+<!-- Recommended Asset Card 2: PDF Audit Report Section -->
+<div class="p-3.5 bg-surface-card rounded shadow-sm flex flex-col gap-2.5 hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="h-[18px] px-1.5 rounded border border-format-pdf-border bg-format-pdf-bg text-format-pdf-text font-badge-label text-badge-label flex items-center shrink-0">PDF 감사보고서</span>
+<span class="font-body-semibold text-body-dense text-text-primary truncate">2025_4분기_데이터센터_에너지감사보고서.pdf</span>
+</div>
+<span class="font-code-mono text-[10px] text-text-muted shrink-0">p.42 제3절</span>
+</div>
+<!-- Snippet Paragraph Quote -->
+<div class="p-2.5 bg-surface-container rounded text-text-primary font-body-default text-body-dense relative">
+<span class="material-symbols-outlined absolute right-2 top-2 text-border-strong text-[18px] opacity-40">format_quote</span>
+<p class="leading-relaxed pr-5">
+              "...외기 냉방 복합 칠러 도입 시 <span class="bg-diff-modified-bg text-diff-modified-text px-1 font-semibold">연간 전력비 71.4억원 절감</span>이 가능함을 교차 실측하였으며, 탄소배출권(K-ETS) 환산 가치는 연간 14.8억원 추가 익익으로 반영할 수 있다..."
+            </p>
+</div>
+<!-- Metadata Tag Row -->
+<div class="flex items-center justify-between text-caption font-caption text-text-secondary">
+<span>출처: 공인감사기관 (주)K-에너지엔지니어링</span>
+<span class="text-secondary font-code-mono font-medium">검증신뢰도: 99.8%</span>
+</div>
+<!-- Action Buttons for Card 2 -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 h-8 px-3 rounded bg-surface-container text-text-primary hover:bg-surface-container-high font-body-semibold text-body-dense flex items-center justify-center gap-1.5 transition-colors" id="btnCopyQuote">
+<span class="material-symbols-outlined text-[15px] text-text-secondary">content_copy</span>
+<span>단락 인용구로 복사</span>
+</button>
+<button class="h-8 px-3 rounded bg-surface-container text-text-primary hover:bg-surface-container-high font-body-dense text-body-dense flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[15px] text-diff-modified-text">difference</span>
+<span>문서 Diff 비교</span>
+</button>
+</div>
+</div>
+<!-- Recommended Asset Card 3: Previous HWP Draft Cross-reference -->
+<div class="p-3.5 bg-surface-card rounded shadow-sm flex flex-col gap-2.5 hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="h-[18px] px-1.5 rounded border border-format-hwp-border bg-format-hwp-bg text-format-hwp-text font-badge-label text-badge-label flex items-center shrink-0">HWP 기안서</span>
+<span class="font-body-semibold text-body-dense text-text-primary truncate">2025_친환경_클라우드구축_의결안.hwp</span>
+</div>
+<span class="font-code-mono text-[10px] text-text-muted shrink-0">결재완료</span>
+</div>
+<p class="font-caption text-caption text-text-secondary">
+            이사회 의결 문안: <em>"PUE 1.15를 상회하는 설비 투자에 대해서는 차년도 성과급 연동 지표(KPI)에 감점 조항을 둔다."</em>
+</p>
+<div class="flex items-center justify-end gap-2">
+<button class="text-caption font-caption text-secondary hover:underline flex items-center gap-0.5">
+<span>원본 조항 전체 열람</span>
+<span class="material-symbols-outlined text-[13px]">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Task Pane Quick Action Footer -->
+<div class="p-3 bg-surface-card border-t border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[15px] text-status-local-text">memory</span>
+<span>로컬 인덱스 동기화 완료됨</span>
+</div>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-text-primary font-caption text-caption flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span>프롬프트 설정</span>
+</button>
+</div>
+</aside>
+</div>
+<!-- Inline Micro-interaction Script -->
+<script>
+    (function initOfficePluginInteractions() {
+      const btnInsertTable = document.getElementById('btnInsertTable');
+      const targetArea = document.getElementById('injectionTargetArea');
+      const btnCopyQuote = document.getElementById('btnCopyQuote');
+      const searchInput = document.getElementById('taskpaneSearchInput');
+
+      if (btnInsertTable && targetArea) {
+        btnInsertTable.addEventListener('click', () => {
+          // Replace ghost placeholder with fully styled integrated table
+          targetArea.innerHTML = `
+            <div class="p-3 bg-diff-added-bg rounded flex flex-col gap-2 transition-all duration-300">
+              <div class="flex items-center justify-between text-caption font-caption text-diff-added-text">
+                <span class="font-semibold flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[15px]">check_circle</span>
+                  [표 3-2] 냉각 방식별 PUE 및 경제성 비교 (DOCX 정규 표 스타일 적용 완료)
+                </span>
+                <span class="font-code-mono text-[10px]">출처: 2025_ESG_인프라투자계획서 (Slide 14)</span>
+              </div>
+              <table class="w-full text-left bg-surface-card rounded overflow-hidden shadow-sm">
+                <thead class="bg-primary-container text-white font-caption text-caption">
+                  <tr>
+                    <th class="p-2">항목</th>
+                    <th class="p-2">기존 공랭식 전산동</th>
+                    <th class="p-2">2026 차세대 수냉식 (DLC)</th>
+                    <th class="p-2">변동폭 (비고)</th>
+                  </tr>
+                </thead>
+                <tbody class="text-body-dense font-code-mono text-text-primary">
+                  <tr class="bg-surface-card">
+                    <td class="p-2 font-medium">연평균 PUE 지표</td>
+                    <td class="p-2 text-text-secondary">1.48</td>
+                    <td class="p-2 font-bold text-secondary">1.14</td>
+                    <td class="p-2 font-bold text-diff-added-text bg-diff-added-bg">▲ 22.9% 향상 (최적 기준)</td>
+                  </tr>
+                  <tr class="bg-surface-container-low">
+                    <td class="p-2 font-medium">연간 전력비용</td>
+                    <td class="p-2 text-text-secondary">312.4 억원</td>
+                    <td class="p-2 font-bold text-secondary">241.0 억원</td>
+                    <td class="p-2 font-bold text-diff-added-text bg-diff-added-bg">-71.4억원 절감 / 년</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="flex justify-between items-center text-[10px] text-text-secondary font-code-mono px-1">
+                <span>* 각주 1) 2025_4분기_데이터센터_에너지감사보고서 p.42 교차 검증 적용</span>
+                <span class="text-status-local-text font-semibold">서식 무결성 유지됨</span>
+              </div>
+            </div>
+          `;
+          btnInsertTable.disabled = true;
+          btnInsertTable.classList.add('opacity-50', 'cursor-not-allowed');
+          btnInsertTable.innerHTML = `<span class="material-symbols-outlined text-[15px]">done</span><span>문서 본문에 성공적으로 삽입됨</span>`;
+        });
+
+        // Hotkey shortcut F2 support inside document
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'F2') {
+            e.preventDefault();
+            btnInsertTable.click();
+          }
+        });
+      }
+
+      if (btnCopyQuote) {
+        btnCopyQuote.addEventListener('click', () => {
+          const originalText = btnCopyQuote.innerHTML;
+          btnCopyQuote.innerHTML = `<span class="material-symbols-outlined text-[15px] text-security-dlp-pass">done</span><span>클립보드 복사 완료</span>`;
+          setTimeout(() => {
+            btnCopyQuote.innerHTML = originalText;
+          }, 2000);
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('focus', () => {
+          searchInput.select();
+        });
+      }
+    })();
+  </script>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-7 z-50 bg-primary-container text-white px-space-md flex items-center justify-between font-caption text-caption border-t border-primary/20"><div class="flex items-center gap-space-lg overflow-hidden"><div class="flex items-center gap-1.5 truncate"><span class="material-symbols-outlined text-[14px] text-tertiary-fixed">sync</span><span>진행 중 작업: 로컬 문서 증분 색인 63%</span><button class="underline text-on-primary-container hover:text-white ml-1">[일시정지]</button></div><div class="hidden md:flex items-center gap-space-md text-on-primary-container"><span class="font-code-mono text-code-mono">NPU: 42%</span><span>|</span><span class="font-code-mono text-code-mono">RAM: 18.2GB / 32GB</span><span>|</span><span class="font-code-mono text-code-mono">Local Engine: Ollama v0.3.14</span></div></div><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-1 text-diff-removed-bg font-semibold cursor-pointer"><span class="material-symbols-outlined text-[14px]">warning</span><span>손상/암호 오류 목록 (2건)</span></div><span>|</span><div class="flex items-center gap-1 text-tertiary-fixed font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span><span>Ready (온디바이스 전용 모드)</span></div></div></footer></body></html>

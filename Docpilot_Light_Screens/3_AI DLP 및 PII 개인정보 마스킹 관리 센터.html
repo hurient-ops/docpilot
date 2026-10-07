@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-container": "var(--color-on-primary-container)", "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)", "error-container": "var(--color-error-container)", "surface-container-highest": "var(--color-surface-container-highest)", "on-error": "var(--color-on-error)", "secondary-container": "var(--color-secondary-container)", "text-primary": "var(--color-text-primary)", "surface-container-high": "var(--color-surface-container-high)", "surface-container": "var(--color-surface-container)", "status-local-bg": "var(--color-status-local-bg)", "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)", "format-pptx-bg": "var(--color-format-pptx-bg)", "format-xlsx-border": "var(--color-format-xlsx-border)", "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)", "outline-variant": "var(--color-outline-variant)", "status-cloud-bg": "var(--color-status-cloud-bg)", "primary-container": "var(--color-primary-container)", "primary": "var(--color-primary)", "tertiary-container": "var(--color-tertiary-container)", "on-tertiary": "var(--color-on-tertiary)", "on-background": "var(--color-on-background)", "on-primary": "var(--color-on-primary)", "format-docx-border": "var(--color-format-docx-border)", "border-strong": "var(--color-border-strong)", "format-pptx-border": "var(--color-format-pptx-border)", "surface-card": "var(--color-surface-card)", "on-surface": "var(--color-on-surface)", "on-secondary-container": "var(--color-on-secondary-container)", "status-local-text": "var(--color-status-local-text)", "secondary-fixed": "var(--color-secondary-fixed)", "on-tertiary-container": "var(--color-on-tertiary-container)", "tertiary": "var(--color-tertiary)", "primary-fixed-dim": "var(--color-primary-fixed-dim)", "secondary-fixed-dim": "var(--color-secondary-fixed-dim)", "border-subtle": "var(--color-border-subtle)", "surface-canvas": "var(--color-surface-canvas)", "inverse-on-surface": "var(--color-inverse-on-surface)", "format-xlsx-text": "var(--color-format-xlsx-text)", "status-danger-text": "var(--color-status-danger-text)", "surface": "var(--color-surface)", "text-secondary": "var(--color-text-secondary)", "format-pdf-text": "var(--color-format-pdf-text)", "surface-bright": "var(--color-surface-bright)", "format-pdf-bg": "var(--color-format-pdf-bg)", "on-secondary-fixed": "var(--color-on-secondary-fixed)", "surface-dim": "var(--color-surface-dim)", "format-hwp-border": "var(--color-format-hwp-border)", "format-docx-text": "var(--color-format-docx-text)", "surface-variant": "var(--color-surface-variant)", "diff-added-text": "var(--color-diff-added-text)", "status-danger-bg": "var(--color-status-danger-bg)", "diff-added-bg": "var(--color-diff-added-bg)", "format-pdf-border": "var(--color-format-pdf-border)", "on-primary-fixed": "var(--color-on-primary-fixed)", "surface-container-low": "var(--color-surface-container-low)", "on-error-container": "var(--color-on-error-container)", "background": "var(--color-background)", "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)", "surface-tint": "var(--color-surface-tint)", "diff-removed-bg": "var(--color-diff-removed-bg)", "on-surface-variant": "var(--color-on-surface-variant)", "diff-modified-bg": "var(--color-diff-modified-bg)", "on-secondary": "var(--color-on-secondary)", "security-dlp-breach": "var(--color-security-dlp-breach)", "tertiary-fixed": "var(--color-tertiary-fixed)", "on-tertiary-fixed": "var(--color-on-tertiary-fixed)", "format-xlsx-bg": "var(--color-format-xlsx-bg)", "error": "var(--color-error)", "diff-modified-text": "var(--color-diff-modified-text)", "outline": "var(--color-outline)", "format-docx-bg": "var(--color-format-docx-bg)", "security-dlp-pass": "var(--color-security-dlp-pass)", "status-cloud-text": "var(--color-status-cloud-text)", "diff-removed-text": "var(--color-diff-removed-text)", "format-hwp-text": "var(--color-format-hwp-text)", "primary-fixed": "var(--color-primary-fixed)", "format-hwp-bg": "var(--color-format-hwp-bg)", "inverse-primary": "var(--color-inverse-primary)", "surface-container-lowest": "var(--color-surface-container-lowest)", "format-pptx-text": "var(--color-format-pptx-text)", "secondary": "var(--color-secondary)", "inverse-surface": "var(--color-inverse-surface)", "text-muted": "var(--color-text-muted)"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xl":"1.5rem","space-xs":"0.25rem","space-sm":"0.375rem",gutter:"1rem","space-lg":"1rem","space-md":"0.75rem",margin:"1rem"},fontFamily:{"headline-md":["Inter"],"display-lg":["Inter"],"body-dense":["Inter"],"body-default":["Inter"],"code-mono":["JetBrains Mono"],"title-sm":["Inter"],"badge-label":["Inter"],"body-semibold":["Inter"],"caption":["Inter"]},fontSize:{"headline-md":["18px",{lineHeight:"24px",letterSpacing:"-0.015em",fontWeight:"600"}],"display-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-dense":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"400"}],"body-default":["13px",{lineHeight:"18px",letterSpacing:"-0.005em",fontWeight:"400"}],"code-mono":["11px",{lineHeight:"15px",letterSpacing:"0em",fontWeight:"400"}],"title-sm":["15px",{lineHeight:"20px",letterSpacing:"-0.01em",fontWeight:"600"}],"badge-label":["10px",{lineHeight:"12px",letterSpacing:"0.04em",fontWeight:"700"}],"body-semibold":["13px",{lineHeight:"18px",letterSpacing:"-0.005em",fontWeight:"600"}],"caption":["11px",{lineHeight:"14px",letterSpacing:"0.01em",fontWeight:"500"}]}}}};</script><style>
+:root {
+  --color-on-primary-container: #7a92b7;
+  --color-on-secondary-fixed-variant: #003ea8;
+  --color-error-container: #ffdad6;
+  --color-surface-container-highest: #d3e4fe;
+  --color-on-error: #ffffff;
+  --color-secondary-container: #316bf3;
+  --color-text-primary: #1E293B;
+  --color-surface-container-high: #dce9ff;
+  --color-surface-container: #F1F5F9;
+  --color-status-local-bg: #CCFBF1;
+  --color-tertiary-fixed-dim: #6bd8cb;
+  --color-format-pptx-bg: #FFEDD5;
+  --color-format-xlsx-border: #BBF7D0;
+  --color-on-tertiary-fixed-variant: #005049;
+  --color-outline-variant: #c4c6cf;
+  --color-status-cloud-bg: #FEF3C7;
+  --color-primary-container: #0f2a4a;
+  --color-primary: #00152f;
+  --color-tertiary-container: #00302b;
+  --color-on-tertiary: #ffffff;
+  --color-on-background: #0b1c30;
+  --color-on-primary: #ffffff;
+  --color-format-docx-border: #BFDBFE;
+  --color-border-strong: #CBD5E1;
+  --color-format-pptx-border: #FED7AA;
+  --color-surface-card: #FFFFFF;
+  --color-on-surface: #0b1c30;
+  --color-on-secondary-container: #fefcff;
+  --color-status-local-text: #0D9488;
+  --color-secondary-fixed: #dbe1ff;
+  --color-on-tertiary-container: #29a195;
+  --color-tertiary: #001916;
+  --color-primary-fixed-dim: #b0c8f0;
+  --color-secondary-fixed-dim: #b4c5ff;
+  --color-border-subtle: #E2E8F0;
+  --color-surface-canvas: #F8FAFC;
+  --color-inverse-on-surface: #eaf1ff;
+  --color-format-xlsx-text: #16A34A;
+  --color-status-danger-text: #DC2626;
+  --color-surface: #f8f9ff;
+  --color-text-secondary: #64748B;
+  --color-format-pdf-text: #DC2626;
+  --color-surface-bright: #f8f9ff;
+  --color-format-pdf-bg: #FEE2E2;
+  --color-on-secondary-fixed: #00174b;
+  --color-surface-dim: #cbdbf5;
+  --color-format-hwp-border: #BAE6FD;
+  --color-format-docx-text: #2563EB;
+  --color-surface-variant: #d3e4fe;
+  --color-diff-added-text: #166534;
+  --color-status-danger-bg: #FEE2E2;
+  --color-diff-added-bg: #DCFCE7;
+  --color-format-pdf-border: #FECACA;
+  --color-on-primary-fixed: #001c3a;
+  --color-surface-container-low: #eff4ff;
+  --color-on-error-container: #93000a;
+  --color-background: #f8f9ff;
+  --color-on-primary-fixed-variant: #304869;
+  --color-surface-tint: #485f82;
+  --color-diff-removed-bg: #FEE2E2;
+  --color-on-surface-variant: #43474e;
+  --color-diff-modified-bg: #FEF9C3;
+  --color-on-secondary: #ffffff;
+  --color-security-dlp-breach: #E11D48;
+  --color-tertiary-fixed: #89f5e7;
+  --color-on-tertiary-fixed: #00201d;
+  --color-format-xlsx-bg: #DCFCE7;
+  --color-error: #ba1a1a;
+  --color-diff-modified-text: #854D0E;
+  --color-outline: #74777f;
+  --color-format-docx-bg: #DBEAFE;
+  --color-security-dlp-pass: #059669;
+  --color-status-cloud-text: #D97706;
+  --color-diff-removed-text: #991B1B;
+  --color-format-hwp-text: #0284C7;
+  --color-primary-fixed: #d4e3ff;
+  --color-format-hwp-bg: #E0F2FE;
+  --color-inverse-primary: #b0c8f0;
+  --color-surface-container-lowest: #ffffff;
+  --color-format-pptx-text: #EA580C;
+  --color-secondary: #0051d5;
+  --color-inverse-surface: #213145;
+  --color-text-muted: #94A3B8;
+}
+html.dark {
+  --color-on-primary-container: #eeefff;
+  --color-on-secondary-fixed-variant: #005049;
+  --color-error-container: #93000a;
+  --color-surface-container-highest: #2d3449;
+  --color-on-error: #690005;
+  --color-secondary-container: #005049;
+  --color-text-primary: #F8FAFC;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container: #171f33;
+  --color-status-local-bg: #064E3B;
+  --color-tertiary-fixed-dim: #ffb95f;
+  --color-format-pptx-bg: #431407;
+  --color-format-xlsx-border: #064E3B;
+  --color-on-tertiary-fixed-variant: #653e00;
+  --color-outline-variant: #434655;
+  --color-status-cloud-bg: #78350F;
+  --color-primary-container: #2563eb;
+  --color-primary: #b4c5ff;
+  --color-tertiary-container: #996100;
+  --color-on-tertiary: #472a00;
+  --color-on-background: #dae2fd;
+  --color-on-primary: #002a78;
+  --color-format-docx-border: #1E3A8A;
+  --color-border-strong: #334155;
+  --color-format-pptx-border: #431407;
+  --color-surface-card: #0F172A;
+  --color-on-surface: #dae2fd;
+  --color-on-secondary-container: #00302b;
+  --color-status-local-text: #10B981;
+  --color-secondary-fixed: #89f5e7;
+  --color-on-tertiary-container: #ffeedd;
+  --color-tertiary: #ffb95f;
+  --color-primary-fixed-dim: #b4c5ff;
+  --color-secondary-fixed-dim: #6bd8cb;
+  --color-border-subtle: #1E293B;
+  --color-surface-canvas: #0A0F1D;
+  --color-inverse-on-surface: #283044;
+  --color-format-xlsx-text: #10B981;
+  --color-status-danger-text: #EF4444;
+  --color-surface: #0b1326;
+  --color-text-secondary: #94A3B8;
+  --color-format-pdf-text: #EF4444;
+  --color-surface-bright: #31394d;
+  --color-format-pdf-bg: #450A0A;
+  --color-on-secondary-fixed: #00201d;
+  --color-surface-dim: #0b1326;
+  --color-format-hwp-border: #164E63;
+  --color-format-docx-text: #3B82F6;
+  --color-surface-variant: #2d3449;
+  --color-diff-added-text: #10B981;
+  --color-status-danger-bg: #450A0A;
+  --color-diff-added-bg: #064E3B;
+  --color-format-pdf-border: #450A0A;
+  --color-on-primary-fixed: #00174b;
+  --color-surface-container-low: #131b2e;
+  --color-on-error-container: #ffdad6;
+  --color-background: #0b1326;
+  --color-on-primary-fixed-variant: #003ea8;
+  --color-surface-tint: #b4c5ff;
+  --color-diff-removed-bg: #450A0A;
+  --color-on-surface-variant: #c3c6d7;
+  --color-diff-modified-bg: #451A03;
+  --color-on-secondary: #003732;
+  --color-security-dlp-breach: #E11D48;
+  --color-tertiary-fixed: #ffddb8;
+  --color-on-tertiary-fixed: #2a1700;
+  --color-format-xlsx-bg: #064E3B;
+  --color-error: #ffb4ab;
+  --color-diff-modified-text: #F59E0B;
+  --color-outline: #8d90a0;
+  --color-format-docx-bg: #1E3A8A;
+  --color-security-dlp-pass: #059669;
+  --color-status-cloud-text: #D97706;
+  --color-diff-removed-text: #EF4444;
+  --color-format-hwp-text: #06B6D4;
+  --color-primary-fixed: #dbe1ff;
+  --color-format-hwp-bg: #164E63;
+  --color-inverse-primary: #0053db;
+  --color-surface-container-lowest: #060e20;
+  --color-format-pptx-text: #EA580C;
+  --color-secondary: #6bd8cb;
+  --color-inverse-surface: #dae2fd;
+  --color-text-muted: #64748B;
+}
+</style>
+</head><body class="bg-surface-canvas font-body-default text-body-default text-text-primary antialiased select-none"><header class="fixed top-0 left-0 right-0 h-12 z-50 bg-surface-card border-b border-border-subtle flex items-center justify-between px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="hidden md:flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container border border-border-subtle text-text-secondary cursor-pointer hover:text-text-primary"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-caption text-caption">Ctrl+K</span></div><button class="relative p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-security-dlp-breach"></span></button><button class="p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+<script>
+function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+}
+</script>
+<button onclick="toggleDarkMode()" class="p-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors ml-2" title="Toggle Dark Mode">
+    <span class="material-symbols-outlined text-[18px]">dark_mode</span>
+</button>
+<div class="h-4 w-px bg-border-subtle mx-space-xs"></div><div class="flex items-center gap-space-sm cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="hidden lg:inline-block font-body-semibold text-body-semibold text-text-primary">워크스페이스</span></div></div></header>
+
+<aside class="fixed left-0 top-12 bottom-7 w-64 bg-surface-card border-r border-border-subtle z-40 flex flex-col justify-between overflow-y-auto"><div class="p-space-md"><div class="flex items-center justify-between mb-space-sm px-1"><span class="font-caption text-caption uppercase text-text-secondary font-semibold">내 로컬 라이브러리</span><button class="text-text-secondary hover:text-text-primary"><span class="material-symbols-outlined text-[16px]">create_new_folder</span></button></div><div class="flex flex-col gap-0.5 mb-space-lg"><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">folder</span><span class="truncate font-code-mono text-code-mono">C:\DocArchive\2025</span></div><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">lock</span><span class="truncate font-code-mono text-code-mono">C:\HQ_Legal\HWP_Vault</span></div><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">folder</span><span class="truncate font-code-mono text-code-mono">D:\Presentations\Q1</span></div><div class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-surface-container cursor-pointer text-text-primary font-body-default text-body-default"><span class="material-symbols-outlined text-[16px] text-text-secondary">cloud</span><span class="truncate font-code-mono text-code-mono">네트워크 공유 드라이브 (Z:)</span></div></div><div class="mb-space-md px-1"><div class="font-caption text-caption uppercase text-text-secondary font-semibold mb-space-sm">포맷 필터</div><div class="flex flex-wrap gap-1.5"><span class="h-[18px] px-1.5 rounded border border-format-hwp-border bg-format-hwp-bg text-format-hwp-text font-badge-label text-badge-label flex items-center cursor-pointer">HWP/HWPX</span><span class="h-[18px] px-1.5 rounded border border-format-docx-border bg-format-docx-bg text-format-docx-text font-badge-label text-badge-label flex items-center cursor-pointer">DOCX</span><span class="h-[18px] px-1.5 rounded border border-format-xlsx-border bg-format-xlsx-bg text-format-xlsx-text font-badge-label text-badge-label flex items-center cursor-pointer">XLSX</span><span class="h-[18px] px-1.5 rounded border border-format-pptx-border bg-format-pptx-bg text-format-pptx-text font-badge-label text-badge-label flex items-center cursor-pointer">PPTX</span><span class="h-[18px] px-1.5 rounded border border-format-pdf-border bg-format-pdf-bg text-format-pdf-text font-badge-label text-badge-label flex items-center cursor-pointer">PDF</span></div></div></div><div class="p-space-md border-t border-border-subtle bg-surface-canvas/50"><div class="p-space-sm rounded bg-surface-card border border-border-subtle"><div class="flex items-center gap-1.5 mb-1"><span class="material-symbols-outlined text-[16px] text-security-dlp-pass">verified_user</span><span class="font-caption text-caption font-semibold text-text-primary">보안 격리 상태 Safe</span></div><p class="font-caption text-caption text-text-secondary leading-tight">외부 클라우드 전송이 완전히 차단된 온디바이스 샌드박스입니다.</p></div></div></aside><div class="pl-64 pb-7"><main class="w-full pt-12 min-h-screen bg-surface-canvas"><div class="flex flex-col w-full">
+<!-- Interactive State Container -->
+<div class="flex flex-col gap-space-lg p-space-md lg:p-space-xl">
+<!-- Top KPI & Security Isolation Banner -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1: Total PII Detected -->
+<div class="relative overflow-hidden rounded-xl bg-surface-card p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-security-dlp-breach"></span>
+<span class="font-caption text-caption text-text-secondary uppercase tracking-wider font-semibold">총 PII 감지 파일</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-text-primary tracking-tight font-bold">47</span>
+<span class="font-body-dense text-body-dense text-text-secondary">건의 파일</span>
+</div>
+</div>
+<div class="w-9 h-9 rounded bg-diff-removed-bg flex items-center justify-center text-security-dlp-breach">
+<span class="material-symbols-outlined text-[20px]">shield_with_heart</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs grid grid-cols-2 gap-1.5 font-code-mono text-code-mono">
+<div class="flex items-center justify-between px-2 py-1 rounded bg-surface-container">
+<span class="text-text-secondary">주민번호</span>
+<span class="font-semibold text-security-dlp-breach">18건</span>
+</div>
+<div class="flex items-center justify-between px-2 py-1 rounded bg-surface-container">
+<span class="text-text-secondary">금융계좌</span>
+<span class="font-semibold text-format-pptx-text">14건</span>
+</div>
+<div class="flex items-center justify-between px-2 py-1 rounded bg-surface-container">
+<span class="text-text-secondary">휴대전화</span>
+<span class="font-semibold text-format-docx-text">11건</span>
+</div>
+<div class="flex items-center justify-between px-2 py-1 rounded bg-surface-container">
+<span class="text-text-secondary">대외비어휘</span>
+<span class="font-semibold text-secondary">4건</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Masking Completion Rate & Donut Chart -->
+<div class="relative overflow-hidden rounded-xl bg-surface-card p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-caption text-caption text-text-secondary uppercase tracking-wider font-semibold">마스킹 완료 처리율</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-lg text-display-lg text-text-primary tracking-tight font-bold">82.9%</span>
+<span class="font-caption text-caption text-security-dlp-pass font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +14.2%
+              </span>
+</div>
+</div>
+<div class="relative w-12 h-12 shrink-0">
+<!-- Inline SVG Gauge Chart -->
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-container" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-security-dlp-pass" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="88" stroke-dashoffset="15" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-caption text-caption font-semibold text-text-primary">
+              39/47
+            </div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-caption text-caption">
+<span class="text-text-secondary">마스킹 완료 <strong class="text-text-primary font-body-semibold">39건</strong></span>
+<span class="px-2 py-0.5 rounded bg-status-cloud-bg text-status-cloud-text font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-cloud-text animate-pulse"></span>
+            검토 대기 8건
+          </span>
+</div>
+</div>
+<!-- Card 3: Security Isolation Mode -->
+<div class="relative overflow-hidden rounded-xl bg-primary-container p-space-lg text-white shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5 mb-1 text-tertiary-fixed">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-caption text-caption uppercase tracking-wider font-semibold">데이터 격리 수준</span>
+</div>
+<span class="font-title-sm text-title-sm text-white font-bold block">Air-Gapped 온디바이스 전용</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-status-local-bg/20 text-tertiary-fixed font-badge-label text-badge-label font-bold">L3 SECURE</span>
+</div>
+<div class="mt-space-md space-y-1.5">
+<div class="flex justify-between items-center font-caption text-caption text-on-primary-container">
+<span>외부 클라우드 누출 위험도</span>
+<span class="font-code-mono text-code-mono text-tertiary-fixed font-bold">0.00% (차단 100%)</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded overflow-hidden">
+<div class="bg-tertiary-fixed h-full rounded" style="width: 100%"></div>
+</div>
+</div>
+</div>
+<!-- Card 4: Hardware NPU Acceleration Status -->
+<div class="relative overflow-hidden rounded-xl bg-surface-card p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-caption text-caption text-text-secondary uppercase tracking-wider font-semibold">신경망 NPU 정규식 가속</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-lg text-display-lg text-text-primary tracking-tight font-bold">0.04<span class="font-body-default text-body-default text-text-secondary font-normal">s/Doc</span></span>
+</div>
+</div>
+<div class="w-9 h-9 rounded bg-status-local-bg flex items-center justify-center text-status-local-text">
+<span class="material-symbols-outlined text-[20px]">memory</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-caption text-caption text-text-secondary">
+<span class="truncate">한글 형태소 분석기 (Kiwi) 연동됨</span>
+<span class="font-code-mono text-code-mono text-security-dlp-pass font-semibold">Ready</span>
+</div>
+</div>
+</div>
+<!-- Policy Control & Custom Keywords Toolbar -->
+<div class="bg-surface-card rounded-xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div>
+<h2 class="font-title-sm text-title-sm text-text-primary font-bold">자동 감지 및 비파괴 마스킹 규칙</h2>
+<p class="font-caption text-caption text-text-secondary mt-0.5">문서 내 민감정보 패턴을 식별하고 영구 삭제형 또는 렌더링 오버레이 방식으로 치환합니다.</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="h-8 px-space-md rounded bg-primary text-white font-body-semibold text-body-semibold hover:bg-text-primary transition-colors flex items-center gap-1.5 shadow-sm" id="batch-mask-btn">
+<span class="material-symbols-outlined text-[16px]">visibility_off</span>
+<span>선택 항목 일괄 마스킹 & 원본 보호</span>
+</button>
+<button class="h-8 px-space-md rounded bg-surface-container text-text-primary font-body-default text-body-default hover:bg-surface-container-high transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">copy_all</span>
+<span>비파괴 마스킹 사본 생성 (.masked)</span>
+</button>
+</div>
+</div>
+<!-- Rule Toggles -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter pt-space-xs">
+<!-- Toggle 1: 주민번호 -->
+<label class="flex items-center justify-between p-space-sm px-space-md rounded-lg bg-surface-container cursor-pointer select-none">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-security-dlp-breach text-[18px]">badge</span>
+<div>
+<span class="font-body-semibold text-body-semibold text-text-primary block">주민등록번호 완전 마스킹</span>
+<span class="font-code-mono text-code-mono text-text-secondary">●●●●●●-●●●●●●●</span>
+</div>
+</div>
+<input checked="" class="w-4 h-4 rounded text-secondary focus:ring-0" type="checkbox"/>
+</label>
+<!-- Toggle 2: 계좌번호 -->
+<label class="flex items-center justify-between p-space-sm px-space-md rounded-lg bg-surface-container cursor-pointer select-none">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-format-pptx-text text-[18px]">account_balance</span>
+<div>
+<span class="font-body-semibold text-body-semibold text-text-primary block">계좌번호 중간 마스킹</span>
+<span class="font-code-mono text-code-mono text-text-secondary">110-***-*** (앞 3/뒤 2 유지)</span>
+</div>
+</div>
+<input checked="" class="w-4 h-4 rounded text-secondary focus:ring-0" type="checkbox"/>
+</label>
+<!-- Toggle 3: 전화번호 -->
+<label class="flex items-center justify-between p-space-sm px-space-md rounded-lg bg-surface-container cursor-pointer select-none">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-format-docx-text text-[18px]">call</span>
+<div>
+<span class="font-body-semibold text-body-semibold text-text-primary block">휴대전화 가운데 자리 마스킹</span>
+<span class="font-code-mono text-code-mono text-text-secondary">010-●●●●-5678</span>
+</div>
+</div>
+<input checked="" class="w-4 h-4 rounded text-secondary focus:ring-0" type="checkbox"/>
+</label>
+</div>
+<!-- Custom Confidential Keyword Chips -->
+<div class="pt-space-xs flex flex-wrap items-center gap-2">
+<span class="font-caption text-caption text-text-secondary font-semibold uppercase shrink-0">대외비 차단 키워드:</span>
+<div class="flex flex-wrap items-center gap-1.5" id="keyword-container">
+<span class="h-6 px-2 rounded-full bg-surface-container text-text-primary font-caption text-caption flex items-center gap-1">
+<span>프로젝트 타이탄</span>
+<button class="hover:text-security-dlp-breach"><span class="material-symbols-outlined text-[13px]">close</span></button>
+</span>
+<span class="h-6 px-2 rounded-full bg-surface-container text-text-primary font-caption text-caption flex items-center gap-1">
+<span>2026_미공개_M&A</span>
+<button class="hover:text-security-dlp-breach"><span class="material-symbols-outlined text-[13px]">close</span></button>
+</span>
+<span class="h-6 px-2 rounded-full bg-surface-container text-text-primary font-caption text-caption flex items-center gap-1">
+<span>특수단가계약서</span>
+<button class="hover:text-security-dlp-breach"><span class="material-symbols-outlined text-[13px]">close</span></button>
+</span>
+<span class="h-6 px-2 rounded-full bg-surface-container text-text-primary font-caption text-caption flex items-center gap-1">
+<span>임원급여명세</span>
+<button class="hover:text-security-dlp-breach"><span class="material-symbols-outlined text-[13px]">close</span></button>
+</span>
+<button class="h-6 px-2.5 rounded-full bg-surface-container text-secondary font-caption text-caption font-semibold hover:bg-surface-container-high transition-colors flex items-center gap-1" id="add-keyword-btn">
+<span class="material-symbols-outlined text-[14px]">add</span>
+<span>키워드 추가</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Workspace Split: Table + Sticky Inspection Side Sheet -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Detected PII Table (7 cols on desktop) -->
+<div class="xl:col-span-7 bg-surface-card rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-space-md bg-surface-card flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-title-sm text-title-sm text-text-primary font-bold">검출된 민감정보 목록</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-text-secondary font-badge-label text-badge-label font-bold">TOTAL 47 ITEMS</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-caption text-caption text-text-secondary">정렬: 심각도 순</span>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container"><span class="material-symbols-outlined text-[16px]">filter_list</span></button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-canvas text-text-secondary font-caption text-caption uppercase font-semibold h-8 select-none">
+<th class="pl-space-md pr-2 w-8"><input class="w-3.5 h-3.5 rounded text-secondary focus:ring-0" type="checkbox"/></th>
+<th class="px-2 w-16">포맷</th>
+<th class="px-2">문서명 / 경로</th>
+<th class="px-2 w-28">유형</th>
+<th class="px-2 w-24">위치</th>
+<th class="px-2">검출 및 마스킹 스니펫</th>
+<th class="px-2 w-24 text-center">상태</th>
+<th class="pr-space-md pl-2 text-right w-24">조치</th>
+</tr>
+</thead>
+<tbody class="font-body-default text-body-default divide-y-0" id="pii-rows">
+<!-- Row 1 (Selected Row) -->
+<tr class="h-11 bg-surface-container-high/40 hover:bg-surface-container transition-colors cursor-pointer border-l-2 border-primary" onclick="selectRow('row1')">
+<td class="pl-space-md pr-2"><input checked="" class="w-3.5 h-3.5 rounded text-secondary focus:ring-0" type="checkbox"/></td>
+<td class="px-2">
+<span class="h-[18px] px-1.5 rounded bg-format-hwp-bg text-format-hwp-text font-badge-label text-badge-label font-bold flex items-center justify-center">HWPX</span>
+</td>
+<td class="px-2 min-w-[140px] max-w-[180px]">
+<span class="font-body-semibold text-body-semibold text-text-primary truncate block">표준_비밀유지협약서_2026.hwpx</span>
+<span class="font-code-mono text-code-mono text-text-muted truncate block">C:\HQ_Legal\HWP_Vault</span>
+</td>
+<td class="px-2">
+<span class="px-1.5 py-0.5 rounded bg-status-danger-bg text-status-danger-text font-caption text-caption font-semibold">주민등록번호</span>
+</td>
+<td class="px-2 font-caption text-caption text-text-secondary whitespace-nowrap">2페이지 제5조</td>
+<td class="px-2 font-code-mono text-code-mono text-text-primary">
+<span class="bg-diff-removed-bg text-diff-removed-text line-through mr-1">890412-1082914</span>
+<span class="bg-diff-added-bg text-diff-added-text font-bold">890412-1●●●●●●</span>
+</td>
+<td class="px-2 text-center">
+<span class="px-2 py-0.5 rounded bg-diff-added-bg text-security-dlp-pass font-caption text-caption font-bold">완료</span>
+</td>
+<td class="pr-space-md pl-2 text-right">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container-highest" title="원본 파일 열기">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 (Pending Review) -->
+<tr class="h-11 bg-surface-card hover:bg-surface-container transition-colors cursor-pointer" onclick="selectRow('row2')">
+<td class="pl-space-md pr-2"><input class="w-3.5 h-3.5 rounded text-secondary focus:ring-0" type="checkbox"/></td>
+<td class="px-2">
+<span class="h-[18px] px-1.5 rounded bg-format-xlsx-bg text-format-xlsx-text font-badge-label text-badge-label font-bold flex items-center justify-center">XLSX</span>
+</td>
+<td class="px-2 min-w-[140px] max-w-[180px]">
+<span class="font-body-semibold text-body-semibold text-text-primary truncate block">2024_임원급여_보안.xlsx</span>
+<span class="font-code-mono text-code-mono text-text-muted truncate block">D:\Enterprise_Data\04_기밀</span>
+</td>
+<td class="px-2">
+<span class="px-1.5 py-0.5 rounded bg-format-pptx-bg text-format-pptx-text font-caption text-caption font-semibold">금융계좌</span>
+</td>
+<td class="px-2 font-caption text-caption text-text-secondary whitespace-nowrap">Sheet1 H12:H28</td>
+<td class="px-2 font-code-mono text-code-mono text-text-primary">
+<span class="bg-diff-modified-bg text-diff-modified-text font-bold">신한 110-384-918274</span>
+</td>
+<td class="px-2 text-center">
+<span class="px-2 py-0.5 rounded bg-status-cloud-bg text-status-cloud-text font-caption text-caption font-bold">검토 대기</span>
+</td>
+<td class="pr-space-md pl-2 text-right">
+<button class="px-2 py-0.5 rounded bg-secondary text-white font-caption text-caption font-semibold hover:bg-secondary-container transition-colors shadow-sm">
+                    즉시 마스킹
+                  </button>
+</td>
+</tr>
+<!-- Row 3 (DOCX Masked) -->
+<tr class="h-11 bg-surface-card hover:bg-surface-container transition-colors cursor-pointer" onclick="selectRow('row3')">
+<td class="pl-space-md pr-2"><input class="w-3.5 h-3.5 rounded text-secondary focus:ring-0" type="checkbox"/></td>
+<td class="px-2">
+<span class="h-[18px] px-1.5 rounded bg-format-docx-bg text-format-docx-text font-badge-label text-badge-label font-bold flex items-center justify-center">DOCX</span>
+</td>
+<td class="px-2 min-w-[140px] max-w-[180px]">
+<span class="font-body-semibold text-body-semibold text-text-primary truncate block">협력사_정산_명세서_Q4.docx</span>
+<span class="font-code-mono text-code-mono text-text-muted truncate block">D:\Finance\Settlement</span>
+</td>
+<td class="px-2">
+<span class="px-1.5 py-0.5 rounded bg-format-docx-bg text-format-docx-text font-caption text-caption font-semibold">사업자/계좌</span>
+</td>
+<td class="px-2 font-caption text-caption text-text-secondary whitespace-nowrap">4페이지 하단</td>
+<td class="px-2 font-code-mono text-code-mono text-text-primary">
+<span class="bg-diff-added-bg text-diff-added-text">120-81-***** / 우리 1002-***</span>
+</td>
+<td class="px-2 text-center">
+<span class="px-2 py-0.5 rounded bg-diff-added-bg text-security-dlp-pass font-caption text-caption font-bold">완료</span>
+</td>
+<td class="pr-space-md pl-2 text-right">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 (PPTX Confidential Watermark) -->
+<tr class="h-11 bg-surface-card hover:bg-surface-container transition-colors cursor-pointer" onclick="selectRow('row4')">
+<td class="pl-space-md pr-2"><input class="w-3.5 h-3.5 rounded text-secondary focus:ring-0" type="checkbox"/></td>
+<td class="px-2">
+<span class="h-[18px] px-1.5 rounded bg-format-pptx-bg text-format-pptx-text font-badge-label text-badge-label font-bold flex items-center justify-center">PPTX</span>
+</td>
+<td class="px-2 min-w-[140px] max-w-[180px]">
+<span class="font-body-semibold text-body-semibold text-text-primary truncate block">2026_전략투자_로드맵_기밀.pptx</span>
+<span class="font-code-mono text-code-mono text-text-muted truncate block">D:\Presentations\Strategy</span>
+</td>
+<td class="px-2">
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-caption text-caption font-semibold">대외비 키워드</span>
+</td>
+<td class="px-2 font-caption text-caption text-text-secondary whitespace-nowrap">슬라이드 7 본문</td>
+<td class="px-2 font-code-mono text-code-mono text-diff-modified-text">
+<span class="px-1.5 py-0.5 rounded bg-diff-modified-bg">[대외비 워터마크 자동 삽입됨]</span>
+</td>
+<td class="px-2 text-center">
+<span class="px-2 py-0.5 rounded bg-diff-added-bg text-security-dlp-pass font-caption text-caption font-bold">완료</span>
+</td>
+<td class="pr-space-md pl-2 text-right">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 (Phone Number pending) -->
+<tr class="h-11 bg-surface-card hover:bg-surface-container transition-colors cursor-pointer" onclick="selectRow('row5')">
+<td class="pl-space-md pr-2"><input class="w-3.5 h-3.5 rounded text-secondary focus:ring-0" type="checkbox"/></td>
+<td class="px-2">
+<span class="h-[18px] px-1.5 rounded bg-format-pdf-bg text-format-pdf-text font-badge-label text-badge-label font-bold flex items-center justify-center">PDF</span>
+</td>
+<td class="px-2 min-w-[140px] max-w-[180px]">
+<span class="font-body-semibold text-body-semibold text-text-primary truncate block">신규입사자_비상연락망_2025.pdf</span>
+<span class="font-code-mono text-code-mono text-text-muted truncate block">C:\DocArchive\HR</span>
+</td>
+<td class="px-2">
+<span class="px-1.5 py-0.5 rounded bg-format-docx-bg text-format-docx-text font-caption text-caption font-semibold">휴대전화번호</span>
+</td>
+<td class="px-2 font-caption text-caption text-text-secondary whitespace-nowrap">1페이지 표2</td>
+<td class="px-2 font-code-mono text-code-mono text-text-primary">
+<span class="bg-diff-removed-bg text-diff-removed-text">010-4829-1092</span> (3개 항목)
+                </td>
+<td class="px-2 text-center">
+<span class="px-2 py-0.5 rounded bg-status-cloud-bg text-status-cloud-text font-caption text-caption font-bold">검토 대기</span>
+</td>
+<td class="pr-space-md pl-2 text-right">
+<button class="px-2 py-0.5 rounded bg-secondary text-white font-caption text-caption font-semibold hover:bg-secondary-container transition-colors shadow-sm">
+                    즉시 마스킹
+                  </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Footer status -->
+<div class="p-space-sm px-space-md bg-surface-canvas flex items-center justify-between font-caption text-caption text-text-secondary select-none">
+<div class="flex items-center gap-2">
+<span>선택된 파일: <strong class="text-text-primary">1</strong>개 (전체 47개 중)</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-card hover:bg-surface-container font-semibold disabled:opacity-50" disabled="">< 이전</button>
+<span class="px-2 py-1 bg-primary text-white rounded font-code-mono text-code-mono font-bold">1</span>
+<button class="px-2 py-1 rounded bg-surface-card hover:bg-surface-container font-semibold">2</button>
+<button class="px-2 py-1 rounded bg-surface-card hover:bg-surface-container font-semibold">3</button>
+<button class="px-2 py-1 rounded bg-surface-card hover:bg-surface-container font-semibold">다음 ></button>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Redaction Side Sheet (5 cols on desktop) -->
+<div class="xl:col-span-5 bg-surface-card rounded-xl shadow-sm p-space-md lg:p-space-lg flex flex-col gap-space-md sticky top-16">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="h-[18px] px-1.5 rounded bg-format-hwp-bg text-format-hwp-text font-badge-label text-badge-label font-bold">HWPX 로컬 렌더링</span>
+<span class="px-2 py-0.5 rounded bg-diff-added-bg text-security-dlp-pass font-caption text-caption font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified</span> 안전 검증 완료
+              </span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary font-bold">표준_비밀유지협약서_2026.hwpx</h3>
+<p class="font-code-mono text-code-mono text-text-muted mt-0.5">SHA-256: 7f8a92e10c73...84c9</p>
+</div>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container">
+<span class="material-symbols-outlined text-[20px]">fullscreen</span>
+</button>
+</div>
+<!-- Mode Toggle Segment -->
+<div class="grid grid-cols-2 p-1 rounded-lg bg-surface-container select-none">
+<button class="py-1.5 rounded text-text-secondary font-body-semibold text-body-semibold flex items-center justify-center gap-1 transition-all" id="view-raw-btn" onclick="togglePreview('raw')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>마스킹 전 원본</span>
+</button>
+<button class="py-1.5 rounded bg-surface-card text-text-primary shadow-sm font-body-semibold text-body-semibold flex items-center justify-center gap-1 transition-all" id="view-masked-btn" onclick="togglePreview('masked')">
+<span class="material-symbols-outlined text-[16px]">shield</span>
+<span>마스킹 후 사본 미리보기</span>
+</button>
+</div>
+<!-- Document Redaction Preview Stage -->
+<div class="relative bg-surface-canvas rounded-lg p-space-md flex flex-col gap-space-sm font-body-default text-body-default min-h-[340px] justify-between overflow-hidden shadow-inner">
+<!-- Document Content Area -->
+<div class="space-y-3 leading-relaxed text-text-primary">
+<div class="text-center font-bold text-headline-md font-headline-md tracking-tight border-b border-border-subtle/0 pb-2">
+              표준 비밀유지협약서 (NDA)
+            </div>
+<p class="text-text-secondary font-caption text-caption">
+              본 협약은 ㈜넥스트테크(이하 "갑")와 수탁연구원(이하 "을") 상호 간의 영업비밀 및 개인식별정보 보호를 위하여 체결된다.
+            </p>
+<div class="p-space-sm rounded bg-surface-card space-y-2">
+<span class="font-body-semibold text-body-semibold block text-text-primary">제 5 조 (계약 당사자의 인적사항)</span>
+<p class="text-text-primary">
+                1. "을"의 인적사항:<br/>
+                성명: 홍 길 동 (연구총괄책임자)<br/>
+                소속: 글로벌전략데이터분석팀<br/>
+                식별번호: 
+                <!-- Redaction Box Dynamic Switch -->
+<span class="inline-block relative px-1 py-0.5 rounded font-code-mono text-code-mono font-bold bg-text-primary text-white select-none" id="preview-target">
+<span id="preview-text">890412 - 1●●●●●●</span>
+<span class="absolute -top-2.5 -right-2 px-1 rounded bg-security-dlp-pass text-white font-badge-label text-[9px] uppercase tracking-wide">REDACTED</span>
+</span>
+</p>
+<p class="text-text-secondary font-caption text-caption">
+                연락처: <span class="font-code-mono text-code-mono text-text-primary font-semibold">010-9182-3849</span>
+</p>
+</div>
+<p class="font-caption text-caption text-text-muted italic">
+              * 온디바이스 NPU 전처리: 픽셀 오버레이가 아닌 한글 HWPX 바이너리 텍스트 노드 자체를 치환하여 텍스트 복원을 원천 차단함.
+            </p>
+</div>
+<!-- Bottom Action Buttons in Inspector -->
+<div class="pt-space-md flex items-center justify-between gap-space-xs">
+<button class="h-8 px-space-md rounded bg-surface-card text-text-primary font-body-default text-body-default hover:bg-surface-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">history</span>
+<span>작업 롤백</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="h-8 px-space-md rounded bg-diff-removed-bg text-diff-removed-text font-body-semibold text-body-semibold hover:bg-status-danger-bg transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">rule</span>
+<span>예외 승인 (Raw 허용)</span>
+</button>
+<button class="h-8 px-space-md rounded bg-primary text-white font-body-semibold text-body-semibold hover:bg-text-primary transition-colors flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>마스킹 완료 파일 저장</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Security Compliance Audit Stamp -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center gap-space-sm text-text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-security-dlp-pass text-[18px]">verified_user</span>
+<div>
+<strong class="text-text-primary">개인정보보호법 제29조(안전조치의무) 충족:</strong>
+            로컬 AES-256 암호화 적용 및 원본 메타데이터 EXIF/생성자 식별정보 일괄 제거 완료.
+          </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Preview toggle function between Raw and Masked states
+  function togglePreview(state) {
+    const rawBtn = document.getElementById('view-raw-btn');
+    const maskedBtn = document.getElementById('view-masked-btn');
+    const target = document.getElementById('preview-target');
+    const previewText = document.getElementById('preview-text');
+
+    if (state === 'raw') {
+      rawBtn.classList.add('bg-surface-card', 'text-text-primary', 'shadow-sm');
+      rawBtn.classList.remove('text-text-secondary');
+      maskedBtn.classList.remove('bg-surface-card', 'text-text-primary', 'shadow-sm');
+      maskedBtn.classList.add('text-text-secondary');
+      
+      target.className = 'inline-block relative px-1 py-0.5 rounded font-code-mono text-code-mono font-bold bg-diff-removed-bg text-diff-removed-text select-text';
+      target.innerHTML = '<span id="preview-text">890412 - 1082914</span><span class="absolute -top-2.5 -right-2 px-1 rounded bg-security-dlp-breach text-white font-badge-label text-[9px] uppercase tracking-wide">RAW PII</span>';
+    } else {
+      maskedBtn.classList.add('bg-surface-card', 'text-text-primary', 'shadow-sm');
+      maskedBtn.classList.remove('text-text-secondary');
+      rawBtn.classList.remove('bg-surface-card', 'text-text-primary', 'shadow-sm');
+      rawBtn.classList.add('text-text-secondary');
+
+      target.className = 'inline-block relative px-1 py-0.5 rounded font-code-mono text-code-mono font-bold bg-text-primary text-white select-none';
+      target.innerHTML = '<span id="preview-text">890412 - 1●●●●●●</span><span class="absolute -top-2.5 -right-2 px-1 rounded bg-security-dlp-pass text-white font-badge-label text-[9px] uppercase tracking-wide">REDACTED</span>';
+    }
+  }
+
+  // Row selection visual update helper
+  function selectRow(rowId) {
+    const rows = document.querySelectorAll('#pii-rows tr');
+    rows.forEach(r => {
+      r.classList.remove('bg-surface-container-high/40', 'border-l-2', 'border-primary');
+      r.classList.add('bg-surface-card');
+    });
+    event.currentTarget.classList.remove('bg-surface-card');
+    event.currentTarget.classList.add('bg-surface-container-high/40', 'border-l-2', 'border-primary');
+  }
+
+  // Interactive addition of keyword chip
+  document.getElementById('add-keyword-btn')?.addEventListener('click', () => {
+    const keyword = prompt('추가할 대외비 키워드를 입력하세요:', '2026_신규투자계약');
+    if (keyword && keyword.trim()) {
+      const container = document.getElementById('keyword-container');
+      const addBtn = document.getElementById('add-keyword-btn');
+      const chip = document.createElement('span');
+      chip.className = 'h-6 px-2 rounded-full bg-surface-container text-text-primary font-caption text-caption flex items-center gap-1';
+      chip.innerHTML = `<span>${keyword.trim()}</span><button onclick="this.parentElement.remove()" class="hover:text-security-dlp-breach"><span class="material-symbols-outlined text-[13px]">close</span></button>`;
+      container.insertBefore(chip, addBtn);
+    }
+  });
+
+  // Batch Masking Feedback
+  document.getElementById('batch-mask-btn')?.addEventListener('click', () => {
+    alert('선택된 민감정보 항목의 온디바이스 영구 마스킹 및 원본 보호 저장이 완료되었습니다.');
+  });
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-7 z-50 bg-primary-container text-white px-space-md flex items-center justify-between font-caption text-caption border-t border-primary/20"><div class="flex items-center gap-space-lg overflow-hidden"><div class="flex items-center gap-1.5 truncate"><span class="material-symbols-outlined text-[14px] text-tertiary-fixed">sync</span><span>진행 중 작업: 로컬 문서 증분 색인 63%</span><button class="underline text-on-primary-container hover:text-white ml-1">[일시정지]</button></div><div class="hidden md:flex items-center gap-space-md text-on-primary-container"><span class="font-code-mono text-code-mono">NPU: 42%</span><span>|</span><span class="font-code-mono text-code-mono">RAM: 18.2GB / 32GB</span><span>|</span><span class="font-code-mono text-code-mono">Local Engine: Ollama v0.3.14</span></div></div><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-1 text-diff-removed-bg font-semibold cursor-pointer"><span class="material-symbols-outlined text-[14px]">warning</span><span>손상/암호 오류 목록 (2건)</span></div><span>|</span><div class="flex items-center gap-1 text-tertiary-fixed font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span><span>Ready (온디바이스 전용 모드)</span></div></div></footer></body></html>
