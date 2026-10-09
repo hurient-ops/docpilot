@@ -149,6 +149,42 @@ def scan_directory(req: ScanRequest):
     stats = scanner_agent.scan_directory(req.directory_path, req.is_local_only)
     return {"status": "success", "stats": stats}
 
+@app.get("/api/v1/documents")
+def get_documents(skip: int = 0, limit: int = 100, search: str = ""):
+    """현재 DB에 저장된 실제 스캔 문서를 반환합니다."""
+    from sqlalchemy.orm import sessionmaker
+    from sqlalchemy import create_engine
+    try:
+        from db_agent import DocumentMetadata
+        engine = create_engine("sqlite:///e:/projects/docpilot/agents/docpilot_meta.db")
+        Session = sessionmaker(bind=engine)
+        session = Session()
+        query = session.query(DocumentMetadata)
+        if search:
+            query = query.filter(DocumentMetadata.file_name.ilike(f"%{search}%"))
+        docs = query.offset(skip).limit(limit).all()
+        result = [{"id": d.id, "file_name": d.file_name, "file_path": d.file_path, "format": d.format, "size": d.file_size} for d in docs]
+        session.close()
+        return {"status": "success", "documents": result}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+@app.get("/api/v1/documents/stats")
+def get_document_stats():
+    """현재 스캔된 전체 파일 수 및 통계를 반환합니다."""
+    from sqlalchemy.orm import sessionmaker
+    from sqlalchemy import create_engine
+    try:
+        from db_agent import DocumentMetadata
+        engine = create_engine("sqlite:///e:/projects/docpilot/agents/docpilot_meta.db")
+        Session = sessionmaker(bind=engine)
+        session = Session()
+        count = session.query(DocumentMetadata).count()
+        session.close()
+        return {"status": "success", "total_files": count}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
 @app.post("/api/v1/search/hybrid")
 def hybrid_search(req: SearchQuery):
     """텍스트 기반 문서 문맥(위치 추적) 검색을 수행합니다."""

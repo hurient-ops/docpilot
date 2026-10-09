@@ -1,5 +1,5 @@
 import os
-from sqlalchemy import create_engine, Column, Integer, String, DateTime, Boolean, ForeignKey
+from sqlalchemy import create_engine, Column, Integer, String, DateTime, Boolean, ForeignKey, Float
 from sqlalchemy.orm import declarative_base, sessionmaker
 from datetime import datetime
 
@@ -16,6 +16,8 @@ class DocumentMetadata(Base):
     format = Column(String, nullable=False)     # pptx, docx, hwpx, pdf, xlsx
     is_local_only = Column(Boolean, default=False) # Security isolation flag
     total_pages = Column(Integer, default=0)
+    last_modified = Column(Float, nullable=True) # Check modification time
+    file_size = Column(Integer, nullable=True) # Check file size
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 

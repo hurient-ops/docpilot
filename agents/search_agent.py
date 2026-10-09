@@ -114,32 +114,50 @@ class SearchAgent:
             except Exception as e:
                 print(f"[SearchAgent] Vector search error: {e}")
                 
-        # Fallback PoC Mock Data (여기서도 필터링 로직 통과 시뮬레이션)
-        mock_results = [
-            {
-                "file_name": "2025_사업계획서_최종.pptx",
-                "file_path": "C:\\DocArchive\\2025\\2025_사업계획서_최종.pptx",
-                "location_badge": "[12번째 슬라이드]",
-                "snippet": "...따라서 이번 <mark>전략기획</mark>의 핵심은 비용 절감에 있습니다...",
-                "score": 0.95
-            },
-            {
-                "file_name": "보안_규정_가이드라인.hwpx",
-                "file_path": "C:\\HQ_Legal\\보안_규정_가이드라인.hwpx",
-                "location_badge": "[3페이지 2단락]",
-                "snippet": "...망분리 환경 하에서 <mark>전략기획</mark> 데이터를 외부로 유출하는 것을 금합니다...",
-                "score": 0.88
-            }
-        ]
-        
-        # 모의 데이터에 대해서도 보안 필터 적용 테스트
-        final_mock = []
-        for mr in mock_results:
-            if ai_mode == "cloud" and mr["file_path"] in blocked_paths:
-                continue
-            final_mock.append(mr)
+        # Fallback to SQLite text search if VectorDB is missing
+        try:
+            from sqlalchemy import create_engine
+            from sqlalchemy.orm import sessionmaker
+            from db_agent import DocumentChunk, DocumentMetadata
             
-        return final_mock
+            engine = create_engine("sqlite:///e:/projects/docpilot/agents/docpilot_meta.db")
+            Session = sessionmaker(bind=engine)
+            session = Session()
+            
+            chunks = session.query(DocumentChunk).filter(DocumentChunk.content_text.like(f"%{query}%")).limit(top_k).all()
+            
+            fallback_results = []
+            for chunk in chunks:
+                doc = session.query(DocumentMetadata).filter_by(id=chunk.document_id).first()
+                if not doc: continue
+                if ai_mode == "cloud" and doc.file_path in blocked_paths: continue
+                
+                # Highlight the query
+                import re
+                snippet = chunk.content_text
+                # Simple highlight
+                snippet = re.sub(f"({query})", r"<mark>\1</mark>", snippet, flags=re.IGNORECASE)
+                if len(snippet) > 200:
+                    idx = snippet.lower().find(query.lower())
+                    start = max(0, idx - 50)
+                    snippet = "..." + snippet[start:start+150] + "..."
+                    
+                fallback_results.append({
+                    "file_name": doc.file_name,
+                    "file_path": doc.file_path,
+                    "location_badge": f"[{chunk.page_or_slide_num}번째 영역]",
+                    "snippet": snippet,
+                    "score": 0.8  # Default fallback score
+                })
+            
+            session.close()
+            if fallback_results:
+                return fallback_results
+        except Exception as e:
+            print(f"[SearchAgent] SQLite fallback error: {e}")
+
+        # If nothing found, return empty
+        return []
 
 if __name__ == "__main__":
     search_agent = SearchAgent()

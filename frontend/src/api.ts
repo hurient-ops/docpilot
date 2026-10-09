@@ -1,6 +1,14 @@
 const API_BASE = "http://127.0.0.1:8000/api/v1";
 
 export const api = {
+  getDocuments: async () => {
+    const res = await fetch(`${API_BASE}/documents`);
+    return res.json();
+  },
+  getDocumentStats: async () => {
+    const res = await fetch(`${API_BASE}/documents/stats`);
+    return res.json();
+  },
   checkHardware: async () => {
     const res = await fetch(`${API_BASE}/system/hardware`);
     return res.json();
@@ -12,6 +20,11 @@ export const api = {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ directory_path: path, is_local_only: false })
     });
+    return res.json();
+  },
+
+  browseDirectory: async (path: string = "") => {
+    const res = await fetch(`${API_BASE}/browse?path=${encodeURIComponent(path)}`);
     return res.json();
   },
 

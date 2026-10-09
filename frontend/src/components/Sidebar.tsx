@@ -1,7 +1,123 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { api } from '../api';
 
-export default function Sidebar() {
+const TreeNode = ({ name, fullPath, type, level = 0 }: { name: string, fullPath: string, type: string, level?: number }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [children, setChildren] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  
+  const handleToggle = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!isOpen && !loaded) {
+      setLoading(true);
+      try {
+        const res = await api.browseDirectory(fullPath);
+        if (res.directories) {
+          setChildren(res.directories.map((dir: string) => ({
+            name: dir,
+            fullPath: fullPath ? `${fullPath}/${dir}`.replace(/\\/g, '/').replace('//', '/') : dir,
+            type: 'folder'
+          })));
+        }
+        setLoaded(true);
+      } catch (err) {
+        console.error(err);
+      }
+      setLoading(false);
+    }
+    setIsOpen(!isOpen);
+  };
+  
   return (
-    <aside className="fixed left-0 top-12 bottom-7 w-64 bg-surface-card border-r border-border-subtle z-30 flex flex-col justify-between p-space-md"><div className="flex flex-col gap-space-md"><div className="flex items-center justify-between px-space-xs"><span className="font-caption text-caption uppercase font-semibold text-text-secondary">내 로컬 라이브러리</span><button className="w-6 h-6 rounded flex items-center justify-center text-text-secondary hover:bg-surface-container" type="button"><span className="material-symbols-outlined text-[16px]">create_new_folder</span></button></div><div className="space-y-space-xs font-body-dense text-body-dense"><div className="flex items-center gap-space-xs px-space-sm py-1.5 rounded bg-surface-container text-primary font-body-semibold cursor-pointer"><span className="material-symbols-outlined text-[16px] text-secondary">folder_open</span><span className="truncate">C:\DocArchive\2025</span></div><div className="flex items-center gap-space-xs px-space-sm py-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-on-surface cursor-pointer"><span className="material-symbols-outlined text-[16px]">folder</span><span className="truncate">C:\HQ_Legal\HWP_Vault</span></div><div className="flex items-center gap-space-xs px-space-sm py-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-on-surface cursor-pointer"><span className="material-symbols-outlined text-[16px]">folder</span><span className="truncate">D:\Presentations\Q1</span></div><div className="flex items-center gap-space-xs px-space-sm py-1.5 rounded hover:bg-surface-container text-text-secondary hover:text-on-surface cursor-pointer"><span className="material-symbols-outlined text-[16px]">folder_shared</span><span className="truncate">네트워크 공유 드라이브 (Z:)</span></div></div><div className="h-px bg-border-subtle my-space-xs"></div><div className="flex items-center justify-between px-space-xs"><span className="font-caption text-caption uppercase font-semibold text-text-secondary">포맷 필터</span><span className="font-code-mono text-code-mono text-text-muted">5개 유형</span></div><div className="flex flex-wrap gap-space-xs"><span className="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-hwp-bg text-format-hwp-text border border-format-hwp-border">HWP/HWPX</span><span className="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-docx-bg text-format-docx-text border border-format-docx-border">DOCX</span><span className="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-xlsx-bg text-format-xlsx-text border border-format-xlsx-border">XLSX</span><span className="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-pptx-bg text-format-pptx-text border border-format-pptx-border">PPTX</span><span className="px-space-xs py-0.5 rounded font-badge-label text-badge-label font-bold bg-format-pdf-bg text-format-pdf-text border border-format-pdf-border">PDF</span></div></div><div className="p-space-sm bg-surface-container rounded border border-border-subtle"><div className="flex items-center justify-between text-caption font-caption mb-1"><span className="text-text-secondary">보안 격리 상태</span><span className="text-security-dlp-pass font-semibold flex items-center gap-0.5"><span className="material-symbols-outlined text-[12px]">verified_user</span>Safe</span></div><p className="font-caption text-caption text-text-muted leading-tight">외부 클라우드 전송이 완전히 차단된 온디바이스 샌드박스입니다.</p></div></aside>
+    <div className="flex flex-col">
+      <div 
+        className="flex items-center gap-1.5 py-1 px-2 cursor-pointer hover:bg-surface-container"
+        style={{ paddingLeft: `${level * 16 + 8}px` }}
+        onClick={handleToggle}
+        draggable
+        onDragStart={(e) => {
+          e.dataTransfer.setData('text/plain', fullPath);
+        }}
+      >
+        <div className="w-4 flex items-center justify-center shrink-0">
+          <span className="material-symbols-outlined text-[16px] text-text-muted">
+            {isOpen ? "keyboard_arrow_down" : "chevron_right"}
+          </span>
+        </div>
+        <span className={`material-symbols-outlined text-[16px] ${type === 'drive' ? 'text-text-secondary' : 'text-yellow-500'}`}>
+          {type === 'drive' ? 'hard_drive' : (isOpen ? 'folder_open' : 'folder')}
+        </span>
+        <span className="text-[13px] text-text-primary whitespace-nowrap overflow-hidden text-ellipsis">{name}</span>
+        {loading && <span className="material-symbols-outlined text-[12px] animate-spin text-text-muted ml-auto">sync</span>}
+      </div>
+      {isOpen && (
+        <div className="flex flex-col">
+          {children.map((child, idx) => (
+            <TreeNode key={idx} name={child.name} fullPath={child.fullPath} type={child.type} level={level + 1} />
+          ))}
+          {loaded && children.length === 0 && (
+             <div className="text-[11px] text-text-muted py-1" style={{ paddingLeft: `${(level + 1) * 16 + 28}px` }}>빈 폴더</div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default function Sidebar({ onNavigate }: { onNavigate?: (path: string) => void }) {
+  const [drives, setDrives] = useState<any[]>([]);
+
+  useEffect(() => {
+    api.browseDirectory("").then(res => {
+      if (res.directories) {
+        setDrives(res.directories.map((d: string) => ({ name: `로컬 디스크 (${d.replace('\\\\', '')})`, fullPath: d, type: 'drive' })));
+      }
+    });
+  }, []);
+
+  return (
+    <aside className="fixed left-0 top-12 bottom-7 w-64 bg-surface-card border-r border-surface-container z-30 flex flex-col hidden md:flex">
+
+
+      <div className="p-space-sm pb-1">
+        <span className="px-space-xs text-caption font-caption text-text-muted font-semibold">메인 메뉴</span>
+      </div>
+      
+      <nav className="flex flex-col gap-1 p-space-sm pt-0">
+        <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('directory'); }} className="flex items-center gap-3 px-space-md py-2 rounded-lg bg-primary-container text-primary-fixed font-body-semibold transition-colors">
+          <span className="material-symbols-outlined text-[20px]">folder_managed</span>
+          <span>디렉토리 분석</span>
+        </a>
+      </nav>
+
+      <div className="p-space-sm border-t border-surface-container flex-1 overflow-y-auto custom-scrollbar">
+        <span className="px-space-xs text-caption font-caption text-text-muted font-semibold mb-2 block">내 로컬 라이브러리</span>
+        <div className="flex flex-col">
+          {drives.map((drive, idx) => (
+            <TreeNode key={idx} name={drive.name} fullPath={drive.fullPath} type={drive.type} />
+          ))}
+        </div>
+      </div>
+
+      <div className="p-space-md border-t border-surface-container flex flex-col gap-2">
+        <button className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors text-sm" onClick={() => onNavigate && onNavigate('settings')}>
+          <span className="material-symbols-outlined text-[20px]">settings</span>
+          <span>설정</span>
+        </button>
+        <div className="flex items-center justify-between mt-2 p-2 hover:bg-surface-container rounded-lg cursor-pointer transition-colors">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold shadow-sm text-[14px]">
+              A
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[13px] font-semibold text-text-primary">관리자 (Admin)</span>
+              <span className="text-[11px] text-text-muted">admin@docpilot.ai</span>
+            </div>
+          </div>
+          <span className="material-symbols-outlined text-[16px] text-text-muted hover:text-status-error transition-colors" title="로그아웃" onClick={() => window.location.reload()}>logout</span>
+        </div>
+      </div>
+    </aside>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { api } from '../../api';
 
 export default function SearchScreen() {
@@ -6,6 +6,16 @@ export default function SearchScreen() {
   const [loading, setLoading] = useState(false);
   const [searchResults, setSearchResults] = useState<any[]>([]);
   const [aiMode, setAiMode] = useState('local');
+  const [scannedPath, setScannedPath] = useState('C:\\DocArchive'); // Default mockup path
+
+  useEffect(() => {
+    api.browseDirectory("").then(res => {
+      if (res.current_path) {
+        setScannedPath(res.current_path);
+      }
+    }).catch(() => {});
+  }, []);
+
   const handleSearch = async () => {
     setLoading(true);
     try {
@@ -19,20 +29,7 @@ export default function SearchScreen() {
 
   return (
     <>
-{searchResults.length > 0 && (
-  <div className="w-full mb-6 bg-surface-container border-2 border-primary p-4 rounded-lg">
-    <h3 className="font-bold text-primary mb-3">✅ 실제 검색 결과 ({searchResults.length}건)</h3>
-    <div className="flex flex-col gap-3">
-    {searchResults.map((res, idx) => (
-      <div key={idx} className="pb-3 border-b border-border-subtle last:border-0">
-         <h4 className="font-semibold text-text-primary">{res.file_name}</h4>
-         <div className="text-xs text-text-muted mb-1">{res.file_path} {res.location_badge}</div>
-         <p className="text-sm italic text-text-secondary" dangerouslySetInnerHTML={{__html: res.snippet}}></p>
-      </div>
-    ))}
-    </div>
-  </div>
-)}
+
 
       <div className="flex flex-col w-full">
 
@@ -40,6 +37,10 @@ export default function SearchScreen() {
 <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
 
 <div className="flex-1 flex flex-col gap-space-xs">
+<div className="text-xs font-code-mono text-text-secondary mb-1 flex items-center gap-1">
+  <span className="material-symbols-outlined text-[14px]">folder</span>
+  현재 스캔된 디렉토리: <span className="font-semibold text-text-primary">{scannedPath}</span>
+</div>
 <div className="relative flex items-center">
 <div className="absolute left-3.5 flex items-center pointer-events-none text-secondary">
 <span className="material-symbols-outlined text-[20px]">magic_button</span>
@@ -131,14 +132,29 @@ export default function SearchScreen() {
 <div className="flex items-center justify-between">
 <div className="flex items-center gap-2">
 <span className="font-title-sm text-title-sm text-text-primary">검색 결과</span>
-<span className="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-code-mono text-caption font-semibold">4건 최적 매칭 (0.042초 소요)</span>
+<span className="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-code-mono text-caption font-semibold">{searchResults.length > 0 ? `${searchResults.length}건 검색됨` : `4건 최적 매칭 (0.042초 소요)`}</span>
 </div>
 <div className="flex items-center gap-2 text-text-secondary font-caption text-caption">
-<span>정렬: 비전 유사도순</span>
+<span>정렬: 유사도순</span>
 <span className="material-symbols-outlined text-[14px]">arrow_drop_down</span>
 </div>
 </div>
 
+{searchResults.length > 0 ? (
+  <div className="flex flex-col gap-4 w-full mt-4">
+    {searchResults.map((res, idx) => (
+      <div key={idx} className="p-4 bg-surface-card rounded-xl border border-border-subtle shadow-sm flex flex-col gap-2">
+         <div className="flex items-center gap-2">
+            <span className="material-symbols-outlined text-primary">description</span>
+            <h4 className="font-semibold text-text-primary">{res.file_name}</h4>
+            <span className="px-2 py-0.5 bg-surface-container rounded-md text-[10px] text-text-muted font-code-mono">{res.location_badge}</span>
+         </div>
+         <div className="text-xs text-text-muted mb-2 bg-surface-container p-2 rounded truncate">{res.file_path}</div>
+         <p className="text-sm text-text-secondary leading-relaxed bg-surface-canvas p-3 rounded" dangerouslySetInnerHTML={{__html: res.snippet}}></p>
+      </div>
+    ))}
+  </div>
+) : (
 <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md w-full">
 
 <article className="group rounded-xl bg-surface-card overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
@@ -378,9 +394,11 @@ export default function SearchScreen() {
 </div>
 </article>
 </div>
+)}
 </div>
 
 <aside className="w-full xl:w-[440px] shrink-0 rounded-xl bg-surface-card shadow-sm overflow-hidden flex flex-col" id="inspector-dock">
+
 
 <div className="p-space-md bg-primary-container text-white flex items-center justify-between">
 <div className="flex items-center gap-2 min-w-0">
@@ -502,4 +520,5 @@ export default function SearchScreen() {
 
     </>
   );
+
 }
